@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kisi-Kisi & Latihan TIK/KKA — SDN Sukasari 4 Tangerang</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Quicksand (Bulat, Ramah Anak) -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="config.js"></script>
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+    }
+    .custom-gradient {
+      background: linear-gradient(135deg, #eff6ff 0%, #fef3c7 100%);
+    }
+    .playful-card {
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .playful-card:hover:not(.disabled-card) {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.15), 0 10px 10px -5px rgba(59, 130, 246, 0.1);
+    }
+    .disabled-card {
+      filter: grayscale(1);
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    /* Wave animation */
+    .wave-bg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%233b82f6" fill-opacity="0.1" d="M0,192L48,197.3C96,203,192,213,288,197.3C384,181,480,139,576,144C672,149,768,203,864,197.3C960,192,1056,128,1152,112C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat-x;
+      background-size: 1440px 120px;
+      animation: wave 20s linear infinite;
+    }
+    @keyframes wave {
+      0% { background-position-x: 0px; }
+      100% { background-position-x: 1440px; }
+    }
+  </style>
+</head>
+<body class="custom-gradient min-h-screen flex flex-col relative overflow-x-hidden text-slate-800 antialiased pb-20">
+
+  <!-- Header Sekolah -->
+  <header class="bg-blue-600 text-white shadow-lg relative overflow-hidden py-6">
+    <div class="absolute inset-0 bg-blue-700 opacity-30 pattern-grid"></div>
+    <div class="max-w-6xl mx-auto px-4 relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div class="flex items-center gap-4">
+        <!-- Logo Sekolah -->
+        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-inner p-1 shrink-0 overflow-hidden">
+          <img src="logo_sekolah.png" alt="Logo SDN Sukasari 4" class="w-full h-full object-contain rounded-full">
+        </div>
+        <div>
+          <h2 id="header-school" class="text-xl font-bold tracking-wide">SDN SUKASARI 4 TANGERANG</h2>
+          <p class="text-xs text-blue-100 flex items-center justify-center sm:justify-start gap-2 mt-0.5">
+            <span>NPSN: <span id="header-npsn">20606443</span></span>
+            <span class="w-1 h-1 bg-blue-300 rounded-full"></span>
+            <span>TAHUN PELAJARAN: <span id="header-tahun">2025-2026</span></span>
+          </p>
+        </div>
+      </div>
+      <div class="text-center sm:text-right">
+        <span class="bg-amber-400 text-slate-900 font-extrabold text-xs px-3 py-1.5 rounded-full uppercase shadow-md tracking-wider">
+          🖥️ Portal Kisi-Kisi TIK & KKA
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Konten Utama -->
+  <main class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full relative z-10">
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3 drop-shadow-sm">
+        📚 Selamat Datang di Portal Latihan Kisi-Kisi!
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed">
+        Halo pintar! Pilih kelasmu di bawah ini untuk berlatih soal kisi-kisi Penilaian Akhir Semester. Tetap semangat dan jujur ya!
+      </p>
+      <div class="flex items-center justify-center gap-2 mt-3.5">
+        <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-blue-300 shrink-0 shadow-sm">
+          <img src="pakahmad.png" alt="Pak Ahmad" class="w-full h-full object-cover">
+        </div>
+        <span class="text-blue-600 font-extrabold text-base sm:text-lg">Pak Ahmad bangga padamu!</span>
+      </div>
+    </div>
+
+    <!-- Grid Kartu Kelas -->
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12" id="grid-kelas">
+      <!-- Diisi dinamis oleh JS -->
+      <div class="animate-pulse bg-white rounded-3xl h-44 shadow-md col-span-2 md:col-span-5 flex items-center justify-center">
+        <span class="text-slate-400 font-semibold">Memuat daftar kelas...</span>
+      </div>
+    </div>
+
+    <!-- Modal Form Identitas Siswa (Hidden by default, shown when card clicked) -->
+    <div id="modal-identitas" class="hidden max-w-lg mx-auto bg-white border-2 border-blue-200 rounded-3xl p-6 shadow-xl mb-12 animate-fade-in">
+      <div class="flex items-center gap-3 border-b-2 border-slate-100 pb-4 mb-6">
+        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-xl">
+          ✏️
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-800">Lengkapi Identitas Diri</h3>
+          <p class="text-xs text-slate-500 font-medium">Kamu memilih <span id="selected-class-label" class="font-bold text-blue-600">Kelas 1</span></p>
+        </div>
+      </div>
+
+      <form id="form-siswa" onsubmit="mulaiUjian(event)">
+        <!-- Input Nama -->
+        <div class="mb-5">
+          <label for="siswa-nama" class="block text-sm font-bold text-slate-700 mb-2">Nama Lengkap Siswa</label>
+          <input type="text" id="siswa-nama" required 
+            class="w-full text-base font-medium px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-blue-500 focus:outline-none transition-all placeholder-slate-400 uppercase"
+            placeholder="TULIS NAMA LENGKAPMU DI SINI">
+        </div>
+
+        <!-- Input No Absen -->
+        <div class="mb-6">
+          <label for="siswa-absen" class="block text-sm font-bold text-slate-700 mb-2">Nomor Absen</label>
+          <input type="number" id="siswa-absen" required min="1" max="50"
+            class="w-full text-base font-medium px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-blue-500 focus:outline-none transition-all placeholder-slate-400"
+            placeholder="Contoh: 15">
+        </div>
+
+        <!-- Action Button -->
+        <div class="flex gap-3">
+          <button type="button" onclick="batalPilih()"
+            class="w-1/3 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3.5 rounded-2xl transition-all text-sm sm:text-base">
+            Batal
+          </button>
+          <button type="submit" 
+            class="w-2/3 bg-blue-500 hover:bg-blue-600 text-white font-extrabold py-3.5 rounded-2xl shadow-md hover:shadow-lg transition-all text-sm sm:text-base transform active:scale-95">
+            Mulai Latihan Sekarang 🚀
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Collapsible Pengaturan Guru (Collapsible) -->
+    <div class="max-w-lg mx-auto bg-slate-50 border border-slate-200 rounded-3xl p-5 shadow-sm no-print">
+      <button onclick="toggleGuru()" class="w-full flex items-center justify-between font-bold text-slate-600 text-sm focus:outline-none">
+        <span class="flex items-center gap-2">
+          ⚙️ Pengaturan Koreksi AI (Khusus Guru)
+        </span>
+        <span id="guru-chevron">▼</span>
+      </button>
+      
+      <div id="guru-panel" class="hidden mt-4 border-t border-slate-200 pt-4 flex flex-col gap-4">
+        <p class="text-xs text-slate-500 leading-relaxed font-medium">
+          Aplikasi ini mendukung koreksi otomatis berbasis AI untuk soal Isian & Uraian. Pilih provider AI di bawah ini dan masukkan API Key Anda. 
+          <br><strong class="text-blue-600">Rekomendasi:</strong> Gunakan <strong>Google Gemini</strong> karena gratis/sangat murah, cepat, dan bekerja langsung dari browser tanpa perlu server perantara (Proxy).
+        </p>
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-2.5 text-[10px] text-amber-700 font-bold leading-relaxed">
+          📢 <strong>Info Latihan Mandiri / Di Rumah:</strong><br>
+          Jika aplikasi dibuka oleh siswa di rumah masing-masing, biarkan API Key ini kosong. Aplikasi secara otomatis beralih ke <strong>Koreksi Mandiri Berbasis Rubrik & Orang Tua</strong>. 
+          Siswa akan mendapatkan skor Pilihan Ganda secara otomatis, Isian singkat dicocokkan cerdas, dan Orang Tua dapat memberikan nilai untuk soal Uraian secara interaktif langsung pada lembar hasil!
+        </div>
+        
+        <!-- Pilihan Provider -->
+        <div>
+          <label for="guru-provider" class="block text-xs font-bold text-slate-700 mb-1.5">Pilih Provider AI</label>
+          <select id="guru-provider" onchange="updateProviderSettings()" 
+            class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-blue-500 focus:outline-none font-bold text-slate-700">
+            <option value="gemini">Google Gemini (Sangat Cepat, Gratis & CORS-Friendly)</option>
+            <option value="groq">Groq AI (Super Cepat - Llama 3.3)</option>
+            <option value="claude">Anthropic Claude (Sangat Akurat - Perlu Proxy)</option>
+          </select>
+        </div>
+
+        <!-- API Key Input -->
+        <div>
+          <label for="guru-api-key" class="block text-xs font-bold text-slate-700 mb-1.5" id="label-api-key">Gemini API Key</label>
+          <input type="password" id="guru-api-key" 
+            class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-blue-500 focus:outline-none font-mono"
+            placeholder="Masukkan API Key...">
+          <p class="text-[10px] text-slate-400 font-semibold mt-1" id="desc-api-key">
+            Dapatkan API key gratis di Google AI Studio.
+          </p>
+        </div>
+
+        <!-- Custom Model Input -->
+        <div>
+          <label for="guru-model" class="block text-xs font-bold text-slate-700 mb-1.5">Nama Model AI (Bisa Dikustomisasi)</label>
+          <input type="text" id="guru-model" 
+            class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-blue-500 focus:outline-none font-mono"
+            placeholder="gemini-1.5-flash">
+        </div>
+
+        <!-- Simpan Button -->
+        <div>
+          <button onclick="simpanPengaturanGuru()" 
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-3 rounded-xl text-xs transition-all uppercase tracking-wider shadow-sm">
+            Simpan Konfigurasi AI 💾
+          </button>
+          <p id="api-key-status" class="text-xs text-green-600 font-bold mt-2 text-center hidden">✓ Konfigurasi AI tersimpan di memori browser!</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Wave effect at background -->
+  <div class="wave-bg"></div>
+
+  <!-- Footer -->
+  <footer class="absolute bottom-0 left-0 right-0 py-4 text-center bg-blue-800 text-white text-xs z-10 border-t border-blue-900">
+    <div class="max-w-6xl mx-auto px-4 font-medium flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p id="footer-school-name">&copy; 2026 SDN Sukasari 4 Tangerang</p>
+      <p id="footer-address">Jl. Moch. Yamin No.1, Babakan, Tangerang, Banten</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    let kelasTerpilih = null;
+    let daftarKelasData = {};
+
+    // Inisialisasi halaman saat diload
+    window.addEventListener('DOMContentLoaded', async () => {
+      // Set Header info dari config.js
+      document.getElementById('header-school').innerText = CONFIG.SEKOLAH.toUpperCase();
+      document.getElementById('header-npsn').innerText = CONFIG.NPSN;
+      document.getElementById('header-tahun').innerText = CONFIG.TAHUN_PELAJARAN;
+      document.getElementById('footer-school-name').innerText = `© 2026 ${CONFIG.SEKOLAH}`;
+      document.getElementById('footer-address').innerText = CONFIG.ALAMAT;
+
+      // Load Saved AI Config if any
+      const savedProvider = sessionStorage.getItem("ai_provider") || CONFIG.DEFAULT_PROVIDER || "gemini";
+      document.getElementById('guru-provider').value = savedProvider;
+      
+      updateProviderSettings(); // Sinkronkan label & placeholders
+
+      const savedKey = sessionStorage.getItem("ai_api_key");
+      if (savedKey) {
+        document.getElementById('guru-api-key').value = savedKey;
+      }
+
+      const savedModel = sessionStorage.getItem("ai_model");
+      if (savedModel) {
+        document.getElementById('guru-model').value = savedModel;
+      }
+
+      // Load data kelas 1-5 secara paralel
+      await muatSemuaKelas();
+    });
+
+    // Mengambil data JSON kelas secara asinkron untuk mengetahui ketersediaan soal & topik
+    async function muatSemuaKelas() {
+      const grid = document.getElementById('grid-kelas');
+      grid.innerHTML = ""; // Bersihkan placeholder
+      
+      const colors = [
+        { bg: 'bg-emerald-50 hover:bg-emerald-100/70', border: 'border-emerald-200', text: 'text-emerald-600', number: 'text-emerald-500', btn: 'bg-emerald-500' },
+        { bg: 'bg-indigo-50 hover:bg-indigo-100/70', border: 'border-indigo-200', text: 'text-indigo-600', number: 'text-indigo-500', btn: 'bg-indigo-500' },
+        { bg: 'bg-rose-50 hover:bg-rose-100/70', border: 'border-rose-200', text: 'text-rose-600', number: 'text-rose-500', btn: 'bg-rose-500' },
+        { bg: 'bg-amber-50 hover:bg-amber-100/70', border: 'border-amber-200', text: 'text-amber-600', number: 'text-amber-500', btn: 'bg-amber-500' },
+        { bg: 'bg-sky-50 hover:bg-sky-100/70', border: 'border-sky-200', text: 'text-sky-600', number: 'text-sky-500', btn: 'bg-sky-500' }
+      ];
+
+      for (let k = 1; k <= 5; k++) {
+        const theme = colors[k-1];
+        try {
+          const res = await fetch(`soal/kelas${k}.json`);
+          if (!res.ok) throw new Error("Gagal mengambil data");
+          const data = await res.json();
+          
+          daftarKelasData[k] = data;
+          
+          // Cek apakah soal sudah diisi (bukan placeholder)
+          const isBelumDiisi = data.topik.includes("SOAL BELUM DIISI");
+          
+          if (isBelumDiisi) {
+            tampilkanCardDisabled(grid, k);
+          } else {
+            tampilkanCardAktif(grid, k, data.topik, theme);
+          }
+        } catch (err) {
+          console.error(`Kelas ${k} error:`, err);
+          tampilkanCardDisabled(grid, k);
+        }
+      }
+    }
+
+    function tampilkanCardAktif(grid, kelas, topik, theme) {
+      grid.innerHTML += `
+        <button onclick="pilihKelas(${kelas})" id="card-kelas-${kelas}"
+          class="playful-card ${theme.bg} border-2 ${theme.border} rounded-3xl p-5 shadow-sm text-center flex flex-col items-center justify-between h-48 focus:outline-none">
+          <span class="text-4xl sm:text-5xl font-extrabold ${theme.number}">${kelas}</span>
+          <div class="mt-2 flex-grow flex items-center justify-center">
+            <span class="text-sm font-bold text-slate-700 leading-tight block">${topik}</span>
+          </div>
+          <span class="mt-3 text-xs font-bold text-white px-3 py-1 rounded-full ${theme.btn} tracking-wider">
+            MULAI LATIHAN
+          </span>
+        </button>
+      `;
+    }
+
+    function tampilkanCardDisabled(grid, kelas) {
+      grid.innerHTML += `
+        <div class="playful-card disabled-card bg-slate-50 border-2 border-slate-200 rounded-3xl p-5 shadow-sm text-center flex flex-col items-center justify-between h-48">
+          <span class="text-4xl sm:text-5xl font-extrabold text-slate-400">${kelas}</span>
+          <div class="mt-2 flex-grow flex items-center justify-center">
+            <span class="text-xs font-semibold text-slate-400 leading-normal block">SOAL BELUM TERSEDIA</span>
+          </div>
+          <span class="mt-3 text-[10px] font-extrabold text-slate-400 bg-slate-200 px-3 py-1 rounded-full uppercase tracking-wider">
+            Belum Siap
+          </span>
+        </div>
+      `;
+    }
+
+    // Aksi saat memilih kelas
+    function pilihKelas(kelas) {
+      kelasTerpilih = kelas;
+      
+      // Reset visual semua card aktif, beri highlight pada card terpilih
+      for (let k = 1; k <= 5; k++) {
+        const card = document.getElementById(`card-kelas-${k}`);
+        if (card) {
+          if (k === kelas) {
+            card.classList.add('ring-4', 'ring-blue-500', 'border-blue-500', 'bg-blue-50');
+          } else {
+            card.classList.remove('ring-4', 'ring-blue-500', 'border-blue-500', 'bg-blue-50');
+          }
+        }
+      }
+
+      // Tampilkan form identitas
+      document.getElementById('selected-class-label').innerText = `Kelas ${kelas} (${daftarKelasData[kelas].topik})`;
+      document.getElementById('modal-identitas').classList.remove('hidden');
+      document.getElementById('modal-identitas').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function batalPilih() {
+      kelasTerpilih = null;
+      document.getElementById('modal-identitas').classList.add('hidden');
+      
+      // Reset ring highlight pada semua card
+      for (let k = 1; k <= 5; k++) {
+        const card = document.getElementById(`card-kelas-${k}`);
+        if (card) {
+          card.classList.remove('ring-4', 'ring-blue-500', 'border-blue-500', 'bg-blue-50');
+        }
+      }
+    }
+
+    // Sinkronisasi label & placeholder berdasarkan provider yang dipilih
+
+    function updateProviderSettings() {
+      const provider = document.getElementById('guru-provider').value;
+      const labelKey = document.getElementById('label-api-key');
+      const descKey = document.getElementById('desc-api-key');
+      const inputModel = document.getElementById('guru-model');
+      
+      const defaultModel = CONFIG.DEFAULT_MODELS[provider];
+      inputModel.placeholder = defaultModel;
+      
+      // Jika model belum pernah diisi custom, biarkan kosong agar auto-fallback ke placeholder (default model)
+      if (!sessionStorage.getItem("ai_model")) {
+        inputModel.value = "";
+      }
+
+      if (provider === "gemini") {
+        labelKey.innerText = "Google Gemini API Key";
+        descKey.innerHTML = 'Dapatkan API key gratis di <a href="https://aistudio.google.com/" target="_blank" class="text-blue-500 hover:underline font-bold">Google AI Studio</a>. Langsung terhubung (CORS-friendly).';
+      } else if (provider === "groq") {
+        labelKey.innerText = "Groq API Key";
+        descKey.innerHTML = 'Dapatkan API key gratis di <a href="https://console.groq.com/" target="_blank" class="text-blue-500 hover:underline font-bold">Groq Console</a>. Sangat cepat!';
+      } else if (provider === "claude") {
+        labelKey.innerText = "Anthropic Claude API Key";
+        descKey.innerHTML = 'Dapatkan API key di <a href="https://console.anthropic.com/" target="_blank" class="text-blue-500 hover:underline font-bold">Anthropic Console</a>. Menggunakan reverse proxy browser.';
+      }
+    }
+
+    // Toggle panel guru
+    function toggleGuru() {
+      const panel = document.getElementById('guru-panel');
+      const chevron = document.getElementById('guru-chevron');
+      if (panel.classList.contains('hidden')) {
+        panel.classList.remove('hidden');
+        chevron.innerText = '▲';
+      } else {
+        panel.classList.add('hidden');
+        chevron.innerText = '▼';
+      }
+    }
+
+    // Simpan Konfigurasi Guru ke sessionStorage
+    function simpanPengaturanGuru() {
+      const provider = document.getElementById('guru-provider').value;
+      const apiKey = document.getElementById('guru-api-key').value.trim();
+      let model = document.getElementById('guru-model').value.trim();
+
+      if (!model) {
+        model = CONFIG.DEFAULT_MODELS[provider];
+      }
+
+      if (apiKey) {
+        sessionStorage.setItem("ai_provider", provider);
+        sessionStorage.setItem("ai_api_key", apiKey);
+        sessionStorage.setItem("ai_model", model);
+        
+        document.getElementById('api-key-status').innerText = `✓ Konfigurasi ${provider.toUpperCase()} berhasil disimpan!`;
+        document.getElementById('api-key-status').classList.remove('hidden');
+        setTimeout(() => {
+          document.getElementById('api-key-status').classList.add('hidden');
+        }, 3000);
+      } else {
+        sessionStorage.removeItem("ai_provider");
+        sessionStorage.removeItem("ai_api_key");
+        sessionStorage.removeItem("ai_model");
+        alert("Konfigurasi dikosongkan. Latihan akan dikoreksi tanpa AI (Isian & Uraian dinilai manual).");
+      }
+    }
+
+
+    // Submit Form & redirect
+    function mulaiUjian(event) {
+      event.preventDefault();
+      
+      if (!kelasTerpilih) {
+        alert("Pilih kelas terlebih dahulu!");
+        return;
+      }
+
+      const nama = document.getElementById('siswa-nama').value.trim().toUpperCase();
+      const absen = document.getElementById('siswa-absen').value.trim();
+
+      if (!nama || !absen) {
+        alert("Nama Lengkap dan Nomor Absen wajib diisi!");
+        return;
+      }
+
+      // Bersihkan data ujian sebelumnya jika ada
+      sessionStorage.removeItem("jawaban_siswa");
+      sessionStorage.removeItem("waktu_mulai");
+
+      // Simpan identitas & kelas ke sessionStorage
+      sessionStorage.setItem("siswa_nama", nama);
+      sessionStorage.setItem("siswa_absen", absen);
+      sessionStorage.setItem("siswa_kelas", kelasTerpilih);
+
+      // Redirect ke ujian.html
+      window.location.href = "ujian.html";
+    }
+  </script>
+</body>
+</html>

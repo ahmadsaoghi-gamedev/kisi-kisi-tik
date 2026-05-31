@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Kisi-Kisi TIK & KKA</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Quicksand -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="config.js"></script>
+  <script src="ai.js"></script>
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+    }
+    .custom-gradient {
+      background: linear-gradient(135deg, #eff6ff 0%, #fef3c7 100%);
+    }
+    /* Sticky header transition */
+    .sticky-header {
+      transition: all 0.3s ease;
+    }
+    /* Playful options */
+    .choice-btn {
+      transition: all 0.2s ease;
+    }
+    .choice-btn:hover:not(.selected) {
+      background-color: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+    .choice-btn.selected {
+      background-color: #dbeafe;
+      border-color: #3b82f6;
+      color: #1d4ed8;
+      font-weight: 700;
+      box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+    }
+    /* Pulse animation for running out of time */
+    @keyframes pulse-red {
+      0%, 100% { background-color: #ef4444; transform: scale(1); }
+      50% { background-color: #dc2626; transform: scale(1.05); }
+    }
+    .timer-danger {
+      animation: pulse-red 1s infinite;
+      color: white !important;
+    }
+    /* Loader styles */
+    .loader-dot {
+      animation: loader-bounce 1.4s infinite ease-in-out both;
+    }
+    .loader-dot:nth-child(1) { animation-delay: -0.32s; }
+    .loader-dot:nth-child(2) { animation-delay: -0.16s; }
+    @keyframes loader-bounce {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1.0); }
+    }
+  </style>
+</head>
+<body class="custom-gradient min-h-screen text-slate-800 antialiased pb-24">
+
+  <!-- Sticky Header Ujian -->
+  <header class="sticky top-0 z-40 bg-white border-b-2 border-slate-200 shadow-md sticky-header">
+    <div class="max-w-4xl mx-auto px-4 py-3 sm:py-4 flex flex-col gap-2">
+      <!-- Info Siswa & Timer -->
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <h2 id="siswa-info" class="text-sm sm:text-base font-bold text-slate-800">
+            Nama Siswa <span class="text-slate-400">|</span> Kelas X
+          </h2>
+          <p id="sekolah-info" class="text-[10px] sm:text-xs text-slate-500 font-bold uppercase tracking-wide">
+            SDN SUKASARI 4 TANGERANG
+          </p>
+        </div>
+        <!-- Timer -->
+        <div class="flex items-center gap-2">
+          <div id="timer-box" class="bg-emerald-500 text-white font-extrabold px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl flex items-center gap-1.5 shadow-sm text-sm sm:text-base transition-all duration-300">
+            <span>⏱️</span>
+            <span id="countdown-timer" class="font-mono">60:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress Bar Soal Terjawab -->
+      <div class="mt-1">
+        <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-1">
+          <span>PROGRESS MENGERJAKAN</span>
+          <span id="progress-text">0 dari 25 Soal Dijawab</span>
+        </div>
+        <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden border border-slate-200 p-0.5">
+          <div id="progress-bar" class="bg-blue-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Konten Soal -->
+  <main class="max-w-4xl mx-auto px-4 py-6">
+    <div id="loading-soal" class="text-center py-20 bg-white rounded-3xl border-2 border-slate-100 shadow-sm">
+      <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+      <p class="text-slate-600 font-bold">Mengambil lembar soal, tunggu sebentar ya pintar...</p>
+    </div>
+
+    <!-- Error message jika fetch gagal -->
+    <div id="error-soal" class="hidden text-center py-16 bg-white border-2 border-red-200 rounded-3xl p-6 shadow-sm">
+      <div class="text-5xl mb-4">⚠️</div>
+      <h3 class="text-xl font-bold text-slate-800 mb-2">Aduh, Terjadi Masalah!</h3>
+      <p id="error-desc" class="text-slate-600 font-medium mb-6">Lembar latihan belum tersedia untuk kelas ini.</p>
+      <a href="index.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition-all shadow-md">
+        Kembali ke Beranda
+      </a>
+    </div>
+
+    <!-- Container Soal -->
+    <div id="soal-container" class="hidden flex flex-col gap-6">
+      
+      <!-- Bagian I: Pilihan Ganda -->
+      <section id="section-pg" class="bg-white border-2 border-blue-100 rounded-3xl p-5 sm:p-6 shadow-sm">
+        <div class="flex items-center gap-3 border-b-2 border-slate-100 pb-3 mb-6">
+          <span class="text-xl">🎒</span>
+          <h3 class="text-lg sm:text-xl font-extrabold text-blue-600">BAGIAN I — PILIHAN GANDA (Pilih a, b, atau c)</h3>
+        </div>
+        <div id="list-pg" class="flex flex-col gap-8">
+          <!-- Diisi dinamis -->
+        </div>
+      </section>
+
+      <!-- Bagian II: Isian Singkat -->
+      <section id="section-isian" class="bg-white border-2 border-emerald-100 rounded-3xl p-5 sm:p-6 shadow-sm">
+        <div class="flex items-center gap-3 border-b-2 border-slate-100 pb-3 mb-6">
+          <span class="text-xl">✏️</span>
+          <h3 class="text-lg sm:text-xl font-extrabold text-emerald-600">BAGIAN II — ISIAN SINGKAT (Tulis jawaban pendek)</h3>
+        </div>
+        <div id="list-isian" class="flex flex-col gap-8">
+          <!-- Diisi dinamis -->
+        </div>
+      </section>
+
+      <!-- Bagian III: Uraian -->
+      <section id="section-uraian" class="bg-white border-2 border-amber-100 rounded-3xl p-5 sm:p-6 shadow-sm">
+        <div class="flex items-center gap-3 border-b-2 border-slate-100 pb-3 mb-6">
+          <span class="text-xl">📝</span>
+          <h3 class="text-lg sm:text-xl font-extrabold text-amber-600">BAGIAN III — URAIAN (Tulis jawaban penjelasan lengkap)</h3>
+        </div>
+        <div id="list-uraian" class="flex flex-col gap-8">
+          <!-- Diisi dinamis -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Sticky Bottom Submission Bar -->
+  <div id="sticky-bottom" class="hidden fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 py-4 px-4 shadow-2xl z-40">
+    <div class="max-w-4xl mx-auto flex items-center justify-between gap-4">
+      <div class="text-left">
+        <span id="unanswered-count" class="text-xs sm:text-sm font-bold text-slate-500 block">
+          0 Soal Belum Dijawab
+        </span>
+        <span class="text-[10px] sm:text-xs text-slate-400 font-bold uppercase tracking-wider block">
+          Periksa kembali jawabanmu sebelum kumpul!
+        </span>
+      </div>
+      <button onclick="kumpulkanUjian()" 
+        class="bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-3 px-6 sm:px-8 rounded-2xl shadow-md hover:shadow-lg transition-all text-sm sm:text-base transform active:scale-95 flex items-center gap-2">
+        <span>Selesai & Lihat Nilai</span>
+        <span>✔️</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Fullscreen Modal AI Loading Spinner -->
+  <div id="ai-loading-modal" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl border border-slate-100 relative overflow-hidden">
+      <!-- Playful AI Robot Icon -->
+      <div class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 relative animate-bounce">
+        <span class="text-5xl">🤖</span>
+        <span class="absolute top-1 right-1 animate-ping text-lg">💡</span>
+      </div>
+      
+      <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Robot AI Sedang Memeriksa!</h3>
+      
+      <!-- Bouncing dots -->
+      <div class="flex justify-center gap-2 mb-6">
+        <div class="w-3.5 h-3.5 bg-blue-500 rounded-full loader-dot"></div>
+        <div class="w-3.5 h-3.5 bg-blue-500 rounded-full loader-dot"></div>
+        <div class="w-3.5 h-3.5 bg-blue-500 rounded-full loader-dot"></div>
+      </div>
+      
+      <p class="text-slate-600 font-bold text-sm leading-relaxed mb-4">
+        Harap tunggu sebentar ya pintar, robot AI sedang membaca dan mengoreksi jawaban latihanmu...
+      </p>
+      
+      <div class="bg-amber-50 rounded-2xl p-4 border border-amber-200 text-amber-700 text-xs font-semibold leading-relaxed">
+        🔔 <strong>Info Guru:</strong> Jika proses AI memakan waktu terlalu lama atau koneksi sedang tidak stabil, silakan tunggu. Halaman akan otomatis berpindah ke hasil latihan setelah selesai.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // State management
+    let dataUjian = null;
+    let jawabanSiswa = {};
+    let sisaDetik = 0;
+    let timerInterval = null;
+    let debounceTimers = {};
+
+    // Inisialisasi saat window diload
+    window.addEventListener('DOMContentLoaded', async () => {
+      // 1. Validasi State Awal
+      const kelas = sessionStorage.getItem("siswa_kelas");
+      const nama = sessionStorage.getItem("siswa_nama");
+      const absen = sessionStorage.getItem("siswa_absen");
+
+      if (!kelas || !nama || !absen) {
+        window.location.href = "index.html";
+        return;
+      }
+
+      // Set Info Siswa di Header
+      document.getElementById('siswa-info').innerHTML = `
+        <span class="text-blue-600 font-extrabold uppercase">${nama}</span> 
+        <span class="text-slate-300 mx-1">|</span> 
+        <span class="text-slate-600 font-bold">No. Absen: ${absen}</span> 
+        <span class="text-slate-300 mx-1">|</span> 
+        <span class="text-blue-500 font-bold">Kelas ${kelas}</span>
+      `;
+
+      // 2. Fetch Data Soal
+      try {
+        const res = await fetch(`soal/kelas${kelas}.json`);
+        if (!res.ok) throw new Error("Gagal memuat file soal JSON.");
+        dataUjian = await res.json();
+        
+        // Validasi struktur soal minimal
+        if (!dataUjian.pg || !dataUjian.isian || !dataUjian.uraian) {
+          throw new Error("Struktur file JSON soal tidak valid.");
+        }
+
+        // Tampilkan info sekolah
+        document.getElementById('sekolah-info').innerText = dataUjian.sekolah.toUpperCase();
+
+        // 3. Load Jawaban tersimpan dari sessionStorage (jika ada)
+        const savedJawaban = sessionStorage.getItem("jawaban_siswa");
+        if (savedJawaban) {
+          jawabanSiswa = JSON.parse(savedJawaban);
+        }
+
+        // 4. Render Soal ke UI
+        renderSoal();
+
+        // 5. Inisialisasi & Jalankan Timer
+        initTimer(dataUjian.durasi_menit);
+
+        // Update progress awal
+        updateProgress();
+
+        // Tampilkan container utama
+        document.getElementById('loading-soal').classList.add('hidden');
+        document.getElementById('soal-container').classList.remove('hidden');
+        document.getElementById('sticky-bottom').classList.remove('hidden');
+
+      } catch (err) {
+        console.error(err);
+        document.getElementById('loading-soal').classList.add('hidden');
+        document.getElementById('error-soal').classList.remove('hidden');
+        document.getElementById('error-desc').innerText = err.message || "Soal belum tersedia untuk kelas ini.";
+      }
+    });
+
+    // Inisialisasi Timer dengan anti-reload cheat
+    function initTimer(durasiMenit) {
+      const sekarang = Date.now();
+      let waktuMulai = sessionStorage.getItem("waktu_mulai");
+
+      if (!waktuMulai) {
+        waktuMulai = sekarang.toString();
+        sessionStorage.setItem("waktu_mulai", waktuMulai);
+      }
+
+      const elapsedSeconds = Math.floor((sekarang - Number(waktuMulai)) / 1000);
+      sisaDetik = (durasiMenit * 60) - elapsedSeconds;
+
+      if (sisaDetik <= 0) {
+        alert("Waktu ujian telah habis!");
+        submitUjianSecaraOtomatis();
+        return;
+      }
+
+      updateTimerUI();
+
+      timerInterval = setInterval(() => {
+        sisaDetik--;
+        updateTimerUI();
+
+        if (sisaDetik <= 0) {
+          clearInterval(timerInterval);
+          alert("Waktu ujian telah habis! Hasil akan dikumpulkan secara otomatis.");
+          submitUjianSecaraOtomatis();
+        }
+      }, 1000);
+    }
+
+    // Update Tampilan Timer
+    function updateTimerUI() {
+      const min = Math.floor(sisaDetik / 60);
+      const sec = sisaDetik % 60;
+      
+      const countdownElement = document.getElementById('countdown-timer');
+      const timerBox = document.getElementById('timer-box');
+      
+      countdownElement.innerText = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+
+      // Warna peringatan jika waktu menipis
+      if (sisaDetik <= 300) { // <= 5 menit
+        timerBox.className = "text-white font-extrabold px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl flex items-center gap-1.5 shadow-sm text-sm sm:text-base transition-all duration-300 timer-danger";
+      } else if (sisaDetik <= 900) { // <= 15 menit
+        timerBox.className = "bg-amber-500 text-white font-extrabold px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl flex items-center gap-1.5 shadow-sm text-sm sm:text-base transition-all duration-300";
+      } else {
+        timerBox.className = "bg-emerald-500 text-white font-extrabold px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl flex items-center gap-1.5 shadow-sm text-sm sm:text-base transition-all duration-300";
+      }
+    }
+
+    // Render Semua Soal ke Halaman
+    function renderSoal() {
+      // 1. Pilihan Ganda (PG)
+      const pgList = document.getElementById('list-pg');
+      pgList.innerHTML = "";
+      dataUjian.pg.forEach((q, idx) => {
+        const selectedOption = jawabanSiswa[q.no] || "";
+        pgList.innerHTML += `
+          <div class="border-b border-slate-100 pb-6 last:border-0 last:pb-0" id="question-block-${q.no}">
+            <div class="flex items-start gap-2.5 mb-4">
+              <span class="bg-blue-100 text-blue-700 font-extrabold text-sm px-2.5 py-1 rounded-xl">
+                ${q.no}
+              </span>
+              <p class="text-base sm:text-lg font-bold text-slate-800 pt-0.5 leading-relaxed">
+                ${q.soal}
+              </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pl-0 sm:pl-9">
+              <button onclick="pilihJawabanPG(${q.no}, 'a')" id="choice-${q.no}-a"
+                class="choice-btn ${selectedOption === 'a' ? 'selected' : ''} border-2 border-slate-200 bg-white rounded-2xl py-3 px-4 font-semibold text-slate-700 text-left text-sm sm:text-base flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full border-2 border-slate-300 bg-slate-50 flex items-center justify-center text-xs font-bold shrink-0">A</span>
+                <span>${q.pilihan.a}</span>
+              </button>
+              <button onclick="pilihJawabanPG(${q.no}, 'b')" id="choice-${q.no}-b"
+                class="choice-btn ${selectedOption === 'b' ? 'selected' : ''} border-2 border-slate-200 bg-white rounded-2xl py-3 px-4 font-semibold text-slate-700 text-left text-sm sm:text-base flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full border-2 border-slate-300 bg-slate-50 flex items-center justify-center text-xs font-bold shrink-0">B</span>
+                <span>${q.pilihan.b}</span>
+              </button>
+              <button onclick="pilihJawabanPG(${q.no}, 'c')" id="choice-${q.no}-c"
+                class="choice-btn ${selectedOption === 'c' ? 'selected' : ''} border-2 border-slate-200 bg-white rounded-2xl py-3 px-4 font-semibold text-slate-700 text-left text-sm sm:text-base flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full border-2 border-slate-300 bg-slate-50 flex items-center justify-center text-xs font-bold shrink-0">C</span>
+                <span>${q.pilihan.c}</span>
+              </button>
+            </div>
+          </div>
+        `;
+      });
+
+      // 2. Isian Singkat
+      const isianList = document.getElementById('list-isian');
+      isianList.innerHTML = "";
+      dataUjian.isian.forEach((q, idx) => {
+        const val = jawabanSiswa[q.no] || "";
+        isianList.innerHTML += `
+          <div class="border-b border-slate-100 pb-6 last:border-0 last:pb-0" id="question-block-${q.no}">
+            <div class="flex items-start gap-2.5 mb-3">
+              <span class="bg-emerald-100 text-emerald-700 font-extrabold text-sm px-2.5 py-1 rounded-xl">
+                ${q.no}
+              </span>
+              <p class="text-base sm:text-lg font-bold text-slate-800 pt-0.5 leading-relaxed">
+                ${q.soal}
+              </p>
+            </div>
+            <div class="pl-0 sm:pl-9">
+              <input type="text" oninput="simpanJawabanTeks(${q.no}, this.value)" 
+                class="w-full text-base font-semibold px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-emerald-500 focus:outline-none transition-all placeholder-slate-400"
+                placeholder="Tulis jawaban singkatmu di sini…" value="${val}">
+            </div>
+          </div>
+        `;
+      });
+
+      // 3. Uraian
+      const uraianList = document.getElementById('list-uraian');
+      uraianList.innerHTML = "";
+      dataUjian.uraian.forEach((q, idx) => {
+        const val = jawabanSiswa[q.no] || "";
+        const charCount = val.length;
+        uraianList.innerHTML += `
+          <div class="border-b border-slate-100 pb-6 last:border-0 last:pb-0" id="question-block-${q.no}">
+            <div class="flex items-start gap-2.5 mb-3">
+              <span class="bg-amber-100 text-amber-700 font-extrabold text-sm px-2.5 py-1 rounded-xl">
+                ${q.no}
+              </span>
+              <p class="text-base sm:text-lg font-bold text-slate-800 pt-0.5 leading-relaxed">
+                ${q.soal}
+              </p>
+            </div>
+            <div class="pl-0 sm:pl-9 relative">
+              <textarea rows="4" oninput="simpanJawabanUraian(${q.no}, this.value)" 
+                class="w-full text-base font-semibold px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-amber-500 focus:outline-none transition-all placeholder-slate-400 resize-y"
+                placeholder="Jelaskan jawaban lengkapmu di sini (disarankan minimal 20 karakter)...">${val}</textarea>
+              <div class="text-right text-xs font-bold text-slate-400 mt-1">
+                <span id="char-count-${q.no}">${charCount}</span> karakter (disarankan &ge; 20)
+              </div>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    // Handler klik PG
+    function pilihJawabanPG(soalNo, opsi) {
+      jawabanSiswa[soalNo] = opsi;
+      
+      // Update styling pilihan di UI
+      ['a', 'b', 'c'].forEach(opt => {
+        const btn = document.getElementById(`choice-${soalNo}-${opt}`);
+        if (btn) {
+          if (opt === opsi) {
+            btn.classList.add('selected');
+          } else {
+            btn.classList.remove('selected');
+          }
+        }
+      });
+
+      // Save & Update progress
+      saveToSessionStorage();
+      updateProgress();
+    }
+
+    // Handler ketik isian singkat
+    function simpanJawabanTeks(soalNo, val) {
+      // Debounce saving to sessionStorage
+      if (debounceTimers[soalNo]) {
+        clearTimeout(debounceTimers[soalNo]);
+      }
+
+      jawabanSiswa[soalNo] = val;
+
+      debounceTimers[soalNo] = setTimeout(() => {
+        saveToSessionStorage();
+        updateProgress();
+      }, 500);
+    }
+
+    // Handler ketik Uraian dengan character counter
+    function simpanJawabanUraian(soalNo, val) {
+      jawabanSiswa[soalNo] = val;
+
+      // Update character counter
+      const counter = document.getElementById(`char-count-${soalNo}`);
+      if (counter) {
+        counter.innerText = val.length;
+      }
+
+      // Debounce saving
+      if (debounceTimers[soalNo]) {
+        clearTimeout(debounceTimers[soalNo]);
+      }
+
+      debounceTimers[soalNo] = setTimeout(() => {
+        saveToSessionStorage();
+        updateProgress();
+      }, 500);
+    }
+
+    // Simpan ke Session Storage
+    function saveToSessionStorage() {
+      sessionStorage.setItem("jawaban_siswa", JSON.stringify(jawabanSiswa));
+    }
+
+    // Hitung progress terjawab
+    function updateProgress() {
+      const totalSoal = 25; // 10 PG + 10 Isian + 5 Uraian
+      let terjawab = 0;
+
+      for (let key in jawabanSiswa) {
+        if (jawabanSiswa[key] && jawabanSiswa[key].trim() !== "") {
+          terjawab++;
+        }
+      }
+
+      // Batasi agar tidak overload
+      terjawab = Math.min(terjawab, totalSoal);
+
+      const percent = (terjawab / totalSoal) * 100;
+      
+      document.getElementById('progress-bar').style.width = `${percent}%`;
+      document.getElementById('progress-text').innerText = `${terjawab} dari ${totalSoal} Soal Dijawab`;
+
+      const belumDijawab = totalSoal - terjawab;
+      document.getElementById('unanswered-count').innerText = `${belumDijawab} Soal Belum Dijawab`;
+      
+      if (belumDijawab === 0) {
+        document.getElementById('unanswered-count').className = "text-xs sm:text-sm font-extrabold text-emerald-600 block";
+      } else {
+        document.getElementById('unanswered-count').className = "text-xs sm:text-sm font-extrabold text-amber-600 block";
+      }
+
+      return belumDijawab;
+    }
+
+    // Kumpulkan Latihan (Manual click)
+    async function kumpulkanUjian() {
+      const belumDijawab = updateProgress();
+      let confirmMsg = "Apakah kamu yakin ingin mengumpulkan latihanmu?";
+      if (belumDijawab > 0) {
+        confirmMsg = `Masih ada ${belumDijawab} soal yang belum kamu jawab. Apakah kamu yakin ingin mengumpulkan latihan sekarang?`;
+      }
+
+      if (confirm(confirmMsg)) {
+        await prosesSubmitDanKoreksi();
+      }
+    }
+
+    // Submit otomatis saat waktu habis
+    async function submitUjianSecaraOtomatis() {
+      await prosesSubmitDanKoreksi();
+    }
+
+    // Proses inti submit & panggil ai.js untuk koreksi
+    async function prosesSubmitDanKoreksi() {
+      clearInterval(timerInterval);
+
+      // Tampilkan modal loading AI
+      document.getElementById('ai-loading-modal').classList.remove('hidden');
+
+      const apiKey = sessionStorage.getItem("ai_api_key") || "";
+
+      try {
+        console.log("Memulai proses koreksi...");
+        const hasilLengkap = await koreksiUjianLengkap(dataUjian, jawabanSiswa, apiKey);
+        
+        // Simpan hasil ke sessionStorage
+        sessionStorage.setItem("hasil_ujian", JSON.stringify(hasilLengkap));
+        
+        // Redirect ke hasil.html
+        window.location.href = "hasil.html";
+        
+      } catch (err) {
+        console.error("Gagal mengoreksi latihan:", err);
+        alert("Terjadi kesalahan sistem saat mengoreksi latihan. Hasil mentah akan disimpan.");
+        
+        // Buat fallback manual hasil
+        const fallbackHasil = {
+          siswa: {
+            nama: sessionStorage.getItem("siswa_nama") || "Siswa",
+            absen: sessionStorage.getItem("siswa_absen") || "0",
+            kelas: dataUjian.kelas,
+            topik: dataUjian.topik,
+            mapel: dataUjian.mapel,
+            sekolah: dataUjian.sekolah,
+            tahun: dataUjian.tahun
+          },
+          nilai: { pg: 0, isian: 0, uraian: 0, total: 0, predikat: "E" },
+          detail: { pg: [], isian: [], uraian: [] },
+          status: { isAiScored: false, aiError: err.message, tanggal: new Date().toLocaleDateString("id-ID") }
+        };
+        sessionStorage.setItem("hasil_ujian", JSON.stringify(fallbackHasil));
+        window.location.href = "hasil.html";
+      }
+    }
+  </script>
+</body>
+</html>

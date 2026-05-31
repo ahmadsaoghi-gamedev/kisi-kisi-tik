@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Latihan Kisi-Kisi TIK & KKA</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Quicksand -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="config.js"></script>
+  <!-- Dedicated Print Stylesheet -->
+  <link rel="stylesheet" href="print.css" media="print">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+    }
+    .custom-gradient {
+      background: linear-gradient(135deg, #eff6ff 0%, #fef3c7 100%);
+    }
+    .score-glow {
+      box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.4);
+    }
+    .card-zoom {
+      transition: transform 0.2s ease;
+    }
+    .card-zoom:hover {
+      transform: scale(1.01);
+    }
+    /* Confetti animation */
+    @keyframes confetti-fall {
+      0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #f59e0b;
+      animation: confetti-fall 4s linear infinite;
+      z-index: 0;
+    }
+
+    /* Print styling fallback directly in html */
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+        font-family: Arial, sans-serif !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-border {
+        border: 2px solid #333 !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+      }
+      .print-shadow {
+        box-shadow: none !important;
+      }
+      .print-badge {
+        border: 1px solid #333 !important;
+        padding: 2px 8px !important;
+        background: transparent !important;
+        color: black !important;
+      }
+    }
+  </style>
+</head>
+<body class="custom-gradient min-h-screen text-slate-800 antialiased pb-20 relative overflow-x-hidden">
+
+  <!-- Confetti container for passing grades -->
+  <div id="confetti-container" class="absolute inset-0 pointer-events-none overflow-hidden select-none"></div>
+
+  <!-- Header Sekolah -->
+  <header class="bg-blue-600 text-white shadow-lg relative overflow-hidden py-4 sm:py-6 no-print">
+    <div class="max-w-4xl mx-auto px-4 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-inner p-1 shrink-0 overflow-hidden">
+          <img src="logo_sekolah.png" alt="Logo SDN Sukasari 4" class="w-full h-full object-contain rounded-full">
+        </div>
+        <div>
+          <h2 id="header-school" class="text-base sm:text-lg font-bold tracking-wide">SDN SUKASARI 4 TANGERANG</h2>
+          <p class="text-[10px] sm:text-xs text-blue-100 flex items-center gap-1.5 mt-0.5 font-semibold">
+            <span>NPSN: <span id="header-npsn">20606443</span></span>
+            <span class="w-1 h-1 bg-blue-300 rounded-full"></span>
+            <span>TAHUN PELAJARAN: <span id="header-tahun">2025-2026</span></span>
+          </p>
+        </div>
+      </div>
+      <div>
+        <span class="bg-amber-400 text-slate-900 font-extrabold text-xs px-3 py-1 rounded-full uppercase shadow-sm">
+          HASIL LATIHAN
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Konten Utama -->
+  <main class="max-w-4xl mx-auto px-4 py-8 relative z-10">
+    <div class="bg-white border-2 border-slate-200 rounded-3xl p-6 sm:p-8 shadow-xl print-border print-shadow">
+      
+      <!-- Logo Sekolah & Kop Surat khusus Cetak -->
+      <div class="hidden print:flex items-center gap-6 border-b-4 border-double border-slate-800 pb-4 mb-6">
+        <div class="w-20 h-20 border border-slate-300 rounded-full flex items-center justify-center p-1 shrink-0 overflow-hidden">
+          <img src="logo_sekolah.png" alt="Logo SDN Sukasari 4" class="w-full h-full object-contain rounded-full">
+        </div>
+        <div class="flex-grow text-center">
+          <h1 id="print-school-title" class="text-2xl font-bold tracking-wide text-slate-900">SDN SUKASARI 4 TANGERANG</h1>
+          <p class="text-sm font-semibold text-slate-600 mt-1">
+            NPSN: <span id="print-npsn">20606443</span> | NSS: <span id="print-nss">10.1.02.23.10.068</span>
+          </p>
+          <p id="print-address" class="text-xs font-semibold text-slate-500 mt-0.5">
+            Jl. Moch. Yamin No.1, Babakan, Tangerang, Banten
+          </p>
+          <h2 class="text-lg font-extrabold text-slate-800 uppercase tracking-widest mt-3 underline">
+            LEMBAR HASIL LATIHAN KISI-KISI TIK/KKA
+          </h2>
+        </div>
+      </div>
+
+      <!-- Kartu Identitas Siswa -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b-2 border-slate-100 mb-8">
+        <div>
+          <span class="text-xs font-extrabold text-blue-600 uppercase tracking-widest block mb-1">
+            IDENTITAS SISWA
+          </span>
+          <h2 id="siswa-nama" class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-wide uppercase">
+            NAMA LENGKAP SISWA
+          </h2>
+          <div class="grid grid-cols-2 gap-x-6 gap-y-1.5 mt-3 text-slate-600 text-sm sm:text-base font-bold">
+            <div>
+              <span>No. Absen: </span>
+              <span id="siswa-absen" class="text-slate-800">15</span>
+            </div>
+            <div>
+              <span>Mata Pelajaran: </span>
+              <span id="siswa-mapel" class="text-slate-800">TIK</span>
+            </div>
+            <div>
+              <span>Kelas: </span>
+              <span id="siswa-kelas" class="text-slate-800">1</span>
+            </div>
+            <div>
+              <span>Topik: </span>
+              <span id="siswa-topik" class="text-slate-800">Microsoft Paint</span>
+            </div>
+          </div>
+          <p class="text-xs font-semibold text-slate-400 mt-4 flex items-center gap-1.5">
+            <span>📅 Tanggal Ujian: </span>
+            <span id="ujian-tanggal">Kamis, 31 Mei 2026</span>
+          </p>
+        </div>
+
+        <!-- Tampilan Nilai Utama -->
+        <div class="flex items-center gap-4 bg-slate-50 border-2 border-slate-100 rounded-3xl p-4 sm:p-5 shrink-0 select-none score-glow print:border-slate-800">
+          <div class="text-center">
+            <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">Skor Akhir</span>
+            <span id="skor-total" class="text-5xl sm:text-6xl font-extrabold text-blue-600 tracking-tight block my-0.5">
+              100
+            </span>
+            <span class="text-xs font-bold text-slate-500 block">maksimal 100</span>
+          </div>
+          <div class="w-0.5 h-16 bg-slate-200"></div>
+          <div class="text-center px-2">
+            <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">Predikat</span>
+            <span id="skor-predikat" class="text-4xl sm:text-5xl font-extrabold text-emerald-600 tracking-tight block my-0.5">
+              A
+            </span>
+            <span id="predikat-desc" class="text-[10px] font-bold text-emerald-600 block bg-emerald-50 px-2 py-0.5 rounded-full">
+              SANGAT BAIK
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Badge Status AI -->
+      <div id="ai-status-badge" class="flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold px-4 py-2.5 rounded-2xl text-xs sm:text-sm mb-8 print-badge">
+        <span>🤖</span>
+        <span>Ujian telah dikoreksi sepenuhnya menggunakan AI (Anthropic Claude). Hasil akurat dan mendidik!</span>
+      </div>
+
+      <!-- Breakdown Nilai -->
+      <div class="mb-10">
+        <h3 class="text-lg font-extrabold text-slate-800 mb-4 tracking-wide uppercase flex items-center gap-2">
+          <span>📊</span> Rincian Nilai Per Bagian
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- PG -->
+          <div class="bg-blue-50/50 border border-blue-100 rounded-2xl p-4 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-1">Bagian I</span>
+              <h4 class="text-base font-bold text-slate-800">Pilihan Ganda (PG)</h4>
+            </div>
+            <div class="mt-4 flex items-baseline justify-between border-t border-blue-100/50 pt-3">
+              <span class="text-slate-500 text-xs font-bold">Bobot: 40%</span>
+              <span class="text-lg font-extrabold text-blue-600"><span id="skor-pg">40</span> / 40</span>
+            </div>
+          </div>
+          <!-- Isian -->
+          <div class="bg-emerald-50/50 border border-emerald-100 rounded-2xl p-4 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider block mb-1">Bagian II</span>
+              <h4 class="text-base font-bold text-slate-800">Isian Singkat</h4>
+            </div>
+            <div class="mt-4 flex items-baseline justify-between border-t border-emerald-100/50 pt-3">
+              <span class="text-slate-500 text-xs font-bold">Bobot: 40%</span>
+              <span class="text-lg font-extrabold text-emerald-600"><span id="skor-isian">40</span> / 40</span>
+            </div>
+          </div>
+          <!-- Uraian -->
+          <div class="bg-amber-50/50 border border-amber-100 rounded-2xl p-4 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold text-amber-600 uppercase tracking-wider block mb-1">Bagian III</span>
+              <h4 class="text-base font-bold text-slate-800">Uraian / Essay</h4>
+            </div>
+            <div class="mt-4 flex items-baseline justify-between border-t border-amber-100/50 pt-3">
+              <span class="text-slate-500 text-xs font-bold">Bobot: 20%</span>
+              <span class="text-lg font-extrabold text-blue-600"><span id="skor-uraian">20</span> / 20</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail Koreksi Per Soal -->
+      <div>
+        <h3 class="text-lg font-extrabold text-slate-800 mb-5 tracking-wide uppercase flex items-center gap-2">
+          <span>📝</span> Detail Jawaban dan Evaluasi Soal
+        </h3>
+        
+        <div class="flex flex-col gap-6">
+          
+          <!-- Accordion Bagian I: PG -->
+          <div class="border border-slate-200 rounded-2xl overflow-hidden card-zoom">
+            <button onclick="toggleAccordion('acc-pg')" class="w-full bg-slate-50 border-b border-slate-200 px-5 py-4 flex items-center justify-between text-slate-700 font-extrabold text-sm sm:text-base focus:outline-none select-none">
+              <span class="flex items-center gap-2">
+                🟢 Bagian I — PILIHAN GANDA (No. 1–10)
+              </span>
+              <span id="chevron-acc-pg">▼</span>
+            </button>
+            <div id="acc-pg" class="hidden p-4 sm:p-5 flex flex-col gap-4 bg-white border-t border-slate-100">
+              <!-- Diisi dinamis -->
+            </div>
+          </div>
+
+          <!-- Accordion Bagian II: Isian -->
+          <div class="border border-slate-200 rounded-2xl overflow-hidden card-zoom">
+            <button onclick="toggleAccordion('acc-isian')" class="w-full bg-slate-50 border-b border-slate-200 px-5 py-4 flex items-center justify-between text-slate-700 font-extrabold text-sm sm:text-base focus:outline-none select-none">
+              <span class="flex items-center gap-2">
+                🔵 Bagian II — ISIAN SINGKAT (No. 11–20)
+              </span>
+              <span id="chevron-acc-isian">▼</span>
+            </button>
+            <div id="acc-isian" class="hidden p-4 sm:p-5 flex flex-col gap-5 bg-white border-t border-slate-100">
+              <!-- Diisi dinamis -->
+            </div>
+          </div>
+
+          <!-- Accordion Bagian III: Uraian -->
+          <div class="border border-slate-200 rounded-2xl overflow-hidden card-zoom">
+            <button onclick="toggleAccordion('acc-uraian')" class="w-full bg-slate-50 border-b border-slate-200 px-5 py-4 flex items-center justify-between text-slate-700 font-extrabold text-sm sm:text-base focus:outline-none select-none">
+              <span class="flex items-center gap-2">
+                🟡 Bagian III — URAIAN (No. 21–25)
+              </span>
+              <span id="chevron-acc-uraian">▼</span>
+            </button>
+            <div id="acc-uraian" class="hidden p-4 sm:p-5 flex flex-col gap-5 bg-white border-t border-slate-100">
+              <!-- Diisi dinamis -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Lembar Tanda Tangan khusus Cetak -->
+      <div class="hidden print:grid grid-cols-2 gap-12 mt-16 text-center text-slate-800 text-sm font-bold">
+        <div>
+          <p>Orang Tua / Wali Siswa,</p>
+          <div class="h-20"></div>
+          <p class="border-t border-slate-500 w-48 mx-auto pt-1 font-extrabold uppercase">( ....................................... )</p>
+        </div>
+        <div>
+          <p>Guru Mata Pelajaran <span id="print-mapel-label">TIK</span>,</p>
+          <div class="h-20"></div>
+          <p class="border-t border-slate-500 w-48 mx-auto pt-1 font-extrabold uppercase">( ....................................... )</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-10 no-print">
+      <button onclick="window.print()" 
+        class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-3.5 px-8 rounded-2xl shadow-md hover:shadow-lg transition-all text-base transform active:scale-95 flex items-center justify-center gap-2">
+        <span>🖨️ Cetak / Simpan PDF</span>
+      </button>
+      <button onclick="ulangiUjian()" 
+        class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-white font-extrabold py-3.5 px-8 rounded-2xl shadow-md hover:shadow-lg transition-all text-base transform active:scale-95 flex items-center justify-center gap-2">
+        <span>🔄 Ulangi Latihan</span>
+      </button>
+      <a href="index.html" 
+        class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-600 font-extrabold py-3.5 px-8 rounded-2xl transition-all text-base flex items-center justify-center gap-2 text-center border-2 border-slate-200">
+        <span>🏠 Kembali ke Beranda</span>
+      </a>
+    </div>
+  </main>
+
+  <script>
+    let hasilUjian = null;
+
+    // Load data hasil dari sessionStorage
+    window.addEventListener('DOMContentLoaded', () => {
+      // Set Header info dari config.js
+      document.getElementById('header-school').innerText = CONFIG.SEKOLAH.toUpperCase();
+      document.getElementById('header-npsn').innerText = CONFIG.NPSN;
+      document.getElementById('header-tahun').innerText = CONFIG.TAHUN_PELAJARAN;
+      
+      document.getElementById('print-school-title').innerText = CONFIG.SEKOLAH.toUpperCase();
+      document.getElementById('print-npsn').innerText = CONFIG.NPSN;
+      document.getElementById('print-nss').innerText = CONFIG.NSS || "10.1.02.23.10.068";
+      document.getElementById('print-address').innerText = CONFIG.ALAMAT;
+
+      const rawHasil = sessionStorage.getItem("hasil_ujian");
+      if (!rawHasil) {
+        window.location.href = "index.html";
+        return;
+      }
+
+      hasilUjian = JSON.parse(rawHasil);
+      
+      // Render data hasil
+      renderHasilData();
+      
+      // Drop confetti if passed
+      if (hasilUjian.nilai.total >= 70) {
+        createConfetti();
+      }
+    });
+
+    // Menampilkan data hasil ujian di UI
+    function renderHasilData() {
+      const siswa = hasilUjian.siswa;
+      const nilai = hasilUjian.nilai;
+      const status = hasilUjian.status;
+
+      // 1. Set data identitas
+      document.getElementById('siswa-nama').innerText = siswa.nama;
+      document.getElementById('siswa-absen').innerText = siswa.absen;
+      document.getElementById('siswa-kelas').innerText = siswa.kelas;
+      document.getElementById('siswa-topik').innerText = siswa.topik;
+      document.getElementById('siswa-mapel').innerText = siswa.mapel;
+      document.getElementById('ujian-tanggal').innerText = status.tanggal;
+      
+      const printMapelLabel = document.getElementById('print-mapel-label');
+      if (printMapelLabel) {
+        printMapelLabel.innerText = siswa.mapel || "TIK";
+      }
+
+      // 2. Set Nilai Utama & Predikat
+      document.getElementById('skor-total').innerText = nilai.total;
+      
+      const pElem = document.getElementById('skor-predikat');
+      const dElem = document.getElementById('predikat-desc');
+      
+      pElem.innerText = nilai.predikat;
+
+      if (nilai.predikat === "A") {
+        pElem.className = "text-5xl sm:text-6xl font-extrabold text-emerald-600 tracking-tight block my-0.5";
+        dElem.innerText = "SANGAT BAIK";
+        dElem.className = "text-[10px] font-bold text-emerald-600 block bg-emerald-50 px-2 py-0.5 rounded-full";
+      } else if (nilai.predikat === "B") {
+        pElem.className = "text-5xl sm:text-6xl font-extrabold text-blue-600 tracking-tight block my-0.5";
+        dElem.innerText = "BAIK";
+        dElem.className = "text-[10px] font-bold text-blue-600 block bg-blue-50 px-2 py-0.5 rounded-full";
+      } else if (nilai.predikat === "C") {
+        pElem.className = "text-5xl sm:text-6xl font-extrabold text-amber-500 tracking-tight block my-0.5";
+        dElem.innerText = "CUKUP";
+        dElem.className = "text-[10px] font-bold text-amber-500 block bg-amber-50 px-2 py-0.5 rounded-full";
+      } else if (nilai.predikat === "D") {
+        pElem.className = "text-5xl sm:text-6xl font-extrabold text-orange-500 tracking-tight block my-0.5";
+        dElem.innerText = "KURANG";
+        dElem.className = "text-[10px] font-bold text-orange-500 block bg-orange-50 px-2 py-0.5 rounded-full";
+      } else {
+        pElem.className = "text-5xl sm:text-6xl font-extrabold text-red-500 tracking-tight block my-0.5";
+        dElem.innerText = "SANGAT KURANG";
+        dElem.className = "text-[10px] font-bold text-red-500 block bg-red-50 px-2 py-0.5 rounded-full";
+      }
+
+      // 3. Set Rincian
+      document.getElementById('skor-pg').innerText = nilai.pg;
+      document.getElementById('skor-isian').innerText = nilai.isian;
+      document.getElementById('skor-uraian').innerText = nilai.uraian;
+
+      // 4. Set Badge Status AI
+      const aiBadge = document.getElementById('ai-status-badge');
+      if (status.isAiScored) {
+        const providerName = status.aiProvider === "gemini" ? "Google Gemini" : (status.aiProvider === "groq" ? "Groq AI" : "Anthropic Claude");
+        const modelName = status.aiModel || "Default Model";
+        
+        aiBadge.className = "flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold px-4 py-2.5 rounded-2xl text-xs sm:text-sm mb-8 print-badge";
+        aiBadge.innerHTML = `
+          <span>🤖</span>
+          <span>Koreksi Latihan Berhasil! Soal isian & uraian telah dinilai oleh AI (${providerName} - ${modelName}) secara akurat & ramah anak.</span>
+        `;
+      } else {
+        aiBadge.className = "flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-700 font-bold px-4 py-2.5 rounded-2xl text-xs sm:text-sm mb-8 print-badge";
+        aiBadge.innerHTML = `
+          <span>⚠️</span>
+          <span>Koreksi Offline Aktif. Soal PG dikoreksi otomatis, tetapi Isian & Uraian memerlukan koreksi manual oleh Guru/Orang Tua. (API Offline/Error: ${status.aiError || "API Key kosong"})</span>
+        `;
+      }
+
+      // 5. Render Detail Section I (PG)
+      const accPg = document.getElementById('acc-pg');
+      accPg.innerHTML = "";
+      hasilUjian.detail.pg.forEach((item, idx) => {
+        const borderClass = item.isBenar ? 'border-green-200 bg-green-50/20' : 'border-red-200 bg-red-50/20';
+        const badgeClass = item.isBenar ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700';
+        const icon = item.isBenar ? '✓ Benar' : '✗ Salah';
+
+        accPg.innerHTML += `
+          <div class="border ${borderClass} rounded-2xl p-4 flex flex-col gap-2">
+            <div class="flex items-start gap-2 justify-between">
+              <span class="font-extrabold text-sm text-slate-600">No. ${item.no}</span>
+              <span class="text-xs font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider ${badgeClass} shrink-0">
+                ${icon}
+              </span>
+            </div>
+            <p class="text-sm sm:text-base font-bold text-slate-800 leading-relaxed mb-2">${item.soal}</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-bold">
+              <div class="bg-white border border-slate-100 rounded-xl p-2.5">
+                <span class="text-slate-400 block mb-0.5 uppercase tracking-wide">Jawaban Siswa:</span>
+                <span class="${item.isBenar ? 'text-green-600' : 'text-red-500'}">(${item.siswa.toUpperCase()}) ${item.pilihan[item.siswa] || 'Tidak menjawab'}</span>
+              </div>
+              <div class="bg-white border border-slate-100 rounded-xl p-2.5">
+                <span class="text-slate-400 block mb-0.5 uppercase tracking-wide">Jawaban Benar:</span>
+                <span class="text-green-600">(${item.benar.toUpperCase()}) ${item.pilihan[item.benar]}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      // 6. Render Detail Section II (Isian)
+      const accIsian = document.getElementById('acc-isian');
+      accIsian.innerHTML = "";
+      hasilUjian.detail.isian.forEach((item, idx) => {
+        const isBenar = item.nilai > 0;
+        const borderClass = isBenar ? 'border-green-200 bg-green-50/20' : 'border-red-200 bg-red-50/20';
+        const badgeClass = isBenar ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700';
+        const statusText = isBenar ? '✓ BENAR (Nilai: 1)' : '✗ SALAH (Nilai: 0)';
+
+        // Parent self-correction buttons for Isian in offline mode
+        let parentOverrideHtml = "";
+        if (!status.isAiScored) {
+          parentOverrideHtml = `
+            <div class="mt-2.5 flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl p-2.5 no-print">
+              <span class="text-[10px] font-extrabold text-slate-500 uppercase tracking-wide shrink-0">👪 Koreksi Orang Tua:</span>
+              <div class="flex gap-2">
+                <button onclick="overrideIsian(${item.no}, 0)" class="px-3 py-1 text-[10px] font-bold rounded-lg border ${!isBenar ? 'bg-red-500 text-white border-red-500 shadow-sm font-extrabold' : 'bg-white text-slate-600 border-slate-200'} hover:opacity-90 transition-all">Tandai Salah (0)</button>
+                <button onclick="overrideIsian(${item.no}, 1)" class="px-3 py-1 text-[10px] font-bold rounded-lg border ${isBenar ? 'bg-green-600 text-white border-green-600 shadow-sm font-extrabold' : 'bg-white text-slate-600 border-slate-200'} hover:opacity-90 transition-all">Tandai Benar (1)</button>
+              </div>
+            </div>
+          `;
+        }
+
+        accIsian.innerHTML += `
+          <div class="border ${borderClass} rounded-2xl p-4 flex flex-col gap-2.5">
+            <div class="flex items-start gap-2 justify-between">
+              <span class="font-extrabold text-sm text-slate-600">No. ${item.no}</span>
+              <span class="text-xs font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider ${badgeClass} shrink-0">
+                ${statusText}
+              </span>
+            </div>
+            <p class="text-sm sm:text-base font-bold text-slate-800 leading-relaxed mb-1">${item.soal}</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-bold">
+              <div class="bg-white border border-slate-100 rounded-xl p-2.5">
+                <span class="text-slate-400 block mb-0.5 uppercase tracking-wide">Jawaban Siswa:</span>
+                <span class="${isBenar ? 'text-green-600' : 'text-red-500'} font-extrabold text-sm">${item.siswa || '[Tidak Menjawab]'}</span>
+              </div>
+              <div class="bg-white border border-slate-100 rounded-xl p-2.5">
+                <span class="text-slate-400 block mb-0.5 uppercase tracking-wide">Kunci Jawaban:</span>
+                <span class="text-green-600 font-extrabold text-sm uppercase">${item.kunci}</span>
+              </div>
+            </div>
+            <div class="bg-blue-50/30 border border-blue-100 rounded-xl p-3 flex items-start gap-2 mt-1">
+              <span class="text-base">🤖</span>
+              <div>
+                <span class="text-[10px] font-extrabold text-slate-400 block uppercase tracking-wide">Evaluasi Guru/AI:</span>
+                <p class="text-xs font-bold text-slate-700 leading-relaxed mt-0.5">${item.komentar}</p>
+              </div>
+            </div>
+            ${parentOverrideHtml}
+          </div>
+        `;
+      });
+
+      // 7. Render Detail Section III (Uraian)
+      const accUraian = document.getElementById('acc-uraian');
+      accUraian.innerHTML = "";
+      hasilUjian.detail.uraian.forEach((item, idx) => {
+        const score = item.nilai || 0;
+        let borderClass = 'border-slate-200 bg-slate-50/20';
+        let badgeClass = 'bg-slate-100 text-slate-700';
+        let scoreText = 'BELUM DINILAI (Koreksi Mandiri)';
+        
+        // Show status based on score
+        if (status.isAiScored || score > 0 || !item.isOffline) {
+          if (score === 4) {
+            borderClass = 'border-green-200 bg-green-50/20';
+            badgeClass = 'bg-green-100 text-green-700';
+            scoreText = `NILAI: 4 / 4 (Sangat Lengkap)`;
+          } else if (score === 2) {
+            borderClass = 'border-yellow-200 bg-yellow-50/20';
+            badgeClass = 'bg-yellow-100 text-yellow-700';
+            scoreText = `NILAI: 2 / 4 (Cukup Lengkap)`;
+          } else {
+            borderClass = 'border-red-200 bg-red-50/20';
+            badgeClass = 'bg-red-100 text-red-700';
+            scoreText = `NILAI: 0 / 4 (Belum Tepat)`;
+          }
+        }
+
+        // Parent self-correction buttons for Essay/Uraian in offline mode
+        let parentOverrideHtml = "";
+        if (!status.isAiScored) {
+          parentOverrideHtml = `
+            <div class="bg-blue-50/20 border border-blue-100 rounded-xl p-3 flex flex-col gap-2 mt-1 no-print">
+              <span class="text-[10px] font-extrabold text-blue-600 uppercase tracking-wide">👪 Koreksi Mandiri Bersama Orang Tua:</span>
+              <p class="text-[10px] text-slate-500 font-semibold leading-relaxed">Silakan bandingkan jawaban siswa dengan Kriteria Rubrik di atas, lalu tentukan nilainya:</p>
+              <div class="flex gap-2">
+                <button onclick="overrideUraian(${item.no}, 0)" class="flex-1 py-1.5 text-[10px] font-bold rounded-lg border ${score === 0 ? 'bg-red-500 text-white border-red-500 shadow-sm font-extrabold' : 'bg-white text-slate-600 border-slate-200'} hover:opacity-90 transition-all">Belum Tepat (0)</button>
+                <button onclick="overrideUraian(${item.no}, 2)" class="flex-1 py-1.5 text-[10px] font-bold rounded-lg border ${score === 2 ? 'bg-amber-500 text-white border-amber-500 shadow-sm font-extrabold' : 'bg-white text-slate-600 border-slate-200'} hover:opacity-90 transition-all">Cukup Lengkap (2)</button>
+                <button onclick="overrideUraian(${item.no}, 4)" class="flex-1 py-1.5 text-[10px] font-bold rounded-lg border ${score === 4 ? 'bg-green-600 text-white border-green-600 shadow-sm font-extrabold' : 'bg-white text-slate-600 border-slate-200'} hover:opacity-90 transition-all">Sangat Lengkap (4)</button>
+              </div>
+            </div>
+          `;
+        }
+
+        accUraian.innerHTML += `
+          <div class="border ${borderClass} rounded-2xl p-4 flex flex-col gap-2.5">
+            <div class="flex items-start gap-2 justify-between">
+              <span class="font-extrabold text-sm text-slate-600">No. ${item.no}</span>
+              <span class="text-xs font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider ${badgeClass} shrink-0">
+                ${scoreText}
+              </span>
+            </div>
+            <p class="text-sm sm:text-base font-bold text-slate-800 leading-relaxed mb-1">${item.soal}</p>
+            <div class="bg-white border border-slate-100 rounded-xl p-3 text-xs font-bold">
+              <span class="text-slate-400 block mb-1 uppercase tracking-wide">Jawaban Siswa:</span>
+              <p class="text-slate-800 font-semibold text-sm leading-relaxed whitespace-pre-wrap">${item.siswa || '[Tidak Menjawab]'}</p>
+            </div>
+            <div class="bg-slate-50 border border-slate-100 rounded-xl p-3 text-[10px] font-bold">
+              <span class="text-slate-400 block mb-1 uppercase tracking-wide">Rubrik Kriteria Penilaian:</span>
+              <p class="text-slate-500 leading-relaxed font-semibold">${item.rubrik}</p>
+            </div>
+            <div class="bg-blue-50/30 border border-blue-100 rounded-xl p-3 flex items-start gap-2 mt-1">
+              <span class="text-base">${item.isOffline ? '👨‍🏫' : '🤖'}</span>
+              <div>
+                <span class="text-[10px] font-extrabold text-slate-400 block uppercase tracking-wide">Evaluasi Guru/AI:</span>
+                <p class="text-xs font-bold text-slate-700 leading-relaxed mt-0.5">${item.komentar}</p>
+              </div>
+            </div>
+            ${parentOverrideHtml}
+          </div>
+        `;
+      });
+    }
+
+    // Fungsi Koreksi Mandiri oleh Orang Tua
+    function overrideIsian(no, nilai) {
+      const item = hasilUjian.detail.isian.find(q => q.no === no);
+      if (!item) return;
+      item.nilai = nilai;
+      
+      // Update komentar offline
+      if (nilai === 1) {
+        item.komentar = "Luar biasa! Jawaban dikonfirmasi BENAR oleh Orang Tua.";
+      } else {
+        item.komentar = `Jawaban ditandai KURANG TEPAT oleh Orang Tua. Kunci jawaban: ${item.kunci}`;
+      }
+      
+      hitungUlangSkorAkhir();
+    }
+
+    function overrideUraian(no, nilai) {
+      const item = hasilUjian.detail.uraian.find(q => q.no === no);
+      if (!item) return;
+      item.nilai = nilai;
+      item.isOffline = false; // Tandai sudah dinilai
+      
+      // Update komentar offline
+      if (nilai === 4) {
+        item.komentar = "Hebat! Evaluasi Orang Tua: Jawaban Sangat Lengkap dan sesuai kriteria.";
+      } else if (nilai === 2) {
+        item.komentar = "Bagus! Evaluasi Orang Tua: Jawaban Cukup Lengkap namun ada bagian yang terlewat.";
+      } else {
+        item.komentar = "Ayo belajar lagi! Evaluasi Orang Tua: Jawaban Belum Tepat atau tidak sesuai kriteria.";
+      }
+      
+      hitungUlangSkorAkhir();
+    }
+
+    function dapatkanPredikat(total) {
+      if (total >= 90) return "A";
+      if (total >= 80) return "B";
+      if (total >= 70) return "C";
+      if (total >= 60) return "D";
+      return "E";
+    }
+
+    function hitungUlangSkorAkhir() {
+      const nilai = hasilUjian.nilai;
+      
+      // Hitung ulang Isian: Jumlah Isian Benar * 4 (max 40)
+      const totalBenarIsian = hasilUjian.detail.isian.filter(item => item.nilai > 0).length;
+      nilai.isian = totalBenarIsian * 4;
+      
+      // Hitung ulang Uraian: Total Nilai Uraian (max 20)
+      const totalSkorUraian = hasilUjian.detail.uraian.reduce((sum, item) => sum + (item.nilai || 0), 0);
+      nilai.uraian = totalSkorUraian;
+      
+      // Hitung Skor Total
+      nilai.total = nilai.pg + nilai.isian + nilai.uraian;
+      nilai.predikat = dapatkanPredikat(nilai.total);
+      
+      // Simpan ulang ke sessionStorage
+      sessionStorage.setItem("hasil_ujian", JSON.stringify(hasilUjian));
+      
+      // Render ulang seluruh data
+      renderHasilData();
+    }
+
+    // Toggle accordion expand / collapse
+    function toggleAccordion(id) {
+      const content = document.getElementById(id);
+      const chevron = document.getElementById(`chevron-${id}`);
+      
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        chevron.innerText = '▲';
+      } else {
+        content.classList.add('hidden');
+        chevron.innerText = '▼';
+      }
+    }
+
+    // Aksi Ulangi Latihan
+    function ulangiUjian() {
+      if (confirm("Apakah kamu yakin ingin mengulangi latihan? Jawaban sebelumnya akan dihapus.")) {
+        sessionStorage.removeItem("jawaban_siswa");
+        sessionStorage.removeItem("waktu_mulai");
+        sessionStorage.removeItem("hasil_ujian");
+        window.location.href = "ujian.html";
+      }
+    }
+
+    // Confetti effect builder
+    function createConfetti() {
+      const container = document.getElementById('confetti-container');
+      const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899'];
+      
+      for (let i = 0; i < 60; i++) {
+        const c = document.createElement('div');
+        c.className = 'confetti';
+        c.style.left = `${Math.random() * 100}%`;
+        c.style.top = `${-Math.random() * 20}px`;
+        c.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        c.style.width = `${Math.random() * 6 + 6}px`;
+        c.style.height = `${Math.random() * 12 + 6}px`;
+        c.style.animationDuration = `${Math.random() * 2 + 2.5}s`;
+        c.style.animationDelay = `${Math.random() * 3}s`;
+        c.style.borderRadius = `${Math.random() * 4}px`;
+        container.appendChild(c);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+/* print.css — Stylesheet khusus cetak hasil ujian A4 */
+
+@media print {
+  /* 1. Reset Dasar */
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: 'Times New Roman', Times, serif, Arial, sans-serif !important;
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 2. Sembunyikan Elemen Non-Cetak */
+  .no-print,
+  header,
+  footer,
+  button,
+  a,
+  .wave-bg,
+  #confetti-container,
+  #sticky-bottom,
+  #guru-panel {
+    display: none !important;
+  }
+
+  /* 3. Atur Layout Utama */
+  main {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 10mm !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  .print-border {
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  /* 4. Kop Surat SDN Sukasari 4 Tangerang */
+  .print\:flex {
+    display: flex !important;
+  }
+
+  .border-double {
+    border-bottom: 4px double #000000 !important;
+  }
+
+  /* 5. Tampilan Skor & Predikat */
+  .score-glow {
+    box-shadow: none !important;
+    border: 2px solid #000000 !important;
+    background: #f8fafc !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
+  }
+
+  #skor-total {
+    color: #000000 !important;
+    font-size: 36pt !important;
+    font-weight: bold !important;
+  }
+
+  #skor-predikat {
+    color: #000000 !important;
+    font-size: 32pt !important;
+    font-weight: bold !important;
+  }
+
+  #predikat-desc {
+    color: #000000 !important;
+    background: transparent !important;
+    border: 1px solid #000000 !important;
+    padding: 1px 5px !important;
+    font-size: 8pt !important;
+    margin-top: 4px !important;
+  }
+
+  /* 6. Kartu Rincian Nilai */
+  .grid-cols-3 {
+    display: grid !important;
+    grid-template-cols: repeat(3, 1fr) !important;
+    gap: 15px !important;
+  }
+
+  .bg-blue-50\/50, .bg-emerald-50\/50, .bg-amber-50\/50 {
+    background: #f8fafc !important;
+    border: 1px solid #cccccc !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    color: #000000 !important;
+  }
+
+  .text-blue-600, .text-emerald-600, .text-amber-600 {
+    color: #000000 !important;
+  }
+
+  /* 7. Status Badge AI */
+  .print-badge {
+    background: #f1f5f9 !important;
+    border: 1px solid #aaaaaa !important;
+    color: #000000 !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+  }
+
+  /* 8. Accordion Detail Soal (Paksa Tampil Saat Cetak) */
+  #acc-pg, #acc-isian, #acc-uraian {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    opacity: 1 !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 15px 0 !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  /* Sembunyikan tombol header accordion */
+  .card-zoom > button {
+    background: #e2e8f0 !important;
+    border: 1px solid #cccccc !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    cursor: default !important;
+  }
+  
+  #chevron-acc-pg, #chevron-acc-isian, #chevron-acc-uraian {
+    display: none !important;
+  }
+
+  /* Sembunyikan bayangan / zoom */
+  .card-zoom {
+    border: none !important;
+    margin-bottom: 20px !important;
+    page-break-inside: avoid !important;
+  }
+
+  .border-green-200, .border-red-200, .border-yellow-200, .border-slate-200 {
+    border: 1px solid #888888 !important;
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Badge Soal Benar/Salah */
+  .bg-green-100, .bg-red-100, .bg-yellow-100, .bg-slate-100 {
+    background: transparent !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+  }
+
+  .bg-white {
+    background: #ffffff !important;
+    border: 1px solid #dddddd !important;
+  }
+
+  .bg-blue-50\/30 {
+    background: #f8fafc !important;
+    border: 1px dashed #888888 !important;
+  }
+
+  /* 9. Penataan Halaman & Cetak */
+  @page {
+    size: A4;
+    margin: 15mm 15mm 15mm 15mm;
+  }
+
+  /* Paksa pindah halaman jika diperlukan */
+  .page-break {
+    page-break-before: always !important;
+  }
+
+  /* Tanda Tangan */
+  .print\:grid {
+    display: grid !important;
+    grid-template-cols: 1fr 1fr !important;
+    margin-top: 30px !important;
+    page-break-inside: avoid !important;
+  }
+}
