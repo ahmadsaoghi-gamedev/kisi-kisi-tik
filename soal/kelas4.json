@@ -1,0 +1,207 @@
+{
+  "kelas": 4,
+  "topik": "Dasar-Dasar Microsoft Word (Pengolah Kata)",
+  "mapel": "TIK",
+  "sekolah": "SDN Sukasari 4 Tangerang",
+  "npsn": "20606443",
+  "nss": "10.1.02.23.10.068",
+  "alamat": "Jl. Moch. Yamin No.1, Babakan, Tangerang",
+  "tahun": "2025-2026",
+  "durasi_menit": 60,
+  "pg": [
+    {
+      "no": 1,
+      "soal": "Nama aplikasi pengolah kata yang paling sering digunakan di komputer adalah ....",
+      "pilihan": {
+        "a": "Microsoft Word",
+        "b": "Microsoft Paint",
+        "c": "Microsoft Excel"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 2,
+      "soal": "Ikon apakah yang berfungsi untuk membuat tulisan atau teks menjadi cetak tebal?",
+      "pilihan": {
+        "a": "Bold (B)",
+        "b": "Italic (I)",
+        "c": "Underline (U)"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 3,
+      "soal": "Fungsi utama dari ikon Font pada menu Home Microsoft Word adalah untuk ....",
+      "pilihan": {
+        "a": "Mengatur ukuran tulisan",
+        "b": "Mengubah bentuk atau jenis huruf",
+        "c": "Memberi warna pada tulisan"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 4,
+      "soal": "Ikon apa yang digunakan untuk mengatur besar kecilnya ukuran huruf (Font Size)?",
+      "pilihan": {
+        "a": "Font Size (Angka)",
+        "b": "Font Color",
+        "c": "Grow Font"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 5,
+      "soal": "Jika ingin mengubah warna tulisan pada Microsoft Word, ikon yang digunakan adalah ....",
+      "pilihan": {
+        "a": "Font Style",
+        "b": "Font Color (simbol A dengan garis warna di bawah)",
+        "c": "Text Highlight Color"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 6,
+      "soal": "Apa fungsi kombinasi tombol Ctrl + C pada keyboard saat mengetik di Microsoft Word?",
+      "pilihan": {
+        "a": "Untuk menyalin (copy) teks yang dipilih",
+        "b": "Untuk memotong (cut) teks yang dipilih",
+        "c": "Untuk menempel (paste) teks yang disalin"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 7,
+      "soal": "Tombol Delete digunakan untuk menghapus karakter yang berada di sebelah .... kursor.",
+      "pilihan": {
+        "a": "Kiri (belakang)",
+        "b": "Kanan (depan)",
+        "c": "Atas"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 8,
+      "soal": "Program manakah di bawah ini yang secara standar tidak menyediakan fitur kreasi tulisan indah 'WordArt'?",
+      "pilihan": {
+        "a": "Microsoft Word",
+        "b": "Notepad",
+        "c": "Microsoft PowerPoint"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 9,
+      "soal": "Saat mengetik di Microsoft Word, tombol pintas keyboard apa yang dapat digunakan untuk langsung menuju bagian akhir dokumen?",
+      "pilihan": {
+        "a": "Ctrl + End",
+        "b": "Ctrl + Home",
+        "c": "Ctrl + Page Up"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 10,
+      "soal": "Apa kegunaan utama dari tombol Caps Lock pada keyboard saat kita mengetik?",
+      "pilihan": {
+        "a": "Untuk menghapus tulisan dengan cepat",
+        "b": "Untuk membuat kursor berpindah baris baru",
+        "c": "Untuk membuat huruf menjadi kapital/besar semua"
+      },
+      "jawaban": "c"
+    }
+  ],
+  "isian": [
+    {
+      "no": 11,
+      "soal": "Pada menu tab apakah fitur tulisan indah 'WordArt' dapat ditemukan?",
+      "kunci": "insert | menu insert | tab insert",
+      "skor_maks": 1
+    },
+    {
+      "no": 12,
+      "soal": "Istilah Underline Style digunakan untuk menyatakan format teks yang memiliki ....",
+      "kunci": "garis bawah | bergaris bawah | under line",
+      "skor_maks": 1
+    },
+    {
+      "no": 13,
+      "soal": "Kombinasi tombol pintas Ctrl + A pada keyboard digunakan untuk memilih seluruh ....",
+      "kunci": "teks | tulisan | semua teks | dokumen | select all",
+      "skor_maks": 1
+    },
+    {
+      "no": 14,
+      "soal": "Perintah menu atau tombol yang digunakan jika ingin menyimpan file dengan nama yang berbeda atau lokasi baru adalah ....",
+      "kunci": "save as | tombol save as | menu save as",
+      "skor_maks": 1
+    },
+    {
+      "no": 15,
+      "soal": "Sebelum mengubah ukuran atau jenis huruf, teks harus terlebih dahulu di ....",
+      "kunci": "blok | seleksi | select | ditandai | disorot | highlight",
+      "skor_maks": 1
+    },
+    {
+      "no": 16,
+      "soal": "Ikon Open yang digambarkan dengan map terbuka digunakan untuk .......... file dokumen yang telah disimpan.",
+      "kunci": "membuka | open | membuka file | membuka dokumen",
+      "skor_maks": 1
+    },
+    {
+      "no": 17,
+      "soal": "Perintah yang berfungsi untuk membatalkan tindakan atau kesalahan pengetikan terakhir disebut ....",
+      "kunci": "undo | membatalkan | ctrl z | ctrl + z",
+      "skor_maks": 1
+    },
+    {
+      "no": 18,
+      "soal": "Tombol Delete pada keyboard berguna untuk menghapus teks dari sisi .......... kursor.",
+      "kunci": "kanan | depan | sebelah kanan | sebelah depan",
+      "skor_maks": 1
+    },
+    {
+      "no": 19,
+      "soal": "Tombol Backspace pada keyboard berguna untuk menghapus teks dari sisi .......... kursor.",
+      "kunci": "kiri | belakang | sebelah kiri | sebelah belakang",
+      "skor_maks": 1
+    },
+    {
+      "no": 20,
+      "soal": "Tombol pada keyboard yang membuat huruf diketik menjadi kapital/besar semua adalah ....",
+      "kunci": "caps lock | tombol caps lock | capslock",
+      "skor_maks": 1
+    }
+  ],
+  "uraian": [
+    {
+      "no": 21,
+      "soal": "Jelaskan langkah-langkah mengubah warna tulisan pada Microsoft Word!",
+      "rubrik": "Langkah mewarnai teks: (1) Seleksi atau blok teks yang ingin diubah warnanya, (2) Klik tab menu 'Home' di bagian atas, (3) Cari dan klik tanda panah kecil di sebelah ikon 'Font Color' (simbol huruf A dengan garis warna di bawahnya), (4) Pilih warna yang diinginkan pada pilihan warna yang muncul.",
+      "skor_maks": 4
+    },
+    {
+      "no": 22,
+      "soal": "Sebutkan beberapa jenis tampilan huruf (Font Style) populer yang tersedia di Microsoft Word!",
+      "rubrik": "Siswa menyebutkan minimal 3-4 jenis font populer dengan benar, contoh: Times New Roman, Calibri, Arial, Comic Sans MS, Courier New, Georgia, Garamond, dll.",
+      "skor_maks": 4
+    },
+    {
+      "no": 23,
+      "soal": "Apa perbedaan fungsi antara fitur Font Color dan Font Size pada Microsoft Word?",
+      "rubrik": "Font Color berfungsi untuk memberikan atau mengubah warna pada karakter huruf/teks agar lebih menarik (misal merah, biru, hijau), sedangkan Font Size berfungsi untuk mengatur besar atau kecilnya ukuran fisik karakter huruf/teks tersebut (misal ukuran 12, 14, 16).",
+      "skor_maks": 4
+    },
+    {
+      "no": 24,
+      "soal": "Bagaimana cara membuat teks menjadi rata kanan dan rata kiri sekaligus (Justify) di Microsoft Word? Jelaskan langkahnya!",
+      "rubrik": "Langkah membuat Justify: (1) Seleksi atau blok paragraf teks yang ingin diatur perataannya, (2) Klik tab menu 'Home' di bagian atas, (3) Pada kelompok menu 'Paragraph', cari dan klik ikon 'Justify' (rata kiri-kanan, bersimbol garis-garis sejajar kiri dan kanan), atau alternatifnya tekan tombol shortcut Ctrl + J pada keyboard.",
+      "skor_maks": 4
+    },
+    {
+      "no": 25,
+      "soal": "Jelaskan pengertian fitur 'WordArt' menurut pemahamanmu!",
+      "rubrik": "WordArt adalah sebuah fitur atau alat pada Microsoft Word (dan aplikasi Office lainnya) yang digunakan untuk membuat tulisan atau teks menjadi sangat indah, artistik, dan bergaya (memiliki efek bayangan, 3D, warna gradasi, melengkung, dll). Biasanya digunakan untuk judul dokumen atau poster agar terlihat menonjol dan menarik perhatian.",
+      "skor_maks": 4
+    }
+  ]
+}

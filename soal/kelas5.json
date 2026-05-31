@@ -1,0 +1,207 @@
+{
+  "kelas": 5,
+  "topik": "Berpikir Komputasional, Scratch, dan AI",
+  "mapel": "KKA",
+  "sekolah": "SDN Sukasari 4 Tangerang",
+  "npsn": "20606443",
+  "nss": "10.1.02.23.10.068",
+  "alamat": "Jl. Moch. Yamin No.1, Babakan, Tangerang",
+  "tahun": "2025-2026",
+  "durasi_menit": 60,
+  "pg": [
+    {
+      "no": 1,
+      "soal": "Saat membuat jadwal piket kelas, Siti membagi pekerjaannya menjadi beberapa bagian kecil seperti menyapu, menghapus papan tulis, dan merapikan meja. Cara berpikir tersebut termasuk pilar ....",
+      "pilihan": {
+        "a": "Dekomposisi",
+        "b": "Abstraksi",
+        "c": "Pengenalan Pola"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 2,
+      "soal": "Andi menyadari bahwa setiap hari Senin ia sering terlambat bangun pagi. Kemampuan Andi mengenali kebiasaan dan pengulangan masalah tersebut disebut ....",
+      "pilihan": {
+        "a": "Abstraksi",
+        "b": "Pengenalan Pola",
+        "c": "Algoritma"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 3,
+      "soal": "Ketika membuat gambar denah rumah sederhana, Budi hanya menggambarkan bagian penting seperti pintu, jendela, dan ruangan, serta mengabaikan detail hiasan dinding. Cara berpikir ini termasuk ....",
+      "pilihan": {
+        "a": "Algoritma",
+        "b": "Dekomposisi",
+        "c": "Abstraksi"
+      },
+      "jawaban": "c"
+    },
+    {
+      "no": 4,
+      "soal": "Urutan langkah-langkah logis yang tersusun secara rapi dan sistematis untuk menyelesaikan suatu masalah disebut ....",
+      "pilihan": {
+        "a": "Dekomposisi",
+        "b": "Algoritma",
+        "c": "Abstraksi"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 5,
+      "soal": "Di bawah ini yang merupakan contoh penerapan langkah-langkah algoritma dalam kehidupan sehari-hari adalah ....",
+      "pilihan": {
+        "a": "Urutan langkah mencuci tangan menggunakan sabun secara benar",
+        "b": "Melamun memikirkan mainan baru di kamar",
+        "c": "Membeli jajanan tanpa melihat uang kembalian"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 6,
+      "soal": "Urutan kegiatan memasak nasi secara runtun mulai dari mencuci beras, memasukkan air, hingga menyalakan rice cooker merupakan contoh penerapan berpikir komputasional pilar ....",
+      "pilihan": {
+        "a": "Pengenalan Pola",
+        "b": "Abstraksi",
+        "c": "Algoritma"
+      },
+      "jawaban": "c"
+    },
+    {
+      "no": 7,
+      "soal": "Di dalam aplikasi Scratch, objek atau karakter gambar yang dapat digerakkan dan diberikan perintah kode pada animasi/permainan disebut ....",
+      "pilihan": {
+        "a": "Backdrop",
+        "b": "Sprite",
+        "c": "Stage"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 8,
+      "soal": "Blok Scratch yang membuat karakter terus berjalan selama syarat tertentu terpenuhi adalah ....",
+      "pilihan": {
+        "a": "Forever atau Repeat Until",
+        "b": "Set X to 0",
+        "c": "Go to random position"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 9,
+      "soal": "Program Scratch yang menggerakkan karakter ke kanan saat tombol panah kanan ditekan diawali menggunakan blok jenis ....",
+      "pilihan": {
+        "a": "Control",
+        "b": "Events (Kejadian)",
+        "c": "Sensing"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 10,
+      "soal": "Proses mencari, menemukan, dan kemudian memperbaiki kesalahan (error) pada kode program dinamakan ....",
+      "pilihan": {
+        "a": "Coding",
+        "b": "Debugging",
+        "c": "Saving"
+      },
+      "jawaban": "b"
+    }
+  ],
+  "isian": [
+    {
+      "no": 11,
+      "soal": "Data yang berbentuk angka seperti nilai ujian, umur, dan jumlah siswa disebut data ....",
+      "kunci": "numerik | angka | data numerik | data angka | kuantitatif",
+      "skor_maks": 1
+    },
+    {
+      "no": 12,
+      "soal": "Dalam Scratch, area latar belakang tempat sprite atau karakter bergerak disebut ....",
+      "kunci": "stage | panggung | latar | backdrop",
+      "skor_maks": 1
+    },
+    {
+      "no": 13,
+      "soal": "Aktivitas menemukan dan memperbaiki kesalahan (error) pada program komputer dikenal dengan istilah ....",
+      "kunci": "debugging | debug | de-bugging | perbaikan program",
+      "skor_maks": 1
+    },
+    {
+      "no": 14,
+      "soal": "Proses membagi masalah besar atau kompleks menjadi beberapa bagian kecil yang lebih mudah diselesaikan disebut ....",
+      "kunci": "dekomposisi | deconstruction | decomposition",
+      "skor_maks": 1
+    },
+    {
+      "no": 15,
+      "soal": "Kemampuan untuk memilah informasi penting dan mengabaikan informasi yang tidak penting/relevan disebut ....",
+      "kunci": "abstraksi | abstraction",
+      "skor_maks": 1
+    },
+    {
+      "no": 16,
+      "soal": "Blok Scratch yang digunakan untuk mengulang sekumpulan perintah selama beberapa kali disebut blok ....",
+      "kunci": "repeat | loop | perulangan | ulangi | block repeat | block loop",
+      "skor_maks": 1
+    },
+    {
+      "no": 17,
+      "soal": "Teknologi Kecerdasan Buatan (AI) dapat mengenali objek atau wajah karena dilatih menggunakan banyak sekali ....",
+      "kunci": "data | sampel | gambar | contoh | data foto | data gambar",
+      "skor_maks": 1
+    },
+    {
+      "no": 18,
+      "soal": "Aturan dan tata krama perilaku yang tepat serta sopan dalam menggunakan teknologi digital disebut ....",
+      "kunci": "etika digital | kewargaan digital | etika internet | netiket | literasi digital",
+      "skor_maks": 1
+    },
+    {
+      "no": 19,
+      "soal": "Pilar berpikir komputasional yang melengkapi dekomposisi, pengenalan pola, dan abstraksi adalah ....",
+      "kunci": "algoritma | algorithm",
+      "skor_maks": 1
+    },
+    {
+      "no": 20,
+      "soal": "Nama aplikasi pemrograman visual berbasis blok warna-warni yang digunakan siswa SD untuk belajar membuat game/animasi sederhana adalah ....",
+      "kunci": "scratch | scratch mit | aplikasi scratch",
+      "skor_maks": 1
+    }
+  ],
+  "uraian": [
+    {
+      "no": 21,
+      "soal": "Jelaskan pengertian berpikir komputasional, sebutkan empat pilar utamanya, dan berikan satu contoh penerapannya!",
+      "rubrik": "Siswa menuliskan: (1) Pengertian berpikir komputasional (metode menyelesaikan masalah dengan cara seperti komputer), (2) Empat pilarnya: Dekomposisi, Pengenalan Pola, Abstraksi, Algoritma, (3) Satu contoh bebas (misalnya langkah mencuci piring atau membuat teh).",
+      "skor_maks": 4
+    },
+    {
+      "no": 22,
+      "soal": "Perhatikan program Scratch: saat bendera hijau diklik, 'ulangi 10 kali: maju 10 langkah, lalu putar kanan 36 derajat'. Jelaskan apa yang terjadi pada karakter (Sprite) tersebut!",
+      "rubrik": "Karakter (Sprite) akan bergerak maju secara perlahan lalu berputar sebanyak 10 kali. Karena perputaran totalnya adalah 10 kali x 36 derajat = 360 derajat (satu putaran penuh), maka karakter tersebut akan berjalan membentuk lintasan berbentuk lingkaran penuh atau segi-10 beraturan lalu kembali menghadap ke arah semula.",
+      "skor_maks": 4
+    },
+    {
+      "no": 23,
+      "soal": "Sebutkan tiga contoh penggunaan Artificial Intelligence (AI) atau Kecerdasan Buatan dalam kehidupan sehari-hari beserta manfaatnya!",
+      "rubrik": "Menyebutkan minimal 3 contoh dan manfaat, seperti: (1) Deteksi wajah (Face ID) untuk membuka HP, (2) Google Assistant/Siri untuk mencari informasi lewat suara, (3) Rekomendasi video (YouTube) untuk mencarikan konten menarik, (4) Google Translate untuk menerjemahkan bahasa secara instan.",
+      "skor_maks": 4
+    },
+    {
+      "no": 24,
+      "soal": "Tuliskan langkah-langkah mengirimkan tugas kepada guru secara benar dan sopan melalui email!",
+      "rubrik": "Langkah logis: (1) Buka email (seperti Gmail), (2) Klik tombol 'Tulis' (Compose), (3) Ketik alamat email guru pada kolom 'To', (4) Isi subjek dengan format jelas (misal: Tugas KKA Kelas 5 - [Nama]), (5) Lampirkan file tugas menggunakan ikon klip kertas, (6) Ketik pesan sopan, (7) Klik 'Kirim' (Send).",
+      "skor_maks": 4
+    },
+    {
+      "no": 25,
+      "soal": "Mengapa siswa SD perlu mempelajari berpikir komputasional? Sebutkan minimal dua alasan!",
+      "rubrik": "Siswa menyebutkan minimal 2 alasan: (1) Melatih otak berpikir terstruktur, logis, dan sistematis dalam menyelesaikan masalah sehari-hari, (2) Mempersiapkan diri memahami teknologi masa depan seperti robotika, (3) Mempermudah tugas rumit dengan membaginya menjadi bagian kecil.",
+      "skor_maks": 4
+    }
+  ]
+}

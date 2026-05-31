@@ -1,1 +1,207 @@
-
+{
+  "kelas": 1,
+  "topik": "Microsoft Paint",
+  "mapel": "TIK",
+  "sekolah": "SDN Sukasari 4 Tangerang",
+  "npsn": "20606443",
+  "nss": "10.1.02.23.10.068",
+  "alamat": "Jl. Moch. Yamin No.1, Babakan, Tangerang",
+  "tahun": "2025-2026",
+  "durasi_menit": 60,
+  "pg": [
+    {
+      "no": 1,
+      "soal": "Aplikasi pengolah gambar sederhana adalah ….",
+      "pilihan": {
+        "a": "notes",
+        "b": "paint",
+        "c": "notebook"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 2,
+      "soal": "Menu yang terlihat pada microsoft paint terdapat ….",
+      "pilihan": {
+        "a": "2",
+        "b": "3",
+        "c": "5"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 3,
+      "soal": "Terdapat menu yang akan tampil jika kita menekan ikon A, menu apakah itu.",
+      "pilihan": {
+        "a": "view",
+        "b": "text",
+        "c": "edit"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 4,
+      "soal": "Oval adalah ikon yang berguna untuk menggambar …",
+      "pilihan": {
+        "a": "garis lurus",
+        "b": "lingkaran",
+        "c": "kotak"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 5,
+      "soal": "Line berguna untuk menggambar …..",
+      "pilihan": {
+        "a": "garis lengkung",
+        "b": "Garis lurus",
+        "c": "lingkaran"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 6,
+      "soal": "Segitiga dapat dibuat menggunakan ikon ….",
+      "pilihan": {
+        "a": "rectangle",
+        "b": "triangle",
+        "c": "oval"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 7,
+      "soal": "Balon dapat dibuat menggunakan ikon ….",
+      "pilihan": {
+        "a": "oval",
+        "b": "curve",
+        "c": "line"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 8,
+      "soal": "Untuk mewarnai sebuah gambar, maka kamu dapat menggunakan ikon ….",
+      "pilihan": {
+        "a": "fill with color",
+        "b": "pick color",
+        "c": "Color box"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 9,
+      "soal": "Rounded rectangle berguna untuk menggambar …",
+      "pilihan": {
+        "a": "kotak",
+        "b": "bulat",
+        "c": "kotak dengan sudut tumpul"
+      },
+      "jawaban": "c"
+    },
+    {
+      "no": 10,
+      "soal": "Mengapa hiasan dinding harus ditempel ke kertas karton....",
+      "pilihan": {
+        "a": "supaya hiasan lebih kuat",
+        "b": "supaya mudah digantung",
+        "c": "supaya tampak indah"
+      },
+      "jawaban": "a"
+    }
+  ],
+  "isian": [
+    {
+      "no": 11,
+      "soal": "Untuk menggambar garis lengkung dapat menggunakan ikon …",
+      "kunci": "curve",
+      "skor_maks": 1
+    },
+    {
+      "no": 12,
+      "soal": "Ikon eraser pada paint berguna untuk …",
+      "kunci": "menghapus gambar",
+      "skor_maks": 1
+    },
+    {
+      "no": 13,
+      "soal": "Untuk menggambar badan mobil kamu dapat menggunakan ikon …",
+      "kunci": "rectangle",
+      "skor_maks": 1
+    },
+    {
+      "no": 14,
+      "soal": "Kotak dengan sudut tumpul digambar menggunakan ikon ....",
+      "kunci": "rounded rectangle",
+      "skor_maks": 1
+    },
+    {
+      "no": 15,
+      "soal": "Line berguna untuk menggambar …",
+      "kunci": "garis lurus",
+      "skor_maks": 1
+    },
+    {
+      "no": 16,
+      "soal": "Pencil pada paint berguna untuk …",
+      "kunci": "menggambar bebas",
+      "skor_maks": 1
+    },
+    {
+      "no": 17,
+      "soal": "Color box pada paint disebut …",
+      "kunci": "kotak warna",
+      "skor_maks": 1
+    },
+    {
+      "no": 18,
+      "soal": "Untuk mewarnai gambar, kamu dapat menggunakan ikon …",
+      "kunci": "fill with color",
+      "skor_maks": 1
+    },
+    {
+      "no": 19,
+      "soal": "Agar gambar lebih menarik maka diberi …",
+      "kunci": "warna",
+      "skor_maks": 1
+    },
+    {
+      "no": 20,
+      "soal": "Untuk menyalin sebuah warna dari satu objek ke objek yang lain, kamu dapat menggunakan ikon …",
+      "kunci": "pick color",
+      "skor_maks": 1
+    }
+  ],
+  "uraian": [
+    {
+      "no": 21,
+      "soal": "Apa yang Kamu ketahui tentang \"Paint\" pada komputer?",
+      "rubrik": "Siswa menjelaskan bahwa Paint adalah program/aplikasi menggambar bawaan Windows, digunakan untuk menggambar dan mewarnai gambar sederhana di komputer.",
+      "skor_maks": 4
+    },
+    {
+      "no": 22,
+      "soal": "Sebutkan 3 alat (tool) yang ada di Microsoft Paint dan jelaskan kegunaan masing-masing alat tersebut!",
+      "rubrik": "Menyebutkan minimal 3 tool dengan benar beserta kegunaannya. Contoh: Pencil (menggambar bebas), Eraser (menghapus), Fill with Color (mewarnai), Oval (menggambar lingkaran/oval), Rectangle (menggambar kotak), Line (menggambar garis lurus), Curve (garis lengkung), Text/A (menulis teks).",
+      "skor_maks": 4
+    },
+    {
+      "no": 23,
+      "soal": "Apa perbedaan antara rectangle dan rounded rectangle?",
+      "rubrik": "Rectangle = menggambar kotak/persegi dengan sudut tajam/siku-siku. Rounded Rectangle = menggambar kotak/persegi dengan sudut tumpul/melengkung.",
+      "skor_maks": 4
+    },
+    {
+      "no": 24,
+      "soal": "Tuliskan langkah-langkah menggambar mobil di paint!",
+      "rubrik": "Urutan langkah yang logis, contoh: (1) Buka aplikasi Paint, (2) Pilih tool Rectangle untuk badan mobil, (3) Pilih tool Oval/Circle untuk roda, (4) Gunakan Line untuk detail, (5) Warnai menggunakan Fill with Color, (6) Simpan gambar.",
+      "skor_maks": 4
+    },
+    {
+      "no": 25,
+      "soal": "Ceritakan pengalamanmu menggunakan Paint dan apa saja yang kamu sukai saat menggunakan program tersebut!",
+      "rubrik": "Jawaban subjektif/bersifat personal. Nilai diberikan berdasarkan: (1) Kemampuan mengungkapkan pengalaman, (2) Penyebutan fitur Paint yang pernah digunakan, (3) Alasan yang masuk akal mengapa menyukainya. Tidak ada jawaban yang 100% salah.",
+      "skor_maks": 4
+    }
+  ]
+}
