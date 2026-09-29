@@ -2,170 +2,282 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kisi-Kisi & Latihan TIK/KKA — SDN Sukasari 4 Tangerang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Portal Latihan Kisi-Kisi TIK & KKA — SDN Sukasari 4 Tangerang</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Quicksand (Bulat, Ramah Anak) -->
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+            mono: ['"Quicksand"', 'sans-serif'],
+          },
+          boxShadow: {
+            'expert-glass': '0 10px 30px -5px rgba(59, 130, 246, 0.08), 0 4px 12px rgba(0, 0, 0, 0.03)',
+            'expert-hover': '0 25px 50px -12px rgba(59, 130, 246, 0.25), 0 10px 25px -5px rgba(0, 0, 0, 0.04)',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, Quicksand -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
   <script src="config.js"></script>
+  <script src="cyber-bg.js"></script>
   <style>
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
     body {
-      font-family: 'Quicksand', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f0f7ff 50%, #fef3c7 100%);
+      background-attachment: fixed;
+      color: #0f172a;
+      overflow-x: hidden;
     }
-    .custom-gradient {
-      background: linear-gradient(135deg, #eff6ff 0%, #fef3c7 100%);
+
+    /* Ambient Light Blobs */
+    .glow-blob-1 {
+      position: fixed;
+      top: -15%;
+      left: 15%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(255,255,255,0) 70%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(50px);
     }
-    .playful-card {
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    .glow-blob-2 {
+      position: fixed;
+      bottom: -15%;
+      right: 15%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.14) 0%, rgba(255,255,255,0) 70%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(60px);
     }
-    .playful-card:hover:not(.disabled-card) {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.15), 0 10px 10px -5px rgba(59, 130, 246, 0.1);
+
+    /* Glass Cards */
+    .glass-card-expert {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
+
+    .glass-card-interactive {
+      position: relative;
+    }
+
+    @media (hover: hover) {
+      .glass-card-interactive:hover:not(.disabled-card) {
+        transform: translateY(-6px);
+      }
+    }
+
+    .glass-card-interactive:active:not(.disabled-card) {
+      transform: scale(0.98);
+    }
+
     .disabled-card {
-      filter: grayscale(1);
-      opacity: 0.6;
+      opacity: 0.55;
+      filter: grayscale(0.8);
       cursor: not-allowed;
+      border: 1.5px dashed #cbd5e1 !important;
     }
-    /* Wave animation */
-    .wave-bg {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 120px;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%233b82f6" fill-opacity="0.1" d="M0,192L48,197.3C96,203,192,213,288,197.3C384,181,480,139,576,144C672,149,768,203,864,197.3C960,192,1056,128,1152,112C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat-x;
-      background-size: 1440px 120px;
-      animation: wave 20s linear infinite;
+
+    /* Shimmer Gradient Text */
+    .gradient-title {
+      background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    @keyframes wave {
-      0% { background-position-x: 0px; }
-      100% { background-position-x: 1440px; }
+
+    /* Pulsing Light Indicator */
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 10px #10b981; }
+      50% { opacity: 0.5; transform: scale(1.25); box-shadow: 0 0 18px #10b981; }
+    }
+    .pulse-indicator {
+      animation: pulse-dot 2s infinite ease-in-out;
+    }
+
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .animate-modal-in {
+      animation: fadeInScale 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
   </style>
 </head>
-<body class="custom-gradient min-h-screen flex flex-col relative overflow-x-hidden text-slate-800 antialiased pb-20">
+<body class="min-h-screen flex flex-col relative antialiased pb-12 sm:pb-16">
 
-  <!-- Header Sekolah -->
-  <header class="bg-blue-600 text-white shadow-lg relative overflow-hidden py-6">
-    <div class="absolute inset-0 bg-blue-700 opacity-30 pattern-grid"></div>
-    <div class="max-w-6xl mx-auto px-4 relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-      <div class="flex items-center gap-4">
-        <!-- Logo Sekolah -->
-        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-inner p-1 shrink-0 overflow-hidden">
-          <img src="logo_sekolah.png" alt="Logo SDN Sukasari 4" class="w-full h-full object-contain rounded-full">
+  <!-- Ambient Light Blobs -->
+  <div class="glow-blob-1"></div>
+  <div class="glow-blob-2"></div>
+
+  <!-- Header Sekolah Floating Glass Header -->
+  <header class="relative z-20 bg-white/85 backdrop-blur-xl border-b border-blue-100/80 py-3 sm:py-4 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
+      
+      <!-- Logo & Nama Sekolah -->
+      <div class="flex items-center gap-3">
+        <div class="relative">
+          <div class="w-11 h-11 sm:w-13 sm:h-13 bg-white rounded-full flex items-center justify-center p-1.5 shadow-md border border-blue-100 shrink-0">
+            <img src="logo_sekolah.png" alt="Logo SDN Sukasari 4" class="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-full">
+          </div>
+          <span class="absolute bottom-0 right-0 w-3 h-3 sm:w-3.5 sm:h-3.5 bg-emerald-500 border-2 border-white rounded-full pulse-indicator"></span>
         </div>
         <div>
-          <h2 id="header-school" class="text-xl font-bold tracking-wide">SDN SUKASARI 4 TANGERANG</h2>
-          <p class="text-xs text-blue-100 flex items-center justify-center sm:justify-start gap-2 mt-0.5">
-            <span>NPSN: <span id="header-npsn">20606443</span></span>
+          <h2 id="header-school" class="font-display font-extrabold text-base sm:text-xl text-slate-900 tracking-tight leading-tight">
+            SDN SUKASARI 4 TANGERANG
+          </h2>
+          <p class="text-[11px] sm:text-xs text-slate-500 font-semibold flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 mt-0.5">
+            <span>NPSN: <span id="header-npsn" class="font-bold text-blue-600">20606443</span></span>
             <span class="w-1 h-1 bg-blue-300 rounded-full"></span>
-            <span>TAHUN PELAJARAN: <span id="header-tahun">2025-2026</span></span>
+            <span>TAHUN PELAJARAN: <span id="header-tahun" class="font-bold text-slate-700">2025-2026</span></span>
           </p>
         </div>
       </div>
-      <div class="text-center sm:text-right">
-        <span class="bg-amber-400 text-slate-900 font-extrabold text-xs px-3 py-1.5 rounded-full uppercase shadow-md tracking-wider">
-          🖥️ Portal Kisi-Kisi TIK & KKA
+
+      <!-- Header Pill Tag -->
+      <div class="flex items-center gap-2">
+        <span class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold text-[10px] sm:text-xs px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-md tracking-wide flex items-center gap-1.5">
+          <span>🖥️</span> PORTAL LATIHAN TIK & KKA
         </span>
       </div>
     </div>
   </header>
 
-  <!-- Konten Utama -->
-  <main class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full relative z-10">
-    <div class="text-center mb-10">
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3 drop-shadow-sm">
-        📚 Selamat Datang di Portal Latihan Kisi-Kisi!
+  <!-- Konten Utama Halaman -->
+  <main class="max-w-7xl mx-auto px-3.5 sm:px-6 py-6 sm:py-10 flex-grow w-full relative z-10">
+
+    <!-- Hero Title & Greeting Section -->
+    <div class="text-center mb-8 sm:mb-12 relative">
+      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-[11px] sm:text-xs font-bold mb-3 shadow-sm">
+        <span>⚡ Latihan Kisi-Kisi Ujian Semester SD</span>
+      </div>
+
+      <h1 class="font-display text-2xl sm:text-5xl font-black gradient-title tracking-tight mb-2 sm:mb-3 leading-tight">
+        Selamat Datang di Portal Latihan Kisi-Kisi!
       </h1>
-      <p class="text-lg text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed">
-        Halo pintar! Pilih kelasmu di bawah ini untuk berlatih soal kisi-kisi Penilaian Akhir Semester. Tetap semangat dan jujur ya!
+      
+      <p class="text-xs sm:text-lg text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed px-2">
+        Halo pintar! Pilih kelasmu di bawah ini untuk berlatih soal kisi-kisi Penilaian Akhir Semester. Tetap semangat, jujur, dan teliti ya!
       </p>
-      <div class="flex items-center justify-center gap-2 mt-3.5">
-        <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-blue-300 shrink-0 shadow-sm">
+
+      <!-- Teacher Avatar Badge -->
+      <div class="flex items-center justify-center gap-3 mt-4 sm:mt-6">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-blue-500 shadow-md shrink-0">
           <img src="pakahmad.png" alt="Pak Ahmad" class="w-full h-full object-cover">
         </div>
-        <span class="text-blue-600 font-extrabold text-base sm:text-lg">Pak Ahmad bangga padamu!</span>
+        <div class="text-left">
+          <span class="text-blue-700 font-extrabold text-sm sm:text-lg block leading-tight">Pak Ahmad bangga padamu! 🌟</span>
+          <span class="text-[11px] sm:text-xs text-slate-500 font-medium">Guru Pengampu TIK & KKA Sukasari 4</span>
+        </div>
       </div>
     </div>
 
-    <!-- Grid Kartu Kelas -->
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12" id="grid-kelas">
-      <!-- Diisi dinamis oleh JS -->
-      <div class="animate-pulse bg-white rounded-3xl h-44 shadow-md col-span-2 md:col-span-5 flex items-center justify-center">
-        <span class="text-slate-400 font-semibold">Memuat daftar kelas...</span>
+    <!-- Grid Kartu Kelas (Mobile Responsive Layout: 2 cols on mobile, 3 on md, 6 on xl) -->
+    <div class="mb-10 sm:mb-14">
+      <div class="flex items-center justify-between mb-4 sm:mb-6">
+        <h3 class="font-display text-sm sm:text-lg font-bold text-slate-900 tracking-wide flex items-center gap-1.5 sm:gap-2">
+          <span>🏫</span> PILIH KELAS UNTUK MEMULAI
+        </h3>
+        <span class="text-[10px] sm:text-xs font-bold text-blue-700 bg-blue-50 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-blue-200">Kelas 1 – 6 TERSEDIA</span>
+      </div>
+
+      <!-- Grid Layout: 2 columns on mobile, 3 on tablet, 6 on desktop -->
+      <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-6" id="grid-kelas">
+        <!-- Diisi dinamis oleh JS untuk Kelas 1 s/d 6 -->
+        <div class="glass-card-expert rounded-3xl min-h-[220px] sm:min-h-[280px] col-span-2 md:col-span-3 xl:col-span-6 flex flex-col items-center justify-center p-6 text-center border border-blue-100">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-3"></div>
+          <span class="text-slate-500 font-bold text-xs sm:text-base">Memuat modul kelas latihan...</span>
+        </div>
       </div>
     </div>
 
-    <!-- Modal Form Identitas Siswa (Hidden by default, shown when card clicked) -->
-    <div id="modal-identitas" class="hidden max-w-lg mx-auto bg-white border-2 border-blue-200 rounded-3xl p-6 shadow-xl mb-12 animate-fade-in">
-      <div class="flex items-center gap-3 border-b-2 border-slate-100 pb-4 mb-6">
-        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-xl">
-          ✏️
+    <!-- Modal Form Identitas Siswa Overlay -->
+    <div id="modal-identitas" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-md z-50 flex items-center justify-center p-3.5 sm:p-4">
+      <div class="glass-card-expert w-[94vw] max-w-lg rounded-3xl p-5 sm:p-8 border-2 border-blue-200 shadow-2xl animate-modal-in relative max-h-[90vh] overflow-y-auto">
+        <div class="flex items-center gap-3.5 border-b border-slate-100 pb-4 mb-5">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-xl sm:text-2xl shrink-0 border border-blue-100 shadow-sm">
+            ✏️
+          </div>
+          <div>
+            <h3 class="font-display text-lg sm:text-xl font-extrabold text-slate-900">Lengkapi Identitas Siswa</h3>
+            <p class="text-xs text-slate-500 font-semibold mt-0.5">
+              Kamu memilih <span id="selected-class-label" class="font-bold text-blue-600">Kelas 1</span>
+            </p>
+          </div>
         </div>
-        <div>
-          <h3 class="text-xl font-bold text-slate-800">Lengkapi Identitas Diri</h3>
-          <p class="text-xs text-slate-500 font-medium">Kamu memilih <span id="selected-class-label" class="font-bold text-blue-600">Kelas 1</span></p>
-        </div>
+
+        <form id="form-siswa" onsubmit="mulaiUjian(event)">
+          <!-- Input Nama (text-base prevents auto-zoom in iOS Safari) -->
+          <div class="mb-4 sm:mb-5">
+            <label for="siswa-nama" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nama Lengkap Siswa</label>
+            <input type="text" id="siswa-nama" required 
+              class="w-full text-base font-semibold px-4 py-3 sm:py-3.5 rounded-2xl bg-white border-2 border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none transition-all placeholder-slate-400 uppercase tracking-wide min-h-[48px]"
+              placeholder="TULIS NAMA LENGKAPMU DI SINI">
+          </div>
+
+          <!-- Input No Absen -->
+          <div class="mb-5 sm:mb-6">
+            <label for="siswa-absen" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nomor Absen Siswa</label>
+            <input type="number" id="siswa-absen" required min="1" max="50"
+              class="w-full text-base font-semibold px-4 py-3 sm:py-3.5 rounded-2xl bg-white border-2 border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none transition-all placeholder-slate-400 min-h-[48px]"
+              placeholder="Contoh: 15">
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex gap-3">
+            <button type="button" onclick="batalPilih()"
+              class="w-1/3 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-600 font-bold py-3.5 rounded-2xl transition-all text-xs sm:text-sm uppercase tracking-wider min-h-[48px]">
+              Batal
+            </button>
+            <button type="submit" 
+              class="w-2/3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:scale-95 text-white font-display font-extrabold py-3.5 rounded-2xl shadow-lg transition-all text-xs sm:text-base flex items-center justify-center gap-1.5 uppercase tracking-wider min-h-[48px]">
+              <span>Mulai Latihan</span>
+              <span>🚀</span>
+            </button>
+          </div>
+        </form>
       </div>
-
-      <form id="form-siswa" onsubmit="mulaiUjian(event)">
-        <!-- Input Nama -->
-        <div class="mb-5">
-          <label for="siswa-nama" class="block text-sm font-bold text-slate-700 mb-2">Nama Lengkap Siswa</label>
-          <input type="text" id="siswa-nama" required 
-            class="w-full text-base font-medium px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-blue-500 focus:outline-none transition-all placeholder-slate-400 uppercase"
-            placeholder="TULIS NAMA LENGKAPMU DI SINI">
-        </div>
-
-        <!-- Input No Absen -->
-        <div class="mb-6">
-          <label for="siswa-absen" class="block text-sm font-bold text-slate-700 mb-2">Nomor Absen</label>
-          <input type="number" id="siswa-absen" required min="1" max="50"
-            class="w-full text-base font-medium px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-blue-500 focus:outline-none transition-all placeholder-slate-400"
-            placeholder="Contoh: 15">
-        </div>
-
-        <!-- Action Button -->
-        <div class="flex gap-3">
-          <button type="button" onclick="batalPilih()"
-            class="w-1/3 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3.5 rounded-2xl transition-all text-sm sm:text-base">
-            Batal
-          </button>
-          <button type="submit" 
-            class="w-2/3 bg-blue-500 hover:bg-blue-600 text-white font-extrabold py-3.5 rounded-2xl shadow-md hover:shadow-lg transition-all text-sm sm:text-base transform active:scale-95">
-            Mulai Latihan Sekarang 🚀
-          </button>
-        </div>
-      </form>
     </div>
 
-    <!-- Collapsible Pengaturan Guru (Collapsible) -->
-    <div class="max-w-lg mx-auto bg-slate-50 border border-slate-200 rounded-3xl p-5 shadow-sm no-print">
-      <button onclick="toggleGuru()" class="w-full flex items-center justify-between font-bold text-slate-600 text-sm focus:outline-none">
+    <!-- Collapsible Pengaturan Guru AI (Collapsible) -->
+    <div class="max-w-lg mx-auto glass-card-expert rounded-3xl p-4 sm:p-5 shadow-expert-glass border border-slate-200 no-print">
+      <button onclick="toggleGuru()" class="w-full flex items-center justify-between font-bold text-slate-700 text-xs sm:text-sm focus:outline-none">
         <span class="flex items-center gap-2">
           ⚙️ Pengaturan Koreksi AI (Khusus Guru)
         </span>
-        <span id="guru-chevron">▼</span>
+        <span id="guru-chevron" class="text-[11px] font-bold bg-slate-100 text-slate-600 px-2.5 py-1 rounded-lg border border-slate-200">▼ Buka</span>
       </button>
       
       <div id="guru-panel" class="hidden mt-4 border-t border-slate-200 pt-4 flex flex-col gap-4">
-        <p class="text-xs text-slate-500 leading-relaxed font-medium">
+        <p class="text-xs text-slate-600 leading-relaxed font-medium">
           Aplikasi ini mendukung koreksi otomatis berbasis AI untuk soal Isian & Uraian. Pilih provider AI di bawah ini dan masukkan API Key Anda. 
           <br><strong class="text-blue-600">Rekomendasi:</strong> Gunakan <strong>Google Gemini</strong> karena gratis/sangat murah, cepat, dan bekerja langsung dari browser tanpa perlu server perantara (Proxy).
         </p>
-        <div class="bg-amber-50 border border-amber-200 rounded-xl p-2.5 text-[10px] text-amber-700 font-bold leading-relaxed">
+
+        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-3 text-xs text-amber-800 font-medium leading-relaxed">
           📢 <strong>Info Latihan Mandiri / Di Rumah:</strong><br>
-          Jika aplikasi dibuka oleh siswa di rumah masing-masing, biarkan API Key ini kosong. Aplikasi secara otomatis beralih ke <strong>Koreksi Mandiri Berbasis Rubrik & Orang Tua</strong>. 
-          Siswa akan mendapatkan skor Pilihan Ganda secara otomatis, Isian singkat dicocokkan cerdas, dan Orang Tua dapat memberikan nilai untuk soal Uraian secara interaktif langsung pada lembar hasil!
+          Jika aplikasi dibuka oleh siswa di rumah masing-masing, biarkan API Key ini kosong. Aplikasi secara otomatis beralih ke <strong>Koreksi Mandiri Berbasis Rubrik & Orang Tua</strong>.
         </div>
         
         <!-- Pilihan Provider -->
         <div>
-          <label for="guru-provider" class="block text-xs font-bold text-slate-700 mb-1.5">Pilih Provider AI</label>
+          <label for="guru-provider" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Pilih Provider AI</label>
           <select id="guru-provider" onchange="updateProviderSettings()" 
-            class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-blue-500 focus:outline-none font-bold text-slate-700">
+            class="w-full text-xs sm:text-sm font-bold px-3.5 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:outline-none text-slate-800 bg-white min-h-[44px]">
             <option value="gemini">Google Gemini (Sangat Cepat, Gratis & CORS-Friendly)</option>
             <option value="groq">Groq AI (Super Cepat - Llama 3.3)</option>
             <option value="claude">Anthropic Claude (Sangat Akurat - Perlu Proxy)</option>
@@ -174,41 +286,38 @@
 
         <!-- API Key Input -->
         <div>
-          <label for="guru-api-key" class="block text-xs font-bold text-slate-700 mb-1.5" id="label-api-key">Gemini API Key</label>
+          <label for="guru-api-key" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5" id="label-api-key">Gemini API Key</label>
           <input type="password" id="guru-api-key" 
-            class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-blue-500 focus:outline-none font-mono"
+            class="w-full text-base sm:text-sm px-3.5 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:outline-none font-mono bg-white min-h-[44px]"
             placeholder="Masukkan API Key...">
-          <p class="text-[10px] text-slate-400 font-semibold mt-1" id="desc-api-key">
+          <p class="text-[11px] text-slate-500 font-medium mt-1.5" id="desc-api-key">
             Dapatkan API key gratis di Google AI Studio.
           </p>
         </div>
 
         <!-- Custom Model Input -->
         <div>
-          <label for="guru-model" class="block text-xs font-bold text-slate-700 mb-1.5">Nama Model AI (Bisa Dikustomisasi)</label>
+          <label for="guru-model" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nama Model AI (Bisa Dikustomisasi)</label>
           <input type="text" id="guru-model" 
-            class="w-full text-sm px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-blue-500 focus:outline-none font-mono"
+            class="w-full text-base sm:text-sm px-3.5 py-3 rounded-xl border border-slate-300 focus:border-blue-500 focus:outline-none font-mono bg-white min-h-[44px]"
             placeholder="gemini-1.5-flash">
         </div>
 
         <!-- Simpan Button -->
         <div>
           <button onclick="simpanPengaturanGuru()" 
-            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-3 rounded-xl text-xs transition-all uppercase tracking-wider shadow-sm">
+            class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-display font-extrabold py-3.5 rounded-xl text-xs transition-all uppercase tracking-wider shadow-md min-h-[48px]">
             Simpan Konfigurasi AI 💾
           </button>
-          <p id="api-key-status" class="text-xs text-green-600 font-bold mt-2 text-center hidden">✓ Konfigurasi AI tersimpan di memori browser!</p>
+          <p id="api-key-status" class="text-xs text-emerald-600 font-bold mt-2 text-center hidden">✓ Konfigurasi AI tersimpan di memori browser!</p>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- Wave effect at background -->
-  <div class="wave-bg"></div>
-
   <!-- Footer -->
-  <footer class="absolute bottom-0 left-0 right-0 py-4 text-center bg-blue-800 text-white text-xs z-10 border-t border-blue-900">
-    <div class="max-w-6xl mx-auto px-4 font-medium flex flex-col sm:flex-row items-center justify-between gap-2">
+  <footer class="relative z-10 py-4 sm:py-5 text-center bg-white/80 border-t border-blue-100 text-xs text-slate-600 mt-auto backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 font-medium flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-2">
       <p id="footer-school-name">&copy; 2026 SDN Sukasari 4 Tangerang</p>
       <p id="footer-address">Jl. Moch. Yamin No.1, Babakan, Tangerang, Banten</p>
     </div>
@@ -244,25 +353,68 @@
         document.getElementById('guru-model').value = savedModel;
       }
 
-      // Load data kelas 1-5 secara paralel
+      // Load data kelas 1 s/d 6 secara paralel
       await muatSemuaKelas();
     });
 
-    // Mengambil data JSON kelas secara asinkron untuk mengetahui ketersediaan soal & topik
+    // Mengambil data JSON kelas 1 s/d 6 secara asinkron
     async function muatSemuaKelas() {
       const grid = document.getElementById('grid-kelas');
       grid.innerHTML = ""; // Bersihkan placeholder
       
-      const colors = [
-        { bg: 'bg-emerald-50 hover:bg-emerald-100/70', border: 'border-emerald-200', text: 'text-emerald-600', number: 'text-emerald-500', btn: 'bg-emerald-500' },
-        { bg: 'bg-indigo-50 hover:bg-indigo-100/70', border: 'border-indigo-200', text: 'text-indigo-600', number: 'text-indigo-500', btn: 'bg-indigo-500' },
-        { bg: 'bg-rose-50 hover:bg-rose-100/70', border: 'border-rose-200', text: 'text-rose-600', number: 'text-rose-500', btn: 'bg-rose-500' },
-        { bg: 'bg-amber-50 hover:bg-amber-100/70', border: 'border-amber-200', text: 'text-amber-600', number: 'text-amber-500', btn: 'bg-amber-500' },
-        { bg: 'bg-sky-50 hover:bg-sky-100/70', border: 'border-sky-200', text: 'text-sky-600', number: 'text-sky-500', btn: 'bg-sky-500' }
+      const themes = [
+        { 
+          bg: 'bg-emerald-50/70 hover:bg-emerald-100/80', 
+          border: 'border-emerald-300', 
+          numberBg: 'bg-gradient-to-br from-emerald-500 to-teal-700',
+          badgeBg: 'bg-emerald-100 text-emerald-800 border-emerald-300',
+          btnBg: 'bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white',
+          icon: '💻'
+        },
+        { 
+          bg: 'bg-indigo-50/70 hover:bg-indigo-100/80', 
+          border: 'border-indigo-300', 
+          numberBg: 'bg-gradient-to-br from-indigo-500 to-blue-700',
+          badgeBg: 'bg-indigo-100 text-indigo-800 border-indigo-300',
+          btnBg: 'bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white',
+          icon: '🛡️'
+        },
+        { 
+          bg: 'bg-rose-50/70 hover:bg-rose-100/80', 
+          border: 'border-rose-300', 
+          numberBg: 'bg-gradient-to-br from-rose-500 to-purple-700',
+          badgeBg: 'bg-rose-100 text-rose-800 border-rose-300',
+          btnBg: 'bg-gradient-to-r from-rose-600 to-purple-600 hover:from-rose-700 hover:to-purple-700 text-white',
+          icon: '🖥️'
+        },
+        { 
+          bg: 'bg-amber-50/70 hover:bg-amber-100/80', 
+          border: 'border-amber-300', 
+          numberBg: 'bg-gradient-to-br from-amber-500 to-orange-700',
+          badgeBg: 'bg-amber-100 text-amber-800 border-amber-300',
+          btnBg: 'bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white',
+          icon: '⌨️'
+        },
+        { 
+          bg: 'bg-sky-50/70 hover:bg-sky-100/80', 
+          border: 'border-sky-300', 
+          numberBg: 'bg-gradient-to-br from-cyan-500 to-blue-700',
+          badgeBg: 'bg-sky-100 text-sky-800 border-sky-300',
+          btnBg: 'bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white',
+          icon: '🧩'
+        },
+        { 
+          bg: 'bg-purple-50/70 hover:bg-purple-100/80', 
+          border: 'border-purple-300', 
+          numberBg: 'bg-gradient-to-br from-purple-500 to-fuchsia-700',
+          badgeBg: 'bg-purple-100 text-purple-800 border-purple-300',
+          btnBg: 'bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 text-white',
+          icon: '🧠'
+        }
       ];
 
-      for (let k = 1; k <= 5; k++) {
-        const theme = colors[k-1];
+      for (let k = 1; k <= 6; k++) {
+        const theme = themes[k-1];
         try {
           const res = await fetch(`soal/kelas${k}.json`);
           if (!res.ok) throw new Error("Gagal mengambil data");
@@ -270,7 +422,6 @@
           
           daftarKelasData[k] = data;
           
-          // Cek apakah soal sudah diisi (bukan placeholder)
           const isBelumDiisi = data.topik.includes("SOAL BELUM DIISI");
           
           if (isBelumDiisi) {
@@ -288,28 +439,63 @@
     function tampilkanCardAktif(grid, kelas, topik, theme) {
       grid.innerHTML += `
         <button onclick="pilihKelas(${kelas})" id="card-kelas-${kelas}"
-          class="playful-card ${theme.bg} border-2 ${theme.border} rounded-3xl p-5 shadow-sm text-center flex flex-col items-center justify-between h-48 focus:outline-none">
-          <span class="text-4xl sm:text-5xl font-extrabold ${theme.number}">${kelas}</span>
-          <div class="mt-2 flex-grow flex items-center justify-center">
-            <span class="text-sm font-bold text-slate-700 leading-tight block">${topik}</span>
+          class="glass-card-expert glass-card-interactive ${theme.bg} border-2 ${theme.border} rounded-3xl p-3.5 sm:p-5 text-center flex flex-col justify-between min-h-[220px] sm:min-h-[270px] h-full focus:outline-none shadow-expert-glass group">
+          
+          <!-- Card Header Badge & Icon -->
+          <div class="w-full flex items-center justify-between gap-1 mb-2 sm:mb-3">
+            <span class="text-[9px] sm:text-[10px] font-extrabold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full border uppercase tracking-wider ${theme.badgeBg}">
+              KELAS ${kelas}
+            </span>
+            <span class="text-base sm:text-lg">${theme.icon}</span>
           </div>
-          <span class="mt-3 text-xs font-bold text-white px-3 py-1 rounded-full ${theme.btn} tracking-wider">
-            MULAI LATIHAN
-          </span>
+
+          <!-- Card Content Body -->
+          <div class="my-auto py-1 sm:py-2 flex flex-col items-center">
+            <!-- 3D Gradient Number -->
+            <div class="w-11 h-11 sm:w-14 sm:h-14 ${theme.numberBg} text-white font-display font-black text-xl sm:text-2xl rounded-2xl flex items-center justify-center shadow-md mb-2 sm:mb-3">
+              0${kelas}
+            </div>
+            
+            <p class="text-[11px] sm:text-xs font-bold text-slate-800 leading-snug sm:leading-relaxed px-0.5 line-clamp-3">
+              ${topik}
+            </p>
+          </div>
+
+          <!-- Action CTA Button -->
+          <div class="w-full pt-2 sm:pt-3 border-t border-slate-200/60">
+            <span class="w-full text-[11px] sm:text-xs font-extrabold py-2 sm:py-2.5 px-2.5 rounded-2xl ${theme.btnBg} uppercase tracking-wider shadow-sm flex items-center justify-center gap-1.5 min-h-[40px] sm:min-h-[44px]">
+              <span>Mulai Latihan</span>
+              <span class="text-xs sm:text-sm">🚀</span>
+            </span>
+          </div>
         </button>
       `;
     }
 
     function tampilkanCardDisabled(grid, kelas) {
       grid.innerHTML += `
-        <div class="playful-card disabled-card bg-slate-50 border-2 border-slate-200 rounded-3xl p-5 shadow-sm text-center flex flex-col items-center justify-between h-48">
-          <span class="text-4xl sm:text-5xl font-extrabold text-slate-400">${kelas}</span>
-          <div class="mt-2 flex-grow flex items-center justify-center">
-            <span class="text-xs font-semibold text-slate-400 leading-normal block">SOAL BELUM TERSEDIA</span>
+        <div class="glass-card-expert disabled-card rounded-3xl p-3.5 sm:p-5 text-center flex flex-col justify-between min-h-[220px] sm:min-h-[270px] h-full shadow-sm">
+          <div class="w-full flex items-center justify-between mb-2 sm:mb-3">
+            <span class="text-[9px] sm:text-[10px] font-extrabold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-slate-200 text-slate-500 uppercase tracking-wider">
+              KELAS ${kelas}
+            </span>
+            <span class="text-xs sm:text-sm">🔒</span>
           </div>
-          <span class="mt-3 text-[10px] font-extrabold text-slate-400 bg-slate-200 px-3 py-1 rounded-full uppercase tracking-wider">
-            Belum Siap
-          </span>
+
+          <div class="my-auto py-1 sm:py-2 flex flex-col items-center">
+            <div class="w-11 h-11 sm:w-14 sm:h-14 bg-slate-300 text-slate-500 font-display font-black text-xl sm:text-2xl rounded-2xl flex items-center justify-center mb-2 sm:mb-3">
+              0${kelas}
+            </div>
+            <p class="text-[11px] sm:text-xs font-bold text-slate-400 leading-snug">
+              SOAL BELUM TERSEDIA
+            </p>
+          </div>
+
+          <div class="w-full pt-2 sm:pt-3 border-t border-slate-200/40">
+            <span class="w-full text-[10px] font-extrabold py-2 sm:py-2.5 px-2.5 rounded-2xl bg-slate-200 text-slate-500 uppercase tracking-wider block min-h-[40px] sm:min-h-[44px] flex items-center justify-center">
+              Belum Siap
+            </span>
+          </div>
         </div>
       `;
     }
@@ -318,8 +504,7 @@
     function pilihKelas(kelas) {
       kelasTerpilih = kelas;
       
-      // Reset visual semua card aktif, beri highlight pada card terpilih
-      for (let k = 1; k <= 5; k++) {
+      for (let k = 1; k <= 6; k++) {
         const card = document.getElementById(`card-kelas-${k}`);
         if (card) {
           if (k === kelas) {
@@ -330,26 +515,21 @@
         }
       }
 
-      // Tampilkan form identitas
       document.getElementById('selected-class-label').innerText = `Kelas ${kelas} (${daftarKelasData[kelas].topik})`;
       document.getElementById('modal-identitas').classList.remove('hidden');
-      document.getElementById('modal-identitas').scrollIntoView({ behavior: 'smooth' });
     }
 
     function batalPilih() {
       kelasTerpilih = null;
       document.getElementById('modal-identitas').classList.add('hidden');
       
-      // Reset ring highlight pada semua card
-      for (let k = 1; k <= 5; k++) {
+      for (let k = 1; k <= 6; k++) {
         const card = document.getElementById(`card-kelas-${k}`);
         if (card) {
           card.classList.remove('ring-4', 'ring-blue-500', 'border-blue-500', 'bg-blue-50');
         }
       }
     }
-
-    // Sinkronisasi label & placeholder berdasarkan provider yang dipilih
 
     function updateProviderSettings() {
       const provider = document.getElementById('guru-provider').value;
@@ -360,37 +540,34 @@
       const defaultModel = CONFIG.DEFAULT_MODELS[provider];
       inputModel.placeholder = defaultModel;
       
-      // Jika model belum pernah diisi custom, biarkan kosong agar auto-fallback ke placeholder (default model)
       if (!sessionStorage.getItem("ai_model")) {
         inputModel.value = "";
       }
 
       if (provider === "gemini") {
         labelKey.innerText = "Google Gemini API Key";
-        descKey.innerHTML = 'Dapatkan API key gratis di <a href="https://aistudio.google.com/" target="_blank" class="text-blue-500 hover:underline font-bold">Google AI Studio</a>. Langsung terhubung (CORS-friendly).';
+        descKey.innerHTML = 'Dapatkan API key gratis di <a href="https://aistudio.google.com/" target="_blank" class="text-blue-600 hover:underline font-bold">Google AI Studio</a>. Langsung terhubung (CORS-friendly).';
       } else if (provider === "groq") {
         labelKey.innerText = "Groq API Key";
-        descKey.innerHTML = 'Dapatkan API key gratis di <a href="https://console.groq.com/" target="_blank" class="text-blue-500 hover:underline font-bold">Groq Console</a>. Sangat cepat!';
+        descKey.innerHTML = 'Dapatkan API key gratis di <a href="https://console.groq.com/" target="_blank" class="text-blue-600 hover:underline font-bold">Groq Console</a>. Sangat cepat!';
       } else if (provider === "claude") {
         labelKey.innerText = "Anthropic Claude API Key";
-        descKey.innerHTML = 'Dapatkan API key di <a href="https://console.anthropic.com/" target="_blank" class="text-blue-500 hover:underline font-bold">Anthropic Console</a>. Menggunakan reverse proxy browser.';
+        descKey.innerHTML = 'Dapatkan API key di <a href="https://console.anthropic.com/" target="_blank" class="text-blue-600 hover:underline font-bold">Anthropic Console</a>. Menggunakan reverse proxy browser.';
       }
     }
 
-    // Toggle panel guru
     function toggleGuru() {
       const panel = document.getElementById('guru-panel');
       const chevron = document.getElementById('guru-chevron');
       if (panel.classList.contains('hidden')) {
         panel.classList.remove('hidden');
-        chevron.innerText = '▲';
+        chevron.innerText = '▲ Tutup';
       } else {
         panel.classList.add('hidden');
-        chevron.innerText = '▼';
+        chevron.innerText = '▼ Buka';
       }
     }
 
-    // Simpan Konfigurasi Guru ke sessionStorage
     function simpanPengaturanGuru() {
       const provider = document.getElementById('guru-provider').value;
       const apiKey = document.getElementById('guru-api-key').value.trim();
@@ -418,8 +595,6 @@
       }
     }
 
-
-    // Submit Form & redirect
     function mulaiUjian(event) {
       event.preventDefault();
       
@@ -436,16 +611,13 @@
         return;
       }
 
-      // Bersihkan data ujian sebelumnya jika ada
       sessionStorage.removeItem("jawaban_siswa");
       sessionStorage.removeItem("waktu_mulai");
 
-      // Simpan identitas & kelas ke sessionStorage
       sessionStorage.setItem("siswa_nama", nama);
       sessionStorage.setItem("siswa_absen", absen);
       sessionStorage.setItem("siswa_kelas", kelasTerpilih);
 
-      // Redirect ke ujian.html
       window.location.href = "ujian.html";
     }
   </script>

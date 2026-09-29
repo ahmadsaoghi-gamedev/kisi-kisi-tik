@@ -2,50 +2,106 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Latihan Kisi-Kisi TIK & KKA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Latihan Kisi-Kisi TIK & KKA — Lembar Ujian</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Quicksand -->
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+            mono: ['"Quicksand"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
   <script src="config.js"></script>
   <script src="ai.js"></script>
+  <script src="cyber-bg.js"></script>
   <style>
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
     body {
-      font-family: 'Quicksand', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f0f7ff 50%, #fef3c7 100%);
+      background-attachment: fixed;
+      color: #0f172a;
+      overflow-x: hidden;
     }
-    .custom-gradient {
-      background: linear-gradient(135deg, #eff6ff 0%, #fef3c7 100%);
+
+    /* Ambient Blobs */
+    .glow-blob-bg {
+      position: fixed;
+      top: 20%;
+      left: 30%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(255,255,255,0) 70%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(50px);
     }
-    /* Sticky header transition */
-    .sticky-header {
-      transition: all 0.3s ease;
+
+    /* Glass Cards Light Expert */
+    .glass-card-expert {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 10px 30px -5px rgba(59, 130, 246, 0.08), 0 4px 12px rgba(0, 0, 0, 0.03);
     }
-    /* Playful options */
+
+    .glass-header {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1.5px solid rgba(226, 232, 240, 0.8);
+    }
+
+    /* Choice Buttons Style */
     .choice-btn {
       transition: all 0.2s ease;
+      background-color: #ffffff;
+      border: 2px solid #e2e8f0;
+      min-h: 48px;
     }
-    .choice-btn:hover:not(.selected) {
+    @media (hover: hover) {
+      .choice-btn:hover:not(.selected) {
+        background-color: #f8fafc;
+        border-color: #60a5fa;
+        transform: translateY(-2px);
+      }
+    }
+    .choice-btn:active:not(.selected) {
       background-color: #f1f5f9;
-      border-color: #cbd5e1;
+      transform: scale(0.98);
     }
     .choice-btn.selected {
-      background-color: #dbeafe;
-      border-color: #3b82f6;
+      background: #eff6ff;
+      border-color: #2563eb;
       color: #1d4ed8;
       font-weight: 700;
-      box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.18);
     }
-    /* Pulse animation for running out of time */
+
+    /* Timer Danger Animation */
     @keyframes pulse-red {
-      0%, 100% { background-color: #ef4444; transform: scale(1); }
-      50% { background-color: #dc2626; transform: scale(1.05); }
+      0%, 100% { background-color: #ef4444; box-shadow: 0 0 15px rgba(239, 68, 68, 0.6); transform: scale(1); }
+      50% { background-color: #dc2626; box-shadow: 0 0 25px rgba(220, 38, 38, 0.9); transform: scale(1.04); }
     }
     .timer-danger {
       animation: pulse-red 1s infinite;
       color: white !important;
     }
-    /* Loader styles */
+
+    /* Loader */
     .loader-dot {
       animation: loader-bounce 1.4s infinite ease-in-out both;
     }
@@ -57,92 +113,108 @@
     }
   </style>
 </head>
-<body class="custom-gradient min-h-screen text-slate-800 antialiased pb-24">
+<body class="min-h-screen antialiased pb-24 sm:pb-28 relative">
+
+  <div class="glow-blob-bg"></div>
 
   <!-- Sticky Header Ujian -->
-  <header class="sticky top-0 z-40 bg-white border-b-2 border-slate-200 shadow-md sticky-header">
-    <div class="max-w-4xl mx-auto px-4 py-3 sm:py-4 flex flex-col gap-2">
+  <header class="sticky top-0 z-40 glass-header shadow-sm py-2.5 sm:py-3.5 px-3.5 sm:px-6">
+    <div class="max-w-5xl mx-auto flex flex-col gap-2">
       <!-- Info Siswa & Timer -->
-      <div class="flex items-center justify-between gap-4">
-        <div>
-          <h2 id="siswa-info" class="text-sm sm:text-base font-bold text-slate-800">
-            Nama Siswa <span class="text-slate-400">|</span> Kelas X
+      <div class="flex items-center justify-between gap-2">
+        <div class="truncate">
+          <h2 id="siswa-info" class="text-xs sm:text-base font-extrabold text-slate-900 tracking-wide flex items-center gap-1.5 flex-wrap truncate">
+            <span class="text-blue-600 uppercase truncate">NAMA SISWA</span> 
+            <span class="text-slate-300">|</span> 
+            <span class="text-slate-700 shrink-0">KELAS X</span>
           </h2>
-          <p id="sekolah-info" class="text-[10px] sm:text-xs text-slate-500 font-bold uppercase tracking-wide">
+          <p id="sekolah-info" class="text-[9px] sm:text-xs text-slate-500 font-extrabold uppercase tracking-wider mt-0.5 truncate">
             SDN SUKASARI 4 TANGERANG
           </p>
         </div>
-        <!-- Timer -->
-        <div class="flex items-center gap-2">
-          <div id="timer-box" class="bg-emerald-500 text-white font-extrabold px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl flex items-center gap-1.5 shadow-sm text-sm sm:text-base transition-all duration-300">
-            <span>⏱️</span>
-            <span id="countdown-timer" class="font-mono">60:00</span>
+
+        <!-- Timer Box -->
+        <div class="flex items-center gap-1.5 shrink-0">
+          <div id="timer-box" class="bg-emerald-500 text-white font-extrabold px-3 py-1 sm:px-5 sm:py-2 rounded-2xl flex items-center gap-1.5 shadow-md text-xs sm:text-base transition-all duration-300 shrink-0">
+            <span class="text-xs sm:text-base">⏱️</span>
+            <span id="countdown-timer" class="font-mono text-xs sm:text-lg tracking-wider font-bold">60:00</span>
           </div>
         </div>
       </div>
 
       <!-- Progress Bar Soal Terjawab -->
-      <div class="mt-1">
-        <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-1">
-          <span>PROGRESS MENGERJAKAN</span>
-          <span id="progress-text">0 dari 25 Soal Dijawab</span>
+      <div>
+        <div class="flex items-center justify-between text-[10px] sm:text-xs font-bold text-slate-500 mb-1">
+          <span>PROGRESS</span>
+          <span id="progress-text" class="text-blue-600 font-extrabold">0 dari 25 Soal Dijawab</span>
         </div>
-        <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden border border-slate-200 p-0.5">
-          <div id="progress-bar" class="bg-blue-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+        <div class="w-full bg-slate-200/80 rounded-full h-2.5 sm:h-3 overflow-hidden border border-slate-300 p-0.5">
+          <div id="progress-bar" class="bg-gradient-to-r from-blue-500 to-indigo-600 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
         </div>
       </div>
     </div>
   </header>
 
   <!-- Konten Soal -->
-  <main class="max-w-4xl mx-auto px-4 py-6">
-    <div id="loading-soal" class="text-center py-20 bg-white rounded-3xl border-2 border-slate-100 shadow-sm">
-      <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-      <p class="text-slate-600 font-bold">Mengambil lembar soal, tunggu sebentar ya pintar...</p>
+  <main class="max-w-4xl mx-auto px-3.5 sm:px-6 py-5 sm:py-8 relative z-10">
+
+    <!-- Loading State -->
+    <div id="loading-soal" class="text-center py-16 sm:py-20 glass-card-expert rounded-3xl border-2 border-blue-100 shadow-sm">
+      <div class="w-10 h-10 sm:w-12 sm:h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+      <p class="text-slate-600 font-bold text-xs sm:text-base">Mengambil lembar latihan soal, tunggu sebentar ya pintar...</p>
     </div>
 
-    <!-- Error message jika fetch gagal -->
-    <div id="error-soal" class="hidden text-center py-16 bg-white border-2 border-red-200 rounded-3xl p-6 shadow-sm">
-      <div class="text-5xl mb-4">⚠️</div>
-      <h3 class="text-xl font-bold text-slate-800 mb-2">Aduh, Terjadi Masalah!</h3>
-      <p id="error-desc" class="text-slate-600 font-medium mb-6">Lembar latihan belum tersedia untuk kelas ini.</p>
-      <a href="index.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition-all shadow-md">
+    <!-- Error State -->
+    <div id="error-soal" class="hidden text-center py-12 sm:py-16 glass-card-expert border-2 border-red-200 rounded-3xl p-5 sm:p-6 shadow-sm">
+      <div class="text-4xl sm:text-5xl mb-3 sm:mb-4">⚠️</div>
+      <h3 class="font-display text-lg sm:text-xl font-bold text-slate-900 mb-1.5 sm:mb-2">Aduh, Terjadi Kendala!</h3>
+      <p id="error-desc" class="text-slate-600 font-medium text-xs sm:text-base mb-5 sm:mb-6">Lembar latihan belum tersedia untuk kelas ini.</p>
+      <a href="index.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-5 py-2.5 sm:px-6 sm:py-3 rounded-2xl text-xs sm:text-sm transition-all shadow-md">
         Kembali ke Beranda
       </a>
     </div>
 
     <!-- Container Soal -->
-    <div id="soal-container" class="hidden flex flex-col gap-6">
+    <div id="soal-container" class="hidden flex flex-col gap-5 sm:gap-8">
       
       <!-- Bagian I: Pilihan Ganda -->
-      <section id="section-pg" class="bg-white border-2 border-blue-100 rounded-3xl p-5 sm:p-6 shadow-sm">
-        <div class="flex items-center gap-3 border-b-2 border-slate-100 pb-3 mb-6">
-          <span class="text-xl">🎒</span>
-          <h3 class="text-lg sm:text-xl font-extrabold text-blue-600">BAGIAN I — PILIHAN GANDA (Pilih a, b, atau c)</h3>
+      <section id="section-pg" class="glass-card-expert border-2 border-blue-100/80 rounded-3xl p-4 sm:p-8 shadow-sm">
+        <div class="flex items-center gap-2.5 border-b-2 border-slate-100 pb-3 sm:pb-4 mb-5 sm:mb-6">
+          <span class="text-xl sm:text-2xl">🎒</span>
+          <div>
+            <span class="text-[10px] sm:text-[11px] font-extrabold text-blue-600 uppercase tracking-wider block">BAGIAN I</span>
+            <h3 class="font-display text-base sm:text-xl font-extrabold text-slate-900">PILIHAN GANDA (Pilih opsi yang tepat)</h3>
+          </div>
         </div>
-        <div id="list-pg" class="flex flex-col gap-8">
+        <div id="list-pg" class="flex flex-col gap-6 sm:gap-8">
           <!-- Diisi dinamis -->
         </div>
       </section>
 
       <!-- Bagian II: Isian Singkat -->
-      <section id="section-isian" class="bg-white border-2 border-emerald-100 rounded-3xl p-5 sm:p-6 shadow-sm">
-        <div class="flex items-center gap-3 border-b-2 border-slate-100 pb-3 mb-6">
-          <span class="text-xl">✏️</span>
-          <h3 class="text-lg sm:text-xl font-extrabold text-emerald-600">BAGIAN II — ISIAN SINGKAT (Tulis jawaban pendek)</h3>
+      <section id="section-isian" class="glass-card-expert border-2 border-emerald-100/80 rounded-3xl p-4 sm:p-8 shadow-sm">
+        <div class="flex items-center gap-2.5 border-b-2 border-slate-100 pb-3 sm:pb-4 mb-5 sm:mb-6">
+          <span class="text-xl sm:text-2xl">✏️</span>
+          <div>
+            <span class="text-[10px] sm:text-[11px] font-extrabold text-emerald-600 uppercase tracking-wider block">BAGIAN II</span>
+            <h3 class="font-display text-base sm:text-xl font-extrabold text-slate-900">ISIAN SINGKAT (Tulis jawaban pendek)</h3>
+          </div>
         </div>
-        <div id="list-isian" class="flex flex-col gap-8">
+        <div id="list-isian" class="flex flex-col gap-6 sm:gap-8">
           <!-- Diisi dinamis -->
         </div>
       </section>
 
       <!-- Bagian III: Uraian -->
-      <section id="section-uraian" class="bg-white border-2 border-amber-100 rounded-3xl p-5 sm:p-6 shadow-sm">
-        <div class="flex items-center gap-3 border-b-2 border-slate-100 pb-3 mb-6">
-          <span class="text-xl">📝</span>
-          <h3 class="text-lg sm:text-xl font-extrabold text-amber-600">BAGIAN III — URAIAN (Tulis jawaban penjelasan lengkap)</h3>
+      <section id="section-uraian" class="glass-card-expert border-2 border-amber-100/80 rounded-3xl p-4 sm:p-8 shadow-sm">
+        <div class="flex items-center gap-2.5 border-b-2 border-slate-100 pb-3 sm:pb-4 mb-5 sm:mb-6">
+          <span class="text-xl sm:text-2xl">📝</span>
+          <div>
+            <span class="text-[10px] sm:text-[11px] font-extrabold text-amber-600 uppercase tracking-wider block">BAGIAN III</span>
+            <h3 class="font-display text-base sm:text-xl font-extrabold text-slate-900">URAIAN (Tulis penjelasan lengkap)</h3>
+          </div>
         </div>
-        <div id="list-uraian" class="flex flex-col gap-8">
+        <div id="list-uraian" class="flex flex-col gap-6 sm:gap-8">
           <!-- Diisi dinamis -->
         </div>
       </section>
@@ -151,48 +223,48 @@
   </main>
 
   <!-- Sticky Bottom Submission Bar -->
-  <div id="sticky-bottom" class="hidden fixed bottom-0 left-0 right-0 bg-white border-t-2 border-slate-200 py-4 px-4 shadow-2xl z-40">
-    <div class="max-w-4xl mx-auto flex items-center justify-between gap-4">
+  <div id="sticky-bottom" class="hidden fixed bottom-0 left-0 right-0 bg-white/95 border-t-2 border-slate-200 py-3 px-3.5 sm:py-4 sm:px-6 backdrop-blur-md z-40 shadow-2xl">
+    <div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
       <div class="text-left">
-        <span id="unanswered-count" class="text-xs sm:text-sm font-bold text-slate-500 block">
+        <span id="unanswered-count" class="text-xs sm:text-sm font-extrabold text-amber-600 block leading-tight">
           0 Soal Belum Dijawab
         </span>
-        <span class="text-[10px] sm:text-xs text-slate-400 font-bold uppercase tracking-wider block">
-          Periksa kembali jawabanmu sebelum kumpul!
+        <span class="text-[9px] sm:text-xs text-slate-400 font-bold uppercase tracking-wider hidden sm:block">
+          Periksa kembali jawabanmu sebelum mengumpulkan!
         </span>
       </div>
       <button onclick="kumpulkanUjian()" 
-        class="bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-3 px-6 sm:px-8 rounded-2xl shadow-md hover:shadow-lg transition-all text-sm sm:text-base transform active:scale-95 flex items-center gap-2">
+        class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:scale-95 text-white font-display font-extrabold py-2.5 px-4 sm:py-3.5 sm:px-8 rounded-2xl shadow-lg transition-all text-xs sm:text-base flex items-center gap-1.5 uppercase tracking-wider min-h-[44px]">
         <span>Selesai & Lihat Nilai</span>
-        <span>✔️</span>
+        <span class="text-sm sm:text-lg">✔️</span>
       </button>
     </div>
   </div>
 
   <!-- Fullscreen Modal AI Loading Spinner -->
-  <div id="ai-loading-modal" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl border border-slate-100 relative overflow-hidden">
+  <div id="ai-loading-modal" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full text-center shadow-2xl border border-slate-100 relative overflow-hidden">
       <!-- Playful AI Robot Icon -->
-      <div class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 relative animate-bounce">
-        <span class="text-5xl">🤖</span>
-        <span class="absolute top-1 right-1 animate-ping text-lg">💡</span>
+      <div class="w-20 h-20 sm:w-24 sm:h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 relative animate-bounce shadow-md">
+        <span class="text-4xl sm:text-5xl">🤖</span>
+        <span class="absolute top-1 right-1 animate-ping text-base sm:text-lg">💡</span>
       </div>
       
-      <h3 class="text-2xl font-extrabold text-slate-800 mb-3">Robot AI Sedang Memeriksa!</h3>
+      <h3 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 mb-2">Robot AI Sedang Memeriksa!</h3>
       
       <!-- Bouncing dots -->
-      <div class="flex justify-center gap-2 mb-6">
-        <div class="w-3.5 h-3.5 bg-blue-500 rounded-full loader-dot"></div>
-        <div class="w-3.5 h-3.5 bg-blue-500 rounded-full loader-dot"></div>
-        <div class="w-3.5 h-3.5 bg-blue-500 rounded-full loader-dot"></div>
+      <div class="flex justify-center gap-2 mb-5 sm:mb-6">
+        <div class="w-3 h-3 sm:w-3.5 sm:h-3.5 bg-blue-500 rounded-full loader-dot"></div>
+        <div class="w-3 h-3 sm:w-3.5 sm:h-3.5 bg-blue-500 rounded-full loader-dot"></div>
+        <div class="w-3 h-3 sm:w-3.5 sm:h-3.5 bg-blue-500 rounded-full loader-dot"></div>
       </div>
       
-      <p class="text-slate-600 font-bold text-sm leading-relaxed mb-4">
+      <p class="text-slate-600 font-bold text-xs sm:text-sm leading-relaxed mb-4">
         Harap tunggu sebentar ya pintar, robot AI sedang membaca dan mengoreksi jawaban latihanmu...
       </p>
       
-      <div class="bg-amber-50 rounded-2xl p-4 border border-amber-200 text-amber-700 text-xs font-semibold leading-relaxed">
-        🔔 <strong>Info Guru:</strong> Jika proses AI memakan waktu terlalu lama atau koneksi sedang tidak stabil, silakan tunggu. Halaman akan otomatis berpindah ke hasil latihan setelah selesai.
+      <div class="bg-amber-50 rounded-2xl p-3.5 sm:p-4 border border-amber-200 text-amber-800 text-[11px] sm:text-xs font-semibold leading-relaxed">
+        🔔 <strong>Info Guru:</strong> Jika proses AI memakan waktu beberapa detik, silakan tunggu. Halaman akan otomatis berpindah ke hasil latihan setelah selesai.
       </div>
     </div>
   </div>
@@ -219,11 +291,11 @@
 
       // Set Info Siswa di Header
       document.getElementById('siswa-info').innerHTML = `
-        <span class="text-blue-600 font-extrabold uppercase">${nama}</span> 
-        <span class="text-slate-300 mx-1">|</span> 
-        <span class="text-slate-600 font-bold">No. Absen: ${absen}</span> 
-        <span class="text-slate-300 mx-1">|</span> 
-        <span class="text-blue-500 font-bold">Kelas ${kelas}</span>
+        <span class="text-blue-600 font-extrabold uppercase truncate max-w-[140px] sm:max-w-none">${nama}</span> 
+        <span class="text-slate-300 mx-0.5">|</span> 
+        <span class="text-slate-700 font-bold shrink-0">No: ${absen}</span> 
+        <span class="text-slate-300 mx-0.5">|</span> 
+        <span class="text-blue-600 font-bold shrink-0">Kelas ${kelas}</span>
       `;
 
       // 2. Fetch Data Soal
@@ -313,11 +385,11 @@
 
       // Warna peringatan jika waktu menipis
       if (sisaDetik <= 300) { // <= 5 menit
-        timerBox.className = "text-white font-extrabold px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl flex items-center gap-1.5 shadow-sm text-sm sm:text-base transition-all duration-300 timer-danger";
+        timerBox.className = "bg-red-500 text-white font-extrabold px-3 py-1 sm:px-5 sm:py-2 rounded-2xl flex items-center gap-1.5 shadow-md text-xs sm:text-base transition-all duration-300 timer-danger shrink-0";
       } else if (sisaDetik <= 900) { // <= 15 menit
-        timerBox.className = "bg-amber-500 text-white font-extrabold px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl flex items-center gap-1.5 shadow-sm text-sm sm:text-base transition-all duration-300";
+        timerBox.className = "bg-amber-500 text-white font-extrabold px-3 py-1 sm:px-5 sm:py-2 rounded-2xl flex items-center gap-1.5 shadow-md text-xs sm:text-base transition-all duration-300 shrink-0";
       } else {
-        timerBox.className = "bg-emerald-500 text-white font-extrabold px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl flex items-center gap-1.5 shadow-sm text-sm sm:text-base transition-all duration-300";
+        timerBox.className = "bg-emerald-500 text-white font-extrabold px-3 py-1 sm:px-5 sm:py-2 rounded-2xl flex items-center gap-1.5 shadow-md text-xs sm:text-base transition-all duration-300 shrink-0";
       }
     }
 
@@ -328,32 +400,47 @@
       pgList.innerHTML = "";
       dataUjian.pg.forEach((q, idx) => {
         const selectedOption = jawabanSiswa[q.no] || "";
+        
+        let pilihanDHtml = "";
+        if (q.pilihan.d) {
+          pilihanDHtml = `
+            <button onclick="pilihJawabanPG(${q.no}, 'd')" id="choice-${q.no}-d"
+              class="choice-btn ${selectedOption === 'd' ? 'selected' : ''} border-2 border-slate-200 rounded-2xl py-3 px-3.5 font-semibold text-slate-700 text-left text-xs sm:text-base flex items-center gap-2.5">
+              <span class="w-6 h-6 rounded-xl border-2 border-slate-300 bg-slate-50 flex items-center justify-center font-display font-extrabold text-xs shrink-0">D</span>
+              <span class="leading-snug">${q.pilihan.d}</span>
+            </button>
+          `;
+        }
+
+        const gridColsClass = q.pilihan.d ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' : 'grid-cols-1 sm:grid-cols-3';
+
         pgList.innerHTML += `
-          <div class="border-b border-slate-100 pb-6 last:border-0 last:pb-0" id="question-block-${q.no}">
-            <div class="flex items-start gap-2.5 mb-4">
-              <span class="bg-blue-100 text-blue-700 font-extrabold text-sm px-2.5 py-1 rounded-xl">
+          <div class="border-b border-slate-100 pb-5 sm:pb-6 last:border-0 last:pb-0" id="question-block-${q.no}">
+            <div class="flex items-start gap-2.5 mb-3 sm:mb-4">
+              <span class="bg-blue-600 text-white font-display font-black text-xs sm:text-sm px-2.5 py-1 rounded-xl shrink-0 shadow-sm">
                 ${q.no}
               </span>
-              <p class="text-base sm:text-lg font-bold text-slate-800 pt-0.5 leading-relaxed">
+              <p class="text-sm sm:text-lg font-bold text-slate-900 pt-0.5 leading-relaxed">
                 ${q.soal}
               </p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pl-0 sm:pl-9">
+            <div class="grid ${gridColsClass} gap-2.5 sm:gap-3 pl-0 sm:pl-10">
               <button onclick="pilihJawabanPG(${q.no}, 'a')" id="choice-${q.no}-a"
-                class="choice-btn ${selectedOption === 'a' ? 'selected' : ''} border-2 border-slate-200 bg-white rounded-2xl py-3 px-4 font-semibold text-slate-700 text-left text-sm sm:text-base flex items-center gap-3">
-                <span class="w-6 h-6 rounded-full border-2 border-slate-300 bg-slate-50 flex items-center justify-center text-xs font-bold shrink-0">A</span>
-                <span>${q.pilihan.a}</span>
+                class="choice-btn ${selectedOption === 'a' ? 'selected' : ''} border-2 border-slate-200 rounded-2xl py-3 px-3.5 font-semibold text-slate-700 text-left text-xs sm:text-base flex items-center gap-2.5">
+                <span class="w-6 h-6 rounded-xl border-2 border-slate-300 bg-slate-50 flex items-center justify-center font-display font-extrabold text-xs shrink-0">A</span>
+                <span class="leading-snug">${q.pilihan.a}</span>
               </button>
               <button onclick="pilihJawabanPG(${q.no}, 'b')" id="choice-${q.no}-b"
-                class="choice-btn ${selectedOption === 'b' ? 'selected' : ''} border-2 border-slate-200 bg-white rounded-2xl py-3 px-4 font-semibold text-slate-700 text-left text-sm sm:text-base flex items-center gap-3">
-                <span class="w-6 h-6 rounded-full border-2 border-slate-300 bg-slate-50 flex items-center justify-center text-xs font-bold shrink-0">B</span>
-                <span>${q.pilihan.b}</span>
+                class="choice-btn ${selectedOption === 'b' ? 'selected' : ''} border-2 border-slate-200 rounded-2xl py-3 px-3.5 font-semibold text-slate-700 text-left text-xs sm:text-base flex items-center gap-2.5">
+                <span class="w-6 h-6 rounded-xl border-2 border-slate-300 bg-slate-50 flex items-center justify-center font-display font-extrabold text-xs shrink-0">B</span>
+                <span class="leading-snug">${q.pilihan.b}</span>
               </button>
               <button onclick="pilihJawabanPG(${q.no}, 'c')" id="choice-${q.no}-c"
-                class="choice-btn ${selectedOption === 'c' ? 'selected' : ''} border-2 border-slate-200 bg-white rounded-2xl py-3 px-4 font-semibold text-slate-700 text-left text-sm sm:text-base flex items-center gap-3">
-                <span class="w-6 h-6 rounded-full border-2 border-slate-300 bg-slate-50 flex items-center justify-center text-xs font-bold shrink-0">C</span>
-                <span>${q.pilihan.c}</span>
+                class="choice-btn ${selectedOption === 'c' ? 'selected' : ''} border-2 border-slate-200 rounded-2xl py-3 px-3.5 font-semibold text-slate-700 text-left text-xs sm:text-base flex items-center gap-2.5">
+                <span class="w-6 h-6 rounded-xl border-2 border-slate-300 bg-slate-50 flex items-center justify-center font-display font-extrabold text-xs shrink-0">C</span>
+                <span class="leading-snug">${q.pilihan.c}</span>
               </button>
+              ${pilihanDHtml}
             </div>
           </div>
         `;
@@ -365,18 +452,18 @@
       dataUjian.isian.forEach((q, idx) => {
         const val = jawabanSiswa[q.no] || "";
         isianList.innerHTML += `
-          <div class="border-b border-slate-100 pb-6 last:border-0 last:pb-0" id="question-block-${q.no}">
-            <div class="flex items-start gap-2.5 mb-3">
-              <span class="bg-emerald-100 text-emerald-700 font-extrabold text-sm px-2.5 py-1 rounded-xl">
+          <div class="border-b border-slate-100 pb-5 sm:pb-6 last:border-0 last:pb-0" id="question-block-${q.no}">
+            <div class="flex items-start gap-2.5 mb-2.5 sm:mb-3">
+              <span class="bg-emerald-600 text-white font-display font-black text-xs sm:text-sm px-2.5 py-1 rounded-xl shrink-0 shadow-sm">
                 ${q.no}
               </span>
-              <p class="text-base sm:text-lg font-bold text-slate-800 pt-0.5 leading-relaxed">
+              <p class="text-sm sm:text-lg font-bold text-slate-900 pt-0.5 leading-relaxed">
                 ${q.soal}
               </p>
             </div>
-            <div class="pl-0 sm:pl-9">
+            <div class="pl-0 sm:pl-10">
               <input type="text" oninput="simpanJawabanTeks(${q.no}, this.value)" 
-                class="w-full text-base font-semibold px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-emerald-500 focus:outline-none transition-all placeholder-slate-400"
+                class="w-full text-base font-semibold px-3.5 py-3 sm:py-3.5 rounded-2xl bg-white border-2 border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 focus:outline-none transition-all placeholder-slate-400 shadow-sm min-h-[48px]"
                 placeholder="Tulis jawaban singkatmu di sini…" value="${val}">
             </div>
           </div>
@@ -390,21 +477,21 @@
         const val = jawabanSiswa[q.no] || "";
         const charCount = val.length;
         uraianList.innerHTML += `
-          <div class="border-b border-slate-100 pb-6 last:border-0 last:pb-0" id="question-block-${q.no}">
-            <div class="flex items-start gap-2.5 mb-3">
-              <span class="bg-amber-100 text-amber-700 font-extrabold text-sm px-2.5 py-1 rounded-xl">
+          <div class="border-b border-slate-100 pb-5 sm:pb-6 last:border-0 last:pb-0" id="question-block-${q.no}">
+            <div class="flex items-start gap-2.5 mb-2.5 sm:mb-3">
+              <span class="bg-amber-500 text-white font-display font-black text-xs sm:text-sm px-2.5 py-1 rounded-xl shrink-0 shadow-sm">
                 ${q.no}
               </span>
-              <p class="text-base sm:text-lg font-bold text-slate-800 pt-0.5 leading-relaxed">
+              <p class="text-sm sm:text-lg font-bold text-slate-900 pt-0.5 leading-relaxed">
                 ${q.soal}
               </p>
             </div>
-            <div class="pl-0 sm:pl-9 relative">
+            <div class="pl-0 sm:pl-10 relative">
               <textarea rows="4" oninput="simpanJawabanUraian(${q.no}, this.value)" 
-                class="w-full text-base font-semibold px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-amber-500 focus:outline-none transition-all placeholder-slate-400 resize-y"
+                class="w-full text-base font-semibold px-3.5 py-3 sm:py-3.5 rounded-2xl bg-white border-2 border-slate-200 focus:border-amber-500 focus:ring-4 focus:ring-amber-500/10 focus:outline-none transition-all placeholder-slate-400 resize-y shadow-sm"
                 placeholder="Jelaskan jawaban lengkapmu di sini (disarankan minimal 20 karakter)...">${val}</textarea>
-              <div class="text-right text-xs font-bold text-slate-400 mt-1">
-                <span id="char-count-${q.no}">${charCount}</span> karakter (disarankan &ge; 20)
+              <div class="text-right text-[11px] sm:text-xs font-bold text-slate-400 mt-1">
+                <span id="char-count-${q.no}" class="text-amber-600 font-extrabold">${charCount}</span> karakter (disarankan &ge; 20)
               </div>
             </div>
           </div>
@@ -416,8 +503,7 @@
     function pilihJawabanPG(soalNo, opsi) {
       jawabanSiswa[soalNo] = opsi;
       
-      // Update styling pilihan di UI
-      ['a', 'b', 'c'].forEach(opt => {
+      ['a', 'b', 'c', 'd'].forEach(opt => {
         const btn = document.getElementById(`choice-${soalNo}-${opt}`);
         if (btn) {
           if (opt === opsi) {
@@ -428,14 +514,12 @@
         }
       });
 
-      // Save & Update progress
       saveToSessionStorage();
       updateProgress();
     }
 
     // Handler ketik isian singkat
     function simpanJawabanTeks(soalNo, val) {
-      // Debounce saving to sessionStorage
       if (debounceTimers[soalNo]) {
         clearTimeout(debounceTimers[soalNo]);
       }
@@ -452,13 +536,11 @@
     function simpanJawabanUraian(soalNo, val) {
       jawabanSiswa[soalNo] = val;
 
-      // Update character counter
       const counter = document.getElementById(`char-count-${soalNo}`);
       if (counter) {
         counter.innerText = val.length;
       }
 
-      // Debounce saving
       if (debounceTimers[soalNo]) {
         clearTimeout(debounceTimers[soalNo]);
       }
@@ -469,14 +551,14 @@
       }, 500);
     }
 
-    // Simpan ke Session Storage
     function saveToSessionStorage() {
       sessionStorage.setItem("jawaban_siswa", JSON.stringify(jawabanSiswa));
     }
 
-    // Hitung progress terjawab
     function updateProgress() {
-      const totalSoal = 25; // 10 PG + 10 Isian + 5 Uraian
+      const totalSoal = (dataUjian.pg ? dataUjian.pg.length : 0) + 
+                        (dataUjian.isian ? dataUjian.isian.length : 0) + 
+                        (dataUjian.uraian ? dataUjian.uraian.length : 0);
       let terjawab = 0;
 
       for (let key in jawabanSiswa) {
@@ -485,10 +567,8 @@
         }
       }
 
-      // Batasi agar tidak overload
       terjawab = Math.min(terjawab, totalSoal);
-
-      const percent = (terjawab / totalSoal) * 100;
+      const percent = totalSoal > 0 ? (terjawab / totalSoal) * 100 : 0;
       
       document.getElementById('progress-bar').style.width = `${percent}%`;
       document.getElementById('progress-text').innerText = `${terjawab} dari ${totalSoal} Soal Dijawab`;
@@ -497,15 +577,14 @@
       document.getElementById('unanswered-count').innerText = `${belumDijawab} Soal Belum Dijawab`;
       
       if (belumDijawab === 0) {
-        document.getElementById('unanswered-count').className = "text-xs sm:text-sm font-extrabold text-emerald-600 block";
+        document.getElementById('unanswered-count').className = "text-xs sm:text-sm font-extrabold text-emerald-600 block leading-tight";
       } else {
-        document.getElementById('unanswered-count').className = "text-xs sm:text-sm font-extrabold text-amber-600 block";
+        document.getElementById('unanswered-count').className = "text-xs sm:text-sm font-extrabold text-amber-600 block leading-tight";
       }
 
       return belumDijawab;
     }
 
-    // Kumpulkan Latihan (Manual click)
     async function kumpulkanUjian() {
       const belumDijawab = updateProgress();
       let confirmMsg = "Apakah kamu yakin ingin mengumpulkan latihanmu?";
@@ -518,16 +597,13 @@
       }
     }
 
-    // Submit otomatis saat waktu habis
     async function submitUjianSecaraOtomatis() {
       await prosesSubmitDanKoreksi();
     }
 
-    // Proses inti submit & panggil ai.js untuk koreksi
     async function prosesSubmitDanKoreksi() {
       clearInterval(timerInterval);
 
-      // Tampilkan modal loading AI
       document.getElementById('ai-loading-modal').classList.remove('hidden');
 
       const apiKey = sessionStorage.getItem("ai_api_key") || "";
@@ -536,17 +612,13 @@
         console.log("Memulai proses koreksi...");
         const hasilLengkap = await koreksiUjianLengkap(dataUjian, jawabanSiswa, apiKey);
         
-        // Simpan hasil ke sessionStorage
         sessionStorage.setItem("hasil_ujian", JSON.stringify(hasilLengkap));
-        
-        // Redirect ke hasil.html
         window.location.href = "hasil.html";
         
       } catch (err) {
         console.error("Gagal mengoreksi latihan:", err);
         alert("Terjadi kesalahan sistem saat mengoreksi latihan. Hasil mentah akan disimpan.");
         
-        // Buat fallback manual hasil
         const fallbackHasil = {
           siswa: {
             nama: sessionStorage.getItem("siswa_nama") || "Siswa",
