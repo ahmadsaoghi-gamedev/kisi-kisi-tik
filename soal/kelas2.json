@@ -1,206 +1,206 @@
 {
   "kelas": 2,
-  "topik": "Menggambar dengan Microsoft Paint",
+  "topik": "Keselamatan, Kesehatan, dan Perawatan Komputer",
   "mapel": "TIK",
   "sekolah": "SDN Sukasari 4 Tangerang",
   "npsn": "20606443",
   "nss": "10.1.02.23.10.068",
   "alamat": "Jl. Moch. Yamin No.1, Babakan, Tangerang",
-  "tahun": "2025-2026",
+  "tahun": "2026-2027",
   "durasi_menit": 60,
   "pg": [
     {
       "no": 1,
-      "soal": "Paint termasuk aplikasi yang digunakan untuk mengolah ....",
+      "soal": "Saat menggunakan komputer, posisi duduk sebaiknya dibuat ….",
       "pilihan": {
-        "a": "angka",
-        "b": "gambar",
-        "c": "kata"
+        "a": "kaku",
+        "b": "nyaman",
+        "c": "gelisah"
       },
       "jawaban": "b"
     },
     {
       "no": 2,
-      "soal": "Ikon apa yang paling tepat digunakan untuk membuat bagian badan mobil?",
+      "soal": "Jarak yang tepat antara mata dan monitor komputer adalah ….",
       "pilihan": {
-        "a": "Oval",
-        "b": "Curve",
-        "c": "Rectangle"
+        "a": "60-70 cm",
+        "b": "70-80 cm",
+        "c": "80-90 cm"
       },
-      "jawaban": "c"
+      "jawaban": "a"
     },
     {
       "no": 3,
-      "soal": "Untuk menggambar batang pohon yang kokoh, ikon yang digunakan adalah ....",
+      "soal": "Kursi yang terlalu rendah dapat membuat seseorang merasa … saat menggunakan komputer.",
       "pilihan": {
-        "a": "Rectangle atau Line",
-        "b": "Oval atau Circle",
-        "c": "Fill with color"
+        "a": "tidak nyaman",
+        "b": "tidak betah",
+        "c": "tidak puas"
       },
       "jawaban": "a"
     },
     {
       "no": 4,
-      "soal": "Saat membuat gambar kelopak bunga menggunakan kuas semprotan (Airbrush), ukuran semprotan dapat diatur pada menu ....",
+      "soal": "Layar monitor yang terlalu dekat dengan mata dapat … mata.",
       "pilihan": {
-        "a": "Color",
-        "b": "Size",
-        "c": "Rotate"
+        "a": "mengganggu",
+        "b": "menyebabkan kerusakan",
+        "c": "membebani"
       },
       "jawaban": "b"
     },
     {
       "no": 5,
-      "soal": "Warna apakah yang digunakan pada bagian atas bendera Indonesia?",
+      "soal": "Terlalu dekat melihat monitor dapat membuat mata terasa ….",
       "pilihan": {
-        "a": "Merah",
-        "b": "Putih",
-        "c": "Biru"
-      },
-      "jawaban": "a"
-    },
-    {
-      "no": 6,
-      "soal": "Ikon apakah yang paling tepat digunakan untuk menggambar jendela sekolah yang berbentuk persegi?",
-      "pilihan": {
-        "a": "Curve",
-        "b": "Oval",
-        "c": "Rectangle"
+        "a": "sakit",
+        "b": "perih",
+        "c": "a dan b benar"
       },
       "jawaban": "c"
     },
     {
-      "no": 7,
-      "soal": "Ukuran garis yang paling cocok untuk membuat tiang Finish agar terlihat tebal adalah ukuran ....",
+      "no": 6,
+      "soal": "Benda yang sebaiknya tidak dibawa ketika menggunakan komputer adalah ….",
       "pilihan": {
-        "a": "Paling tebal (Thick)",
-        "b": "Paling tipis (Thin)",
-        "c": "Sedang"
+        "a": "minuman",
+        "b": "alat tulis",
+        "c": "buku"
       },
       "jawaban": "a"
+    },
+    {
+      "no": 7,
+      "soal": "Salah satu ciri posisi duduk yang baik saat menggunakan komputer adalah ….",
+      "pilihan": {
+        "a": "kaki menempel pada lantai",
+        "b": "punggung menempel pada kursi",
+        "c": "punggung tegak"
+      },
+      "jawaban": "c"
     },
     {
       "no": 8,
-      "soal": "Alat (tool) garis lurus yang digunakan untuk membuat tiang Finish tegak adalah ....",
+      "soal": "Alat yang dapat dipasang pada layar untuk membantu mengurangi radiasi dari monitor disebut ….",
       "pilihan": {
-        "a": "Line",
-        "b": "Curve",
-        "c": "Pencil"
+        "a": "pelindung layar (screen protector)",
+        "b": "penutup layar (screen cover)",
+        "c": "filter layar (screen filter)"
       },
-      "jawaban": "a"
+      "jawaban": "c"
     },
     {
       "no": 9,
-      "soal": "Ikon apa yang digunakan untuk memberi warna secara penuh pada arena lapangan lomba?",
+      "soal": "Posisi tangan yang tidak tepat ketika mengetik dapat menyebabkan tangan menjadi ….",
       "pilihan": {
-        "a": "Eraser",
-        "b": "Fill with color",
-        "c": "Magnifier"
+        "a": "luka",
+        "b": "pegal",
+        "c": "perih"
       },
       "jawaban": "b"
     },
     {
       "no": 10,
-      "soal": "Jika ingin mengambil warna dari gambar lain untuk digunakan kembali, ikon yang digunakan adalah ....",
+      "soal": "Manakah yang bukan termasuk alat teknologi informasi dan komunikasi?",
       "pilihan": {
-        "a": "Color picker (Pipet)",
-        "b": "Pencil",
-        "c": "Brush"
+        "a": "handphone",
+        "b": "meja komputer",
+        "c": "komputer"
       },
-      "jawaban": "a"
+      "jawaban": "b"
     }
   ],
   "isian": [
     {
       "no": 11,
-      "soal": "Bentuk bulat atau lingkaran dapat dibuat menggunakan ikon ....",
-      "kunci": "oval | lingkaran | bulat | circle",
+      "soal": "Tempat khusus yang digunakan untuk kegiatan menggunakan komputer disebut ….",
+      "kunci": "laboratorium komputer / ruang komputer",
       "skor_maks": 1
     },
     {
       "no": 12,
-      "soal": "Rounded Rectangle digunakan untuk membuat gambar berbentuk kotak dengan sudut ....",
-      "kunci": "tumpul | melengkung | bulat | tidak tajam",
+      "soal": "Agar komputer tetap terawat, komputer harus selalu di ….",
+      "kunci": "bersihkan / dibersihkan",
       "skor_maks": 1
     },
     {
       "no": 13,
-      "soal": "Kanvas putih pada Paint berfungsi sebagai tempat untuk ....",
-      "kunci": "menggambar | menggambar dan mewarnai | melukis | mewarnai gambar",
+      "soal": "Saat duduk menggunakan komputer, punggung sebaiknya … dengan kursi.",
+      "kunci": "menempel",
       "skor_maks": 1
     },
     {
       "no": 14,
-      "soal": "Ikon kaleng cat tumpah yang digunakan untuk memberi warna pada gambar adalah ....",
-      "kunci": "fill with color | kaleng cat | cat tumpah | cat",
+      "soal": "Posisi duduk yang baik ketika menggunakan komputer akan membuat tubuh terasa ….",
+      "kunci": "nyaman",
       "skor_maks": 1
     },
     {
       "no": 15,
-      "soal": "Untuk mengambil warna yang sudah ada pada gambar lain di kanvas, kita menggunakan ikon ....",
-      "kunci": "color picker | pick color | pipet | ikon pipet",
+      "soal": "Jarak mata yang baik dari monitor adalah sekitar … cm.",
+      "kunci": "60-70",
       "skor_maks": 1
     },
     {
       "no": 16,
-      "soal": "Ikon bentuk persegi yang dapat digunakan untuk menggambar lemari pakaian adalah ....",
-      "kunci": "rectangle | kotak | persegi | persegi panjang",
+      "soal": "Untuk membantu mengurangi sinar radiasi dari monitor, kita dapat menggunakan ….",
+      "kunci": "filter layar / screen filter",
       "skor_maks": 1
     },
     {
       "no": 17,
-      "soal": "Ikon bersimbol huruf 'A' yang digunakan untuk menambahkan tulisan pada gambar adalah ....",
-      "kunci": "text | ikon text | ikon A | huruf A | teks",
+      "soal": "Posisi duduk yang salah saat menggunakan komputer dapat membuat badan menjadi ….",
+      "kunci": "pegal",
       "skor_maks": 1
     },
     {
       "no": 18,
-      "soal": "Untuk memperbesar tampilan gambar agar lebih detail dan jelas, kita menggunakan ikon ....",
-      "kunci": "magnifier | kaca pembesar | zoom | ikon kaca pembesar",
+      "soal": "Perangkat yang digunakan untuk menggerakkan pointer pada layar adalah ….",
+      "kunci": "mouse",
       "skor_maks": 1
     },
     {
       "no": 19,
-      "soal": "Saat menggambar batang pohon, kita dapat membuat garis lurus tegak menggunakan ikon ....",
-      "kunci": "line | rectangle | garis lurus | kotak | garis",
+      "soal": "Vacuum cleaner digunakan untuk … komputer.",
+      "kunci": "membersihkan",
       "skor_maks": 1
     },
     {
       "no": 20,
-      "soal": "Saat mewarnai lantai halaman sekolah menjadi hijau, kita menggunakan ikon ember cat bernama ....",
-      "kunci": "fill with color | kaleng cat | cat | ember cat | cat tumpah",
+      "soal": "Jika mata terlalu dekat dengan monitor, mata dapat terasa ….",
+      "kunci": "sakit / perih",
       "skor_maks": 1
     }
   ],
   "uraian": [
     {
       "no": 21,
-      "soal": "Jelaskan perbedaan bentuk dan fungsi antara ikon Rectangle dan ikon Triangle!",
-      "rubrik": "Rectangle berbentuk kotak/persegi, fungsinya untuk membuat gambar kotak (seperti lemari, jendela, badan mobil). Triangle berbentuk segitiga, fungsinya untuk membuat gambar segitiga (seperti atap rumah, gunung, atau layar perahu).",
+      "soal": "Jelaskan bagaimana posisi duduk yang baik ketika menggunakan komputer!",
+      "rubrik": "Siswa menjelaskan posisi duduk yang nyaman dan benar, seperti punggung tegak/menempel pada kursi, kaki menapak di lantai, serta posisi tubuh tidak terlalu dekat dengan monitor.",
       "skor_maks": 4
     },
     {
       "no": 22,
-      "soal": "Sebutkan 3 ikon alat gambar (tools) yang ada di Paint beserta fungsinya masing-masing!",
-      "rubrik": "Siswa menyebutkan 3 alat secara tepat, contoh: (1) Pencil untuk menggambar bebas, (2) Eraser untuk menghapus bagian gambar, (3) Fill with Color untuk mewarnai bidang tertutup, (4) Brush untuk menggambar dengan efek kuas, (5) Oval untuk menggambar lingkaran.",
+      "soal": "Sebutkan alat yang dapat digunakan untuk membersihkan komputer!",
+      "rubrik": "Siswa menyebutkan alat pembersih komputer yang sesuai. Contoh yang didukung soal: vacuum cleaner. Jawaban lain dapat diterima jika relevan dengan kegiatan membersihkan komputer.",
       "skor_maks": 4
     },
     {
       "no": 23,
-      "soal": "Jelaskan langkah-langkah mudah membuat gambar pemandangan pegunungan menggunakan Microsoft Paint!",
-      "rubrik": "Langkah logis untuk anak kelas 2, contoh: (1) Pilih ikon Triangle untuk membuat bentuk gunung, atau ikon Pencil untuk garis gunung secara bebas, (2) Gunakan Line untuk membuat garis batas tanah/jalan, (3) Tambahkan Oval untuk menggambar matahari di atas gunung, (4) Pilih Fill with Color untuk mewarnai gunung (hijau/biru) dan langit (biru muda), (5) Simpan hasil gambar.",
+      "soal": "Mengapa jarak mata dengan layar komputer perlu diperhatikan?",
+      "rubrik": "Siswa menjelaskan bahwa mata perlu diberi jarak yang cukup dari monitor agar tidak terganggu dan mengurangi risiko mata terasa sakit atau perih.",
       "skor_maks": 4
     },
     {
       "no": 24,
-      "soal": "Sebutkan alat-alat (tools) yang dapat digunakan untuk menggambar pohon dan bunga di Microsoft Paint serta jelaskan kegunaannya!",
-      "rubrik": "Sebutkan minimal 3 alat relevan: (1) Rectangle/Line untuk batang pohon/tangkai bunga, (2) Oval/Circle untuk kelopak bunga, (3) Pencil/Brush untuk daun pohon rimbun secara bebas, (4) Fill with Color untuk mewarnai daun hijau, batang cokelat, dan bunga berwarna-warni.",
+      "soal": "Mengapa makanan dan minuman sebaiknya tidak dibawa ke ruang komputer?",
+      "rubrik": "Siswa menjelaskan bahwa makanan dan minuman dapat tumpah atau mengotori serta berisiko merusak perangkat komputer.",
       "skor_maks": 4
     },
     {
       "no": 25,
-      "soal": "Bagaimana cara menentukan dan memilih warna yang sesuai saat mewarnai gambar di Microsoft Paint agar terlihat indah?",
-      "rubrik": "Cara memilih warna: (1) Klik menu Color Box/Palette warna di atas, (2) Pilih warna yang sesuai alam nyata (contoh: daun hijau, langit biru, tanah cokelat), (3) Jika ingin warna kustom klik 'Edit Colors', (4) Gunakan Fill with Color untuk mewarnai bagian gambar yang tertutup rapat agar warna tidak bocor keluar.",
+      "soal": "Ceritakan pengalamanmu ketika menggunakan komputer di sekolah!",
+      "rubrik": "Jawaban bersifat pengalaman pribadi. Penilaian berdasarkan kemampuan siswa menceritakan kegiatan yang dilakukan saat menggunakan komputer di sekolah secara relevan dan jelas.",
       "skor_maks": 4
     }
   ]

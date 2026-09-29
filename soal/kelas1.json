@@ -1,206 +1,206 @@
 {
   "kelas": 1,
-  "topik": "Microsoft Paint",
+  "topik": "Perangkat Teknologi dan Komputer",
   "mapel": "TIK",
   "sekolah": "SDN Sukasari 4 Tangerang",
   "npsn": "20606443",
   "nss": "10.1.02.23.10.068",
   "alamat": "Jl. Moch. Yamin No.1, Babakan, Tangerang",
-  "tahun": "2025-2026",
+  "tahun": "2026-2027",
   "durasi_menit": 60,
   "pg": [
     {
       "no": 1,
-      "soal": "Aplikasi pengolah gambar sederhana adalah ….",
+      "soal": "Alat yang dapat digunakan untuk mendapatkan informasi sekaligus hiburan adalah ….",
       "pilihan": {
-        "a": "notes",
-        "b": "paint",
-        "c": "notebook"
+        "a": "telepon",
+        "b": "televisi",
+        "c": "lemari"
       },
       "jawaban": "b"
     },
     {
       "no": 2,
-      "soal": "Menu yang terlihat pada microsoft paint terdapat ….",
+      "soal": "Jika ingin berbicara dengan orang yang berada jauh dari kita, alat yang dapat digunakan adalah ….",
       "pilihan": {
-        "a": "2",
-        "b": "3",
-        "c": "5"
+        "a": "radio",
+        "b": "handphone",
+        "c": "televisi"
       },
       "jawaban": "b"
     },
     {
       "no": 3,
-      "soal": "Terdapat menu yang akan tampil jika kita menekan ikon A, menu apakah itu.",
+      "soal": "Perangkat yang dapat digunakan untuk berbagai kegiatan seperti menonton, berkomunikasi, dan mendapatkan informasi adalah ….",
       "pilihan": {
-        "a": "view",
-        "b": "text",
-        "c": "edit"
+        "a": "telepon",
+        "b": "komputer",
+        "c": "monitor"
       },
       "jawaban": "b"
     },
     {
       "no": 4,
-      "soal": "Oval adalah ikon yang berguna untuk menggambar …",
+      "soal": "Apa yang sebaiknya dilakukan pada komputer setelah kita selesai menggunakannya?",
       "pilihan": {
-        "a": "garis lurus",
-        "b": "lingkaran",
-        "c": "kotak"
+        "a": "dinyalakan",
+        "b": "dimatikan",
+        "c": "dibiarkan menyala"
       },
       "jawaban": "b"
     },
     {
       "no": 5,
-      "soal": "Line berguna untuk menggambar …..",
+      "soal": "Sebutan lain yang umum digunakan untuk telepon genggam adalah ….",
       "pilihan": {
-        "a": "garis lengkung",
-        "b": "Garis lurus",
-        "c": "lingkaran"
+        "a": "telepon",
+        "b": "komputer",
+        "c": "handphone"
       },
-      "jawaban": "b"
+      "jawaban": "c"
     },
     {
       "no": 6,
-      "soal": "Segitiga dapat dibuat menggunakan ikon ….",
+      "soal": "Nama perangkat komputer yang digunakan untuk mengetik huruf dan angka disebut ….",
       "pilihan": {
-        "a": "rectangle",
-        "b": "triangle",
-        "c": "oval"
+        "a": "keyboard",
+        "b": "CPU",
+        "c": "mouse"
       },
-      "jawaban": "b"
+      "jawaban": "a"
     },
     {
       "no": 7,
-      "soal": "Balon dapat dibuat menggunakan ikon ….",
+      "soal": "Bagian komputer yang berfungsi memperlihatkan gambar pada layar adalah ….",
       "pilihan": {
-        "a": "oval",
-        "b": "curve",
-        "c": "line"
+        "a": "monitor",
+        "b": "keyboard",
+        "c": "mouse"
       },
       "jawaban": "a"
     },
     {
       "no": 8,
-      "soal": "Untuk mewarnai sebuah gambar, maka kamu dapat menggunakan ikon ….",
+      "soal": "Perangkat komputer yang digunakan untuk menghasilkan bunyi atau suara disebut speaker. Speaker mengeluarkan ….",
       "pilihan": {
-        "a": "fill with color",
-        "b": "pick color",
-        "c": "Color box"
+        "a": "tulisan",
+        "b": "suara",
+        "c": "gambar"
       },
-      "jawaban": "a"
+      "jawaban": "b"
     },
     {
       "no": 9,
-      "soal": "Rounded rectangle berguna untuk menggambar …",
+      "soal": "Perangkat komputer yang bentuknya menyerupai seekor tikus disebut ….",
       "pilihan": {
-        "a": "kotak",
-        "b": "bulat",
-        "c": "kotak dengan sudut tumpul"
+        "a": "mouse",
+        "b": "CPU",
+        "c": "monitor"
       },
-      "jawaban": "c"
+      "jawaban": "a"
     },
     {
       "no": 10,
-      "soal": "Mengapa hiasan dinding harus ditempel ke kertas karton....",
+      "soal": "Alat yang dapat digunakan untuk mengirim tulisan dan gambar kepada orang lain adalah ….",
       "pilihan": {
-        "a": "supaya hiasan lebih kuat",
-        "b": "supaya mudah digantung",
-        "c": "supaya tampak indah"
+        "a": "radio",
+        "b": "handphone",
+        "c": "mouse"
       },
-      "jawaban": "a"
+      "jawaban": "b"
     }
   ],
   "isian": [
     {
       "no": 11,
-      "soal": "Untuk menggambar garis lengkung dapat menggunakan ikon …",
-      "kunci": "curve",
+      "soal": "Sebutkan alat yang dapat digunakan untuk menelepon dan mengirim pesan singkat!",
+      "kunci": "handphone",
       "skor_maks": 1
     },
     {
       "no": 12,
-      "soal": "Ikon eraser pada paint berguna untuk …",
-      "kunci": "menghapus gambar",
+      "soal": "Perangkat yang digunakan untuk mendengarkan musik atau suara dari komputer adalah ….",
+      "kunci": "speaker",
       "skor_maks": 1
     },
     {
       "no": 13,
-      "soal": "Untuk menggambar badan mobil kamu dapat menggunakan ikon …",
-      "kunci": "rectangle",
+      "soal": "Apa kegunaan utama mouse pada komputer?",
+      "kunci": "menggerakkan kursor/pointer dan memilih objek",
       "skor_maks": 1
     },
     {
       "no": 14,
-      "soal": "Kotak dengan sudut tumpul digambar menggunakan ikon ....",
-      "kunci": "rounded rectangle",
+      "soal": "Alat apa yang dapat kita gunakan untuk berbicara dengan seseorang yang berada jauh?",
+      "kunci": "telepon/handphone",
       "skor_maks": 1
     },
     {
       "no": 15,
-      "soal": "Line berguna untuk menggambar …",
-      "kunci": "garis lurus",
+      "soal": "Laptop mudah dibawa dari satu tempat ke tempat lain karena bersifat ….",
+      "kunci": "mudah dibawa/praktis",
       "skor_maks": 1
     },
     {
       "no": 16,
-      "soal": "Pencil pada paint berguna untuk …",
-      "kunci": "menggambar bebas",
+      "soal": "Perangkat komputer yang memiliki layar dan tombol untuk mengetik serta mudah dibawa disebut ….",
+      "kunci": "laptop",
       "skor_maks": 1
     },
     {
       "no": 17,
-      "soal": "Color box pada paint disebut …",
-      "kunci": "kotak warna",
+      "soal": "Bagian komputer yang digunakan untuk melihat gambar, video, dan tulisan adalah ….",
+      "kunci": "monitor",
       "skor_maks": 1
     },
     {
       "no": 18,
-      "soal": "Untuk mewarnai gambar, kamu dapat menggunakan ikon …",
-      "kunci": "fill with color",
+      "soal": "Informasi atau pesan dapat disampaikan dalam bentuk tulisan, gambar, atau ….",
+      "kunci": "suara",
       "skor_maks": 1
     },
     {
       "no": 19,
-      "soal": "Agar gambar lebih menarik maka diberi …",
-      "kunci": "warna",
+      "soal": "Tanda panah yang bergerak pada layar ketika mouse digerakkan disebut ….",
+      "kunci": "kursor/pointer",
       "skor_maks": 1
     },
     {
       "no": 20,
-      "soal": "Untuk menyalin sebuah warna dari satu objek ke objek yang lain, kamu dapat menggunakan ikon …",
-      "kunci": "pick color",
+      "soal": "Bentuk monitor pada umumnya menyerupai sebuah ….",
+      "kunci": "televisi/layar",
       "skor_maks": 1
     }
   ],
   "uraian": [
     {
       "no": 21,
-      "soal": "Apa yang Kamu ketahui tentang \"Paint\" pada komputer?",
-      "rubrik": "Siswa menjelaskan bahwa Paint adalah program/aplikasi menggambar bawaan Windows, digunakan untuk menggambar dan mewarnai gambar sederhana di komputer.",
+      "soal": "Jelaskan apa yang dimaksud dengan mouse dan sebutkan kegunaannya!",
+      "rubrik": "Siswa menjelaskan bahwa mouse adalah perangkat komputer yang digunakan untuk menggerakkan kursor/pointer serta memilih atau mengklik objek.",
       "skor_maks": 4
     },
     {
       "no": 22,
-      "soal": "Sebutkan 3 alat (tool) yang ada di Microsoft Paint dan jelaskan kegunaan masing-masing alat tersebut!",
-      "rubrik": "Menyebutkan minimal 3 tool dengan benar beserta kegunaannya. Contoh: Pencil (menggambar bebas), Eraser (menghapus), Fill with Color (mewarnai), Oval (menggambar lingkaran/oval), Rectangle (menggambar kotak), Line (menggambar garis lurus), Curve (garis lengkung), Text/A (menulis teks).",
+      "soal": "Apa yang dimaksud dengan keyboard dan untuk apa alat tersebut digunakan?",
+      "rubrik": "Siswa menjelaskan bahwa keyboard adalah alat input pada komputer yang digunakan untuk mengetik huruf, angka, dan simbol.",
       "skor_maks": 4
     },
     {
       "no": 23,
-      "soal": "Apa perbedaan antara rectangle dan rounded rectangle?",
-      "rubrik": "Rectangle = menggambar kotak/persegi dengan sudut tajam/siku-siku. Rounded Rectangle = menggambar kotak/persegi dengan sudut tumpul/melengkung.",
+      "soal": "Ceritakan salah satu kegiatan yang pernah kamu lakukan dengan komputer atau handphone!",
+      "rubrik": "Jawaban berdasarkan pengalaman siswa. Dapat berupa kegiatan seperti mengetik, menonton, bermain, mengirim pesan, belajar, atau kegiatan lain yang relevan menggunakan komputer/handphone.",
       "skor_maks": 4
     },
     {
       "no": 24,
-      "soal": "Tuliskan langkah-langkah menggambar mobil di paint!",
-      "rubrik": "Urutan langkah yang logis, contoh: (1) Buka aplikasi Paint, (2) Pilih tool Rectangle untuk badan mobil, (3) Pilih tool Oval/Circle untuk roda, (4) Gunakan Line untuk detail, (5) Warnai menggunakan Fill with Color, (6) Simpan gambar.",
+      "soal": "Apa alasan komputer perlu dimatikan setelah selesai digunakan?",
+      "rubrik": "Siswa menjelaskan bahwa komputer perlu dimatikan setelah digunakan agar tidak terus menyala dan dapat digunakan dengan baik serta aman.",
       "skor_maks": 4
     },
     {
       "no": 25,
-      "soal": "Ceritakan pengalamanmu menggunakan Paint dan apa saja yang kamu sukai saat menggunakan program tersebut!",
-      "rubrik": "Jawaban subjektif/bersifat personal. Nilai diberikan berdasarkan: (1) Kemampuan mengungkapkan pengalaman, (2) Penyebutan fitur Paint yang pernah digunakan, (3) Alasan yang masuk akal mengapa menyukainya. Tidak ada jawaban yang 100% salah.",
+      "soal": "Jika ingin berbicara dengan keluarga atau teman yang berada jauh, bagaimana caranya dan alat apa yang dapat digunakan?",
+      "rubrik": "Siswa menjelaskan bahwa komunikasi jarak jauh dapat dilakukan dengan menelepon atau menggunakan handphone/telepon.",
       "skor_maks": 4
     }
   ]

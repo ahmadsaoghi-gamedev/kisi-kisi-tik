@@ -1,206 +1,271 @@
 {
   "kelas": 4,
-  "topik": "Dasar-Dasar Microsoft Word (Pengolah Kata)",
+  "topik": "Teknologi Informasi, Perangkat Komputer, Keyboard, dan Shortcut",
   "mapel": "TIK",
   "sekolah": "SDN Sukasari 4 Tangerang",
   "npsn": "20606443",
   "nss": "10.1.02.23.10.068",
   "alamat": "Jl. Moch. Yamin No.1, Babakan, Tangerang",
-  "tahun": "2025-2026",
+  "tahun": "2026-2027",
   "durasi_menit": 60,
   "pg": [
     {
       "no": 1,
-      "soal": "Nama aplikasi pengolah kata yang paling sering digunakan di komputer adalah ....",
+      "soal": "Kabar atau berita yang memberikan pengetahuan tentang suatu hal disebut ….",
       "pilihan": {
-        "a": "Microsoft Word",
-        "b": "Microsoft Paint",
-        "c": "Microsoft Excel"
+        "a": "teknologi",
+        "b": "komunikasi",
+        "c": "informasi",
+        "d": "teleconference"
       },
-      "jawaban": "a"
+      "jawaban": "c"
     },
     {
       "no": 2,
-      "soal": "Ikon apakah yang berfungsi untuk membuat tulisan atau teks menjadi cetak tebal?",
+      "soal": "Kegiatan bertukar informasi antara dua orang atau lebih hingga saling memahami disebut ….",
       "pilihan": {
-        "a": "Bold (B)",
-        "b": "Italic (I)",
-        "c": "Underline (U)"
+        "a": "informasi",
+        "b": "teknologi",
+        "c": "komunikasi",
+        "d": "teleconference"
       },
-      "jawaban": "a"
+      "jawaban": "c"
     },
     {
       "no": 3,
-      "soal": "Fungsi utama dari ikon Font pada menu Home Microsoft Word adalah untuk ....",
+      "soal": "Manakah yang termasuk perangkat yang digunakan dalam teknologi informasi?",
       "pilihan": {
-        "a": "Mengatur ukuran tulisan",
-        "b": "Mengubah bentuk atau jenis huruf",
-        "c": "Memberi warna pada tulisan"
+        "a": "modem",
+        "b": "mesin cuci",
+        "c": "lampu",
+        "d": "meja"
       },
-      "jawaban": "b"
+      "jawaban": "a"
     },
     {
       "no": 4,
-      "soal": "Ikon apa yang digunakan untuk mengatur besar kecilnya ukuran huruf (Font Size)?",
+      "soal": "Perangkat berikut yang digunakan untuk memasukkan data atau perintah ke komputer adalah ….",
       "pilihan": {
-        "a": "Font Size (Angka)",
-        "b": "Font Color",
-        "c": "Grow Font"
+        "a": "monitor",
+        "b": "CPU",
+        "c": "mouse",
+        "d": "keyboard"
       },
-      "jawaban": "a"
+      "jawaban": "d"
     },
     {
       "no": 5,
-      "soal": "Jika ingin mengubah warna tulisan pada Microsoft Word, ikon yang digunakan adalah ....",
+      "soal": "Yang termasuk contoh perangkat lunak komputer adalah ….",
       "pilihan": {
-        "a": "Font Style",
-        "b": "Font Color (simbol A dengan garis warna di bawah)",
-        "c": "Text Highlight Color"
+        "a": "keyboard",
+        "b": "CPU",
+        "c": "Windows",
+        "d": "harddisk"
       },
-      "jawaban": "b"
+      "jawaban": "c"
     },
     {
       "no": 6,
-      "soal": "Apa fungsi kombinasi tombol Ctrl + C pada keyboard saat mengetik di Microsoft Word?",
+      "soal": "Perangkat keras yang membantu komputer tersambung ke internet adalah ….",
       "pilihan": {
-        "a": "Untuk menyalin (copy) teks yang dipilih",
-        "b": "Untuk memotong (cut) teks yang dipilih",
-        "c": "Untuk menempel (paste) teks yang disalin"
+        "a": "printer",
+        "b": "scanner",
+        "c": "harddisk",
+        "d": "modem"
       },
-      "jawaban": "a"
+      "jawaban": "d"
     },
     {
       "no": 7,
-      "soal": "Tombol Delete digunakan untuk menghapus karakter yang berada di sebelah .... kursor.",
+      "soal": "Tombol Delete pada keyboard digunakan untuk menghapus karakter yang berada di sebelah … kursor.",
       "pilihan": {
-        "a": "Kiri (belakang)",
-        "b": "Kanan (depan)",
-        "c": "Atas"
-      },
-      "jawaban": "b"
-    },
-    {
-      "no": 8,
-      "soal": "Program manakah di bawah ini yang secara standar tidak menyediakan fitur kreasi tulisan indah 'WordArt'?",
-      "pilihan": {
-        "a": "Microsoft Word",
-        "b": "Notepad",
-        "c": "Microsoft PowerPoint"
-      },
-      "jawaban": "b"
-    },
-    {
-      "no": 9,
-      "soal": "Saat mengetik di Microsoft Word, tombol pintas keyboard apa yang dapat digunakan untuk langsung menuju bagian akhir dokumen?",
-      "pilihan": {
-        "a": "Ctrl + End",
-        "b": "Ctrl + Home",
-        "c": "Ctrl + Page Up"
+        "a": "kanan",
+        "b": "kiri",
+        "c": "atas",
+        "d": "bawah"
       },
       "jawaban": "a"
     },
     {
-      "no": 10,
-      "soal": "Apa kegunaan utama dari tombol Caps Lock pada keyboard saat kita mengetik?",
+      "no": 8,
+      "soal": "Shortcut Ctrl + S pada program pengolah dokumen digunakan untuk ….",
       "pilihan": {
-        "a": "Untuk menghapus tulisan dengan cepat",
-        "b": "Untuk membuat kursor berpindah baris baru",
-        "c": "Untuk membuat huruf menjadi kapital/besar semua"
+        "a": "menghapus dokumen",
+        "b": "memotong dokumen",
+        "c": "menyimpan dokumen",
+        "d": "membuka dokumen"
       },
       "jawaban": "c"
+    },
+    {
+      "no": 9,
+      "soal": "Jari yang umumnya digunakan untuk menekan tombol Space Bar adalah ….",
+      "pilihan": {
+        "a": "kelingking",
+        "b": "telunjuk",
+        "c": "jempol",
+        "d": "jari tengah"
+      },
+      "jawaban": "c"
+    },
+    {
+      "no": 10,
+      "soal": "Perintah Alt + F4 digunakan untuk ….",
+      "pilihan": {
+        "a": "mengecilkan program",
+        "b": "membuka program",
+        "c": "menutup program",
+        "d": "memperbesar tampilan"
+      },
+      "jawaban": "c"
+    },
+    {
+      "no": 11,
+      "soal": "Tombol yang dapat digunakan untuk mengubah huruf menjadi kapital saat mengetik adalah ….",
+      "pilihan": {
+        "a": "Ctrl",
+        "b": "Caps Lock",
+        "c": "Backspace",
+        "d": "Shift"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 12,
+      "soal": "Untuk mengetik tanda baca atau simbol tertentu yang terdapat pada tombol keyboard, biasanya kita menggunakan ….",
+      "pilihan": {
+        "a": "Caps Lock",
+        "b": "Backspace",
+        "c": "Shift",
+        "d": "Ctrl"
+      },
+      "jawaban": "c"
+    },
+    {
+      "no": 13,
+      "soal": "Tombol yang berfungsi mengaktifkan pengetikan huruf kapital secara terus-menerus adalah ….",
+      "pilihan": {
+        "a": "Shift",
+        "b": "Num Lock",
+        "c": "Caps Lock",
+        "d": "Enter"
+      },
+      "jawaban": "c"
+    },
+    {
+      "no": 14,
+      "soal": "Untuk menggerakkan kursor ke arah kanan, kiri, atas, atau bawah, kita dapat menggunakan tombol ….",
+      "pilihan": {
+        "a": "Enter",
+        "b": "Shift",
+        "c": "panah",
+        "d": "angka"
+      },
+      "jawaban": "c"
+    },
+    {
+      "no": 15,
+      "soal": "Berikut yang bukan merupakan manfaat komputer adalah ….",
+      "pilihan": {
+        "a": "memudahkan pekerjaan",
+        "b": "merapikan hasil ketikan",
+        "c": "mempercepat pekerjaan",
+        "d": "memperlambat pekerjaan"
+      },
+      "jawaban": "d"
     }
   ],
   "isian": [
     {
-      "no": 11,
-      "soal": "Pada menu tab apakah fitur tulisan indah 'WordArt' dapat ditemukan?",
-      "kunci": "insert | menu insert | tab insert",
-      "skor_maks": 1
-    },
-    {
-      "no": 12,
-      "soal": "Istilah Underline Style digunakan untuk menyatakan format teks yang memiliki ....",
-      "kunci": "garis bawah | bergaris bawah | under line",
-      "skor_maks": 1
-    },
-    {
-      "no": 13,
-      "soal": "Kombinasi tombol pintas Ctrl + A pada keyboard digunakan untuk memilih seluruh ....",
-      "kunci": "teks | tulisan | semua teks | dokumen | select all",
-      "skor_maks": 1
-    },
-    {
-      "no": 14,
-      "soal": "Perintah menu atau tombol yang digunakan jika ingin menyimpan file dengan nama yang berbeda atau lokasi baru adalah ....",
-      "kunci": "save as | tombol save as | menu save as",
-      "skor_maks": 1
-    },
-    {
-      "no": 15,
-      "soal": "Sebelum mengubah ukuran atau jenis huruf, teks harus terlebih dahulu di ....",
-      "kunci": "blok | seleksi | select | ditandai | disorot | highlight",
-      "skor_maks": 1
-    },
-    {
       "no": 16,
-      "soal": "Ikon Open yang digambarkan dengan map terbuka digunakan untuk .......... file dokumen yang telah disimpan.",
-      "kunci": "membuka | open | membuka file | membuka dokumen",
+      "soal": "Tombol Delete digunakan untuk menghapus teks atau karakter yang berada di sebelah … kursor.",
+      "kunci": "kanan",
       "skor_maks": 1
     },
     {
       "no": 17,
-      "soal": "Perintah yang berfungsi untuk membatalkan tindakan atau kesalahan pengetikan terakhir disebut ....",
-      "kunci": "undo | membatalkan | ctrl z | ctrl + z",
+      "soal": "Tombol Backspace digunakan untuk menghapus teks atau karakter yang berada di sebelah … kursor.",
+      "kunci": "kiri",
       "skor_maks": 1
     },
     {
       "no": 18,
-      "soal": "Tombol Delete pada keyboard berguna untuk menghapus teks dari sisi .......... kursor.",
-      "kunci": "kanan | depan | sebelah kanan | sebelah depan",
+      "soal": "Perangkat yang digunakan untuk memasukkan data atau perintah ke dalam komputer disebut ….",
+      "kunci": "input device / perangkat masukan",
       "skor_maks": 1
     },
     {
       "no": 19,
-      "soal": "Tombol Backspace pada keyboard berguna untuk menghapus teks dari sisi .......... kursor.",
-      "kunci": "kiri | belakang | sebelah kiri | sebelah belakang",
+      "soal": "Mouse digunakan untuk … kursor pada layar komputer.",
+      "kunci": "menggerakkan",
       "skor_maks": 1
     },
     {
       "no": 20,
-      "soal": "Tombol pada keyboard yang membuat huruf diketik menjadi kapital/besar semua adalah ....",
-      "kunci": "caps lock | tombol caps lock | capslock",
+      "soal": "Aplikasi yang digunakan untuk mengolah atau membuat dokumen teks disebut program ….",
+      "kunci": "pengolah kata",
+      "skor_maks": 1
+    },
+    {
+      "no": 21,
+      "soal": "Shortcut Ctrl + V digunakan untuk menampilkan hasil ….",
+      "kunci": "copy / salinan",
+      "skor_maks": 1
+    },
+    {
+      "no": 22,
+      "soal": "Untuk memasukkan atau menyisipkan simbol dalam dokumen Word, kita dapat menggunakan menu ….",
+      "kunci": "Symbol",
+      "skor_maks": 1
+    },
+    {
+      "no": 23,
+      "soal": "Tombol keyboard yang digunakan untuk membuat semua huruf menjadi kapital adalah ….",
+      "kunci": "Caps Lock",
+      "skor_maks": 1
+    },
+    {
+      "no": 24,
+      "soal": "Shortcut Ctrl + N biasanya digunakan untuk membuat dokumen ….",
+      "kunci": "baru",
+      "skor_maks": 1
+    },
+    {
+      "no": 25,
+      "soal": "Untuk menutup aplikasi atau dokumen yang sedang digunakan, kita dapat menekan tombol … dan ….",
+      "kunci": "Alt + F4",
       "skor_maks": 1
     }
   ],
   "uraian": [
     {
-      "no": 21,
-      "soal": "Jelaskan langkah-langkah mengubah warna tulisan pada Microsoft Word!",
-      "rubrik": "Langkah mewarnai teks: (1) Seleksi atau blok teks yang ingin diubah warnanya, (2) Klik tab menu 'Home' di bagian atas, (3) Cari dan klik tanda panah kecil di sebelah ikon 'Font Color' (simbol huruf A dengan garis warna di bawahnya), (4) Pilih warna yang diinginkan pada pilihan warna yang muncul.",
+      "no": 26,
+      "soal": "Mengapa keyboard menyediakan kumpulan tombol angka khusus di bagian kanan?",
+      "rubrik": "Siswa menjelaskan bahwa numeric pad memudahkan dan mempercepat pengetikan angka, terutama ketika sering melakukan pekerjaan yang membutuhkan banyak angka.",
       "skor_maks": 4
     },
     {
-      "no": 22,
-      "soal": "Sebutkan beberapa jenis tampilan huruf (Font Style) populer yang tersedia di Microsoft Word!",
-      "rubrik": "Siswa menyebutkan minimal 3-4 jenis font populer dengan benar, contoh: Times New Roman, Calibri, Arial, Comic Sans MS, Courier New, Georgia, Garamond, dll.",
+      "no": 27,
+      "soal": "Jelaskan perbedaan penggunaan tombol Backspace dan Delete ketika memperbaiki kesalahan tulisan, serta berikan contoh!",
+      "rubrik": "Backspace digunakan untuk menghapus karakter di sebelah kiri kursor, sedangkan Delete digunakan untuk menghapus karakter di sebelah kanan kursor. Siswa memberikan contoh yang sesuai.",
       "skor_maks": 4
     },
     {
-      "no": 23,
-      "soal": "Apa perbedaan fungsi antara fitur Font Color dan Font Size pada Microsoft Word?",
-      "rubrik": "Font Color berfungsi untuk memberikan atau mengubah warna pada karakter huruf/teks agar lebih menarik (misal merah, biru, hijau), sedangkan Font Size berfungsi untuk mengatur besar atau kecilnya ukuran fisik karakter huruf/teks tersebut (misal ukuran 12, 14, 16).",
+      "no": 28,
+      "soal": "Apa perbedaan Caps Lock dan Shift dalam membuat huruf kapital? Jelaskan kapan masing-masing tombol digunakan!",
+      "rubrik": "Caps Lock digunakan untuk mengetik huruf kapital secara terus-menerus sampai dimatikan. Shift digunakan sementara untuk membuat huruf kapital atau mengetik simbol tertentu. Contoh penggunaan harus sesuai.",
       "skor_maks": 4
     },
     {
-      "no": 24,
-      "soal": "Bagaimana cara membuat teks menjadi rata kanan dan rata kiri sekaligus (Justify) di Microsoft Word? Jelaskan langkahnya!",
-      "rubrik": "Langkah membuat Justify: (1) Seleksi atau blok paragraf teks yang ingin diatur perataannya, (2) Klik tab menu 'Home' di bagian atas, (3) Pada kelompok menu 'Paragraph', cari dan klik ikon 'Justify' (rata kiri-kanan, bersimbol garis-garis sejajar kiri dan kanan), atau alternatifnya tekan tombol shortcut Ctrl + J pada keyboard.",
+      "no": 29,
+      "soal": "Apa kegunaan Space Bar dan Shift saat mengetik agar tulisan menjadi lebih mudah dibaca?",
+      "rubrik": "Space Bar digunakan untuk memberikan jarak antar kata, sedangkan Shift dapat digunakan untuk membuat huruf kapital atau simbol tertentu sehingga penulisan kalimat menjadi benar dan mudah dibaca.",
       "skor_maks": 4
     },
     {
-      "no": 25,
-      "soal": "Jelaskan pengertian fitur 'WordArt' menurut pemahamanmu!",
-      "rubrik": "WordArt adalah sebuah fitur atau alat pada Microsoft Word (dan aplikasi Office lainnya) yang digunakan untuk membuat tulisan atau teks menjadi sangat indah, artistik, dan bergaya (memiliki efek bayangan, 3D, warna gradasi, melengkung, dll). Biasanya digunakan untuk judul dokumen atau poster agar terlihat menonjol dan menarik perhatian.",
+      "no": 30,
+      "soal": "Jelaskan jari yang tepat untuk mengetik huruf A, S, J, dan K pada keyboard agar pengetikan lebih teratur!",
+      "rubrik": "Siswa memahami penempatan jari pada keyboard: A menggunakan kelingking kiri, S menggunakan jari manis kiri, J menggunakan telunjuk kanan, dan K menggunakan jari tengah kanan.",
       "skor_maks": 4
     }
   ]

@@ -1,0 +1,272 @@
+{
+  "kelas": 6,
+  "topik": "Berpikir Komputasional, Logika, dan Pemrograman Visual",
+  "mapel": "TIK",
+  "sekolah": "SDN Sukasari 4 Tangerang",
+  "npsn": "20606443",
+  "nss": "10.1.02.23.10.068",
+  "alamat": "Jl. Moch. Yamin No.1, Babakan, Tangerang",
+  "tahun": "2026-2027",
+  "durasi_menit": 60,
+  "pg": [
+    {
+      "no": 1,
+      "soal": "Mengerjakan tugas dari yang mudah kemudian dilanjutkan ke bagian yang lebih sulit menunjukkan cara berpikir yang ….",
+      "pilihan": {
+        "a": "repetitif",
+        "b": "terstruktur",
+        "c": "tidak terencana",
+        "d": "acak"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 2,
+      "soal": "Jika akan membuat jus jeruk, kegiatan yang sebaiknya dilakukan terlebih dahulu adalah ….",
+      "pilihan": {
+        "a": "meminum jus",
+        "b": "mengupas jeruk",
+        "c": "memberi gula",
+        "d": "mencuci gelas"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 3,
+      "soal": "Salah satu cara menyelesaikan persoalan yang besar dalam berpikir komputasional adalah ….",
+      "pilihan": {
+        "a": "melupakan masalah",
+        "b": "membaginya menjadi beberapa bagian kecil",
+        "c": "menghindari masalah",
+        "d": "membiarkan masalah"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 4,
+      "soal": "Mengelompokkan barang belanjaan ke dalam kategori tertentu berdasarkan cirinya merupakan contoh ….",
+      "pilihan": {
+        "a": "abstraksi",
+        "b": "pengulangan",
+        "c": "pola",
+        "d": "pengacakan"
+      },
+      "jawaban": "c"
+    },
+    {
+      "no": 5,
+      "soal": "Jika komputer menerima dan menjalankan instruksi dengan benar tanpa kesalahan, komputer akan ….",
+      "pilihan": {
+        "a": "berhenti",
+        "b": "bingung",
+        "c": "bekerja sesuai instruksi",
+        "d": "menolak"
+      },
+      "jawaban": "c"
+    },
+    {
+      "no": 6,
+      "soal": "Kegiatan menjalankan suatu perintah secara berulang-ulang dalam pemrograman disebut ….",
+      "pilihan": {
+        "a": "repeat",
+        "b": "struktur data",
+        "c": "pola pikir",
+        "d": "penyelesaian"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 7,
+      "soal": "Kondisi lampu hijau membuat kendaraan berjalan, sedangkan lampu merah membuat kendaraan berhenti. Contoh tersebut menggunakan ….",
+      "pilihan": {
+        "a": "loop",
+        "b": "logika if-else",
+        "c": "abstraksi",
+        "d": "random"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 8,
+      "soal": "Menyusun daftar piket berdasarkan nomor absen dari 1 sampai 30 merupakan contoh berpikir ….",
+      "pilihan": {
+        "a": "acak",
+        "b": "teratur",
+        "c": "tidak logis",
+        "d": "berulang"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 9,
+      "soal": "Memilih rute yang lebih singkat untuk menghemat waktu merupakan contoh ….",
+      "pilihan": {
+        "a": "solusi efektif",
+        "b": "solusi asal-asalan",
+        "c": "solusi lambat",
+        "d": "tidak sistematis"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 10,
+      "soal": "Apa arti perintah if path to the right pada Blockly Games?",
+      "pilihan": {
+        "a": "Jika ada jalan di kanan maka belok kanan",
+        "b": "Selalu belok kanan",
+        "c": "Jangan belok kanan",
+        "d": "Stop"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 11,
+      "soal": "Dalam Blockly Games, perintah else digunakan ketika kondisi sebelumnya ….",
+      "pilihan": {
+        "a": "benar dan lakukan A",
+        "b": "tidak benar sehingga lakukan B",
+        "c": "selalu melakukan A",
+        "d": "tidak perlu bergerak"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 12,
+      "soal": "Menunggu giliran dengan tertib ketika mengantre merupakan contoh berpikir ….",
+      "pilihan": {
+        "a": "logis dan sistematis",
+        "b": "acak",
+        "c": "tidak beraturan",
+        "d": "melawan aturan"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 13,
+      "soal": "Dalam membuat kue, tindakan yang dilakukan sebelum memanggang adalah ….",
+      "pilihan": {
+        "a": "memanggang kue langsung",
+        "b": "mencampur bahan sesuai resep",
+        "c": "memberi topping",
+        "d": "memotong kue"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 14,
+      "soal": "Jika terdapat 5 ayam dan 2 ayam dijual, hasil yang perlu dicari dengan berpikir logis adalah ….",
+      "pilihan": {
+        "a": "ayam yang lari",
+        "b": "ayam yang sakit",
+        "c": "sisa ayam dengan hitungan logis",
+        "d": "ayam yang dipelihara tetangga"
+      },
+      "jawaban": "c"
+    },
+    {
+      "no": 15,
+      "soal": "Bahasa pemrograman visual yang mudah digunakan untuk belajar coding oleh anak-anak adalah ….",
+      "pilihan": {
+        "a": "Python",
+        "b": "Scratch",
+        "c": "Java",
+        "d": "HTML"
+      },
+      "jawaban": "b"
+    }
+  ],
+  "isian": [
+    {
+      "no": 16,
+      "soal": "Langkah-langkah yang disusun secara berurutan untuk menyelesaikan masalah disebut ….",
+      "kunci": "algoritma",
+      "skor_maks": 1
+    },
+    {
+      "no": 17,
+      "soal": "Perintah yang membuat suatu langkah dijalankan berulang kali disebut ….",
+      "kunci": "repeat",
+      "skor_maks": 1
+    },
+    {
+      "no": 18,
+      "soal": "Membagi masalah besar menjadi beberapa masalah yang lebih kecil disebut ….",
+      "kunci": "dekomposisi",
+      "skor_maks": 1
+    },
+    {
+      "no": 19,
+      "soal": "Operator And digunakan ketika kedua kondisi harus bernilai … agar pernyataan benar.",
+      "kunci": "benar",
+      "skor_maks": 1
+    },
+    {
+      "no": 20,
+      "soal": "Agar komputer dapat menjalankan perintah dengan tepat, instruksi harus ditulis secara ….",
+      "kunci": "jelas dan benar",
+      "skor_maks": 1
+    },
+    {
+      "no": 21,
+      "soal": "Jika hujan turun, kita dapat membawa ….",
+      "kunci": "payung",
+      "skor_maks": 1
+    },
+    {
+      "no": 22,
+      "soal": "Dalam membuat teh, salah satu langkah awal yang logis adalah menyiapkan ….",
+      "kunci": "gelas / bahan dan alat untuk membuat teh",
+      "skor_maks": 1
+    },
+    {
+      "no": 23,
+      "soal": "Operator Or digunakan jika dari dua kondisi terdapat setidaknya satu kondisi yang bernilai ….",
+      "kunci": "benar",
+      "skor_maks": 1
+    },
+    {
+      "no": 24,
+      "soal": "Bahasa pemrograman visual yang mudah dipelajari anak SD adalah ….",
+      "kunci": "Scratch",
+      "skor_maks": 1
+    },
+    {
+      "no": 25,
+      "soal": "Jika komputer menerima instruksi yang salah, komputer dapat mengalami ….",
+      "kunci": "error / kesalahan",
+      "skor_maks": 1
+    }
+  ],
+  "uraian": [
+    {
+      "no": 26,
+      "soal": "Berikan satu contoh kegiatan membantu orang tua di rumah yang dapat dilakukan dengan menerapkan berpikir komputasional. Jelaskan langkahnya!",
+      "rubrik": "Siswa memberikan kegiatan yang relevan dan menjelaskan penyelesaiannya secara terstruktur, misalnya memecah pekerjaan menjadi beberapa bagian, menyusun urutan langkah, menemukan pola, atau menggunakan kondisi.",
+      "skor_maks": 4
+    },
+    {
+      "no": 27,
+      "soal": "Mengapa kita perlu menggunakan cara berpikir logis dan teratur ketika menyelesaikan masalah? Berikan contoh sederhana!",
+      "rubrik": "Siswa menjelaskan bahwa berpikir logis dan teratur membantu menyelesaikan masalah secara sistematis, mengurangi kesalahan, dan menghasilkan solusi yang tepat. Contoh harus relevan.",
+      "skor_maks": 4
+    },
+    {
+      "no": 28,
+      "soal": "Tuliskan urutan kegiatan yang logis dari saat bersiap di rumah hingga masuk ke kelas!",
+      "rubrik": "Siswa menuliskan langkah secara runtut dan masuk akal, misalnya bangun, mandi, berpakaian, sarapan, menyiapkan perlengkapan, berangkat, tiba di sekolah, lalu masuk kelas.",
+      "skor_maks": 4
+    },
+    {
+      "no": 29,
+      "soal": "Buatlah logika program robot yang terus maju, tetapi jika menemukan jalan buntu di depan maka robot harus berbelok ke kiri!",
+      "rubrik": "Siswa menggunakan logika kondisi, misalnya: jika ada jalan di depan maka maju; jika tidak ada jalan di depan maka belok kiri. Jawaban dapat berupa langkah algoritmik atau blok perintah yang setara.",
+      "skor_maks": 4
+    },
+    {
+      "no": 30,
+      "soal": "Bagaimana strategi yang dapat digunakan agar robot mengikuti sisi ruangan berbentuk persegi dan terus bergerak sampai menemukan pintu keluar?",
+      "rubrik": "Siswa menjelaskan strategi gerak robot secara berulang dan terarah, misalnya mengikuti sisi ruangan, memeriksa kondisi jalan, berbelok ketika menemukan sudut atau hambatan, dan mengulanginya sampai menemukan pintu keluar.",
+      "skor_maks": 4
+    }
+  ]
+}

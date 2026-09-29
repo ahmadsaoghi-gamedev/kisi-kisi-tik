@@ -1,206 +1,271 @@
 {
   "kelas": 5,
-  "topik": "Berpikir Komputasional, Scratch, dan AI",
-  "mapel": "KKA",
+  "topik": "Berpikir Komputasional dan Coding Blockly Games",
+  "mapel": "TIK",
   "sekolah": "SDN Sukasari 4 Tangerang",
   "npsn": "20606443",
   "nss": "10.1.02.23.10.068",
   "alamat": "Jl. Moch. Yamin No.1, Babakan, Tangerang",
-  "tahun": "2025-2026",
+  "tahun": "2026-2027",
   "durasi_menit": 60,
   "pg": [
     {
       "no": 1,
-      "soal": "Saat membuat jadwal piket kelas, Siti membagi pekerjaannya menjadi beberapa bagian kecil seperti menyapu, menghapus papan tulis, dan merapikan meja. Cara berpikir tersebut termasuk pilar ....",
+      "soal": "Saat akan membersihkan kamar, tindakan yang sebaiknya dilakukan terlebih dahulu agar pekerjaan teratur adalah ….",
       "pilihan": {
-        "a": "Dekomposisi",
-        "b": "Abstraksi",
-        "c": "Pengenalan Pola"
+        "a": "langsung menyapu lantai",
+        "b": "merapikan barang-barang terlebih dahulu",
+        "c": "membuka jendela setelah selesai",
+        "d": "menyemprot pengharum"
       },
-      "jawaban": "a"
+      "jawaban": "b"
     },
     {
       "no": 2,
-      "soal": "Andi menyadari bahwa setiap hari Senin ia sering terlambat bangun pagi. Kemampuan Andi mengenali kebiasaan dan pengulangan masalah tersebut disebut ....",
+      "soal": "Dalam berpikir komputasional, cara yang digunakan untuk menangani masalah yang besar adalah ….",
       "pilihan": {
-        "a": "Abstraksi",
-        "b": "Pengenalan Pola",
-        "c": "Algoritma"
+        "a": "melupakan masalah",
+        "b": "membaginya menjadi masalah-masalah kecil",
+        "c": "membiarkan masalah",
+        "d": "menunda penyelesaian"
       },
       "jawaban": "b"
     },
     {
       "no": 3,
-      "soal": "Ketika membuat gambar denah rumah sederhana, Budi hanya menggambarkan bagian penting seperti pintu, jendela, dan ruangan, serta mengabaikan detail hiasan dinding. Cara berpikir ini termasuk ....",
+      "soal": "Ketika menyusun puzzle, kita mencocokkan bagian berdasarkan kesamaan bentuk atau gambar. Hal tersebut merupakan contoh ….",
       "pilihan": {
-        "a": "Algoritma",
-        "b": "Dekomposisi",
-        "c": "Abstraksi"
+        "a": "pola",
+        "b": "pengacakan",
+        "c": "perintah",
+        "d": "error"
       },
-      "jawaban": "c"
+      "jawaban": "a"
     },
     {
       "no": 4,
-      "soal": "Urutan langkah-langkah logis yang tersusun secara rapi dan sistematis untuk menyelesaikan suatu masalah disebut ....",
+      "soal": "Dalam Blockly Games, fungsi perintah move forward adalah membuat robot ….",
       "pilihan": {
-        "a": "Dekomposisi",
-        "b": "Algoritma",
-        "c": "Abstraksi"
+        "a": "mundur satu langkah",
+        "b": "maju satu langkah",
+        "c": "melompat",
+        "d": "belok kanan"
       },
       "jawaban": "b"
     },
     {
       "no": 5,
-      "soal": "Di bawah ini yang merupakan contoh penerapan langkah-langkah algoritma dalam kehidupan sehari-hari adalah ....",
+      "soal": "Jika sebuah perintah repeat dijalankan sebanyak 3 times, tindakan di dalamnya akan dilakukan ….",
       "pilihan": {
-        "a": "Urutan langkah mencuci tangan menggunakan sabun secara benar",
-        "b": "Melamun memikirkan mainan baru di kamar",
-        "c": "Membeli jajanan tanpa melihat uang kembalian"
+        "a": "maju 3 langkah sekaligus",
+        "b": "sebanyak 3 kali",
+        "c": "tidak bergerak",
+        "d": "belok ke kanan"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 6,
+      "soal": "Apa maksud dari perintah if path to the right pada Blockly Games?",
+      "pilihan": {
+        "a": "Jika ada jalan di kanan maka belok kanan",
+        "b": "Selalu belok kanan",
+        "c": "Jangan belok kanan",
+        "d": "Berhenti"
       },
       "jawaban": "a"
     },
     {
-      "no": 6,
-      "soal": "Urutan kegiatan memasak nasi secara runtun mulai dari mencuci beras, memasukkan air, hingga menyalakan rice cooker merupakan contoh penerapan berpikir komputasional pilar ....",
-      "pilihan": {
-        "a": "Pengenalan Pola",
-        "b": "Abstraksi",
-        "c": "Algoritma"
-      },
-      "jawaban": "c"
-    },
-    {
       "no": 7,
-      "soal": "Di dalam aplikasi Scratch, objek atau karakter gambar yang dapat digerakkan dan diberikan perintah kode pada animasi/permainan disebut ....",
+      "soal": "Perintah yang dapat digunakan agar robot terus menjalankan langkah berulang sampai tujuan adalah ….",
       "pilihan": {
-        "a": "Backdrop",
-        "b": "Sprite",
-        "c": "Stage"
+        "a": "if",
+        "b": "repeat forever",
+        "c": "else",
+        "d": "stop"
       },
       "jawaban": "b"
     },
     {
       "no": 8,
-      "soal": "Blok Scratch yang membuat karakter terus berjalan selama syarat tertentu terpenuhi adalah ....",
+      "soal": "Kapan perintah if path ahead digunakan dalam Blockly Games?",
       "pilihan": {
-        "a": "Forever atau Repeat Until",
-        "b": "Set X to 0",
-        "c": "Go to random position"
+        "a": "Saat ada dinding di depan",
+        "b": "Saat terdapat jalan di depan",
+        "c": "Saat robot harus berhenti",
+        "d": "Saat robot harus mundur"
       },
-      "jawaban": "a"
+      "jawaban": "b"
     },
     {
       "no": 9,
-      "soal": "Program Scratch yang menggerakkan karakter ke kanan saat tombol panah kanan ditekan diawali menggunakan blok jenis ....",
+      "soal": "Dalam logika pemrograman, bagian else digunakan untuk ….",
       "pilihan": {
-        "a": "Control",
-        "b": "Events (Kejadian)",
-        "c": "Sensing"
+        "a": "melakukan A jika kondisi benar",
+        "b": "melakukan B jika kondisi tidak benar",
+        "c": "selalu melakukan A",
+        "d": "tidak melakukan gerakan"
       },
       "jawaban": "b"
     },
     {
       "no": 10,
-      "soal": "Proses mencari, menemukan, dan kemudian memperbaiki kesalahan (error) pada kode program dinamakan ....",
+      "soal": "Manakah contoh penggunaan logika if-else dalam kehidupan sehari-hari?",
       "pilihan": {
-        "a": "Coding",
-        "b": "Debugging",
-        "c": "Saving"
+        "a": "Jika hujan membawa payung, jika tidak hujan tidak perlu membawa payung",
+        "b": "Jika lapar, tetap makan walaupun tidak lapar",
+        "c": "Jika capek, terus berlari",
+        "d": "Jika mengantuk, terus belajar"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 11,
+      "soal": "Salah satu manfaat menggunakan perintah repeat dalam coding adalah ….",
+      "pilihan": {
+        "a": "membuat robot lebih lambat",
+        "b": "menghemat jumlah perintah",
+        "c": "membuat proyek lebih panjang",
+        "d": "membuat robot bingung"
       },
       "jawaban": "b"
+    },
+    {
+      "no": 12,
+      "soal": "Ketika membuat jadwal belajar berdasarkan urutan kegiatan yang masuk akal, kita menerapkan cara berpikir ….",
+      "pilihan": {
+        "a": "logis",
+        "b": "acak",
+        "c": "cepat saja",
+        "d": "tidak terstruktur"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 13,
+      "soal": "Agar robot dapat melakukan langkah yang sama tanpa menuliskan perintah tersebut berkali-kali, kita dapat menggunakan ….",
+      "pilihan": {
+        "a": "banyak perintah manual",
+        "b": "repeat",
+        "c": "perintah acak",
+        "d": "perintah kosong"
+      },
+      "jawaban": "b"
+    },
+    {
+      "no": 14,
+      "soal": "Membuat pekerjaan lebih efisien dengan memperhatikan urutan dan kondisi merupakan penerapan ….",
+      "pilihan": {
+        "a": "mengidentifikasi program",
+        "b": "mempersiapkan aplikasi program",
+        "c": "meningkatkan efisiensi pekerjaan",
+        "d": "meningkatkan kompleksitas pekerjaan"
+      },
+      "jawaban": "c"
+    },
+    {
+      "no": 15,
+      "soal": "Mengapa langkah-langkah dalam coding perlu disusun secara berurutan?",
+      "pilihan": {
+        "a": "Agar pekerjaan lebih teratur dan hasil maksimal",
+        "b": "Agar pekerjaan lebih lama selesai",
+        "c": "Agar lebih membingungkan",
+        "d": "Agar berbeda dari teman"
+      },
+      "jawaban": "a"
     }
   ],
   "isian": [
     {
-      "no": 11,
-      "soal": "Data yang berbentuk angka seperti nilai ujian, umur, dan jumlah siswa disebut data ....",
-      "kunci": "numerik | angka | data numerik | data angka | kuantitatif",
-      "skor_maks": 1
-    },
-    {
-      "no": 12,
-      "soal": "Dalam Scratch, area latar belakang tempat sprite atau karakter bergerak disebut ....",
-      "kunci": "stage | panggung | latar | backdrop",
-      "skor_maks": 1
-    },
-    {
-      "no": 13,
-      "soal": "Aktivitas menemukan dan memperbaiki kesalahan (error) pada program komputer dikenal dengan istilah ....",
-      "kunci": "debugging | debug | de-bugging | perbaikan program",
-      "skor_maks": 1
-    },
-    {
-      "no": 14,
-      "soal": "Proses membagi masalah besar atau kompleks menjadi beberapa bagian kecil yang lebih mudah diselesaikan disebut ....",
-      "kunci": "dekomposisi | deconstruction | decomposition",
-      "skor_maks": 1
-    },
-    {
-      "no": 15,
-      "soal": "Kemampuan untuk memilah informasi penting dan mengabaikan informasi yang tidak penting/relevan disebut ....",
-      "kunci": "abstraksi | abstraction",
-      "skor_maks": 1
-    },
-    {
       "no": 16,
-      "soal": "Blok Scratch yang digunakan untuk mengulang sekumpulan perintah selama beberapa kali disebut blok ....",
-      "kunci": "repeat | loop | perulangan | ulangi | block repeat | block loop",
+      "soal": "Perintah Blockly Games yang membuat robot bergerak maju satu langkah adalah ….",
+      "kunci": "move forward",
       "skor_maks": 1
     },
     {
       "no": 17,
-      "soal": "Teknologi Kecerdasan Buatan (AI) dapat mengenali objek atau wajah karena dilatih menggunakan banyak sekali ....",
-      "kunci": "data | sampel | gambar | contoh | data foto | data gambar",
+      "soal": "Perintah yang digunakan untuk mengulangi suatu langkah beberapa kali disebut ….",
+      "kunci": "repeat",
       "skor_maks": 1
     },
     {
       "no": 18,
-      "soal": "Aturan dan tata krama perilaku yang tepat serta sopan dalam menggunakan teknologi digital disebut ....",
-      "kunci": "etika digital | kewargaan digital | etika internet | netiket | literasi digital",
+      "soal": "Jika terdapat jalan di sebelah kiri dan robot harus berbelok ke kiri, kondisi/perintah yang digunakan adalah ….",
+      "kunci": "if path to the left",
       "skor_maks": 1
     },
     {
       "no": 19,
-      "soal": "Pilar berpikir komputasional yang melengkapi dekomposisi, pengenalan pola, dan abstraksi adalah ....",
-      "kunci": "algoritma | algorithm",
+      "soal": "Logika yang digunakan ketika robot maju jika ada jalan di depan dan melakukan tindakan lain jika tidak ada jalan adalah ….",
+      "kunci": "if-else",
       "skor_maks": 1
     },
     {
       "no": 20,
-      "soal": "Nama aplikasi pemrograman visual berbasis blok warna-warni yang digunakan siswa SD untuk belajar membuat game/animasi sederhana adalah ....",
-      "kunci": "scratch | scratch mit | aplikasi scratch",
+      "soal": "Urutan langkah yang disusun secara teratur untuk menyelesaikan suatu masalah disebut ….",
+      "kunci": "algoritma",
+      "skor_maks": 1
+    },
+    {
+      "no": 21,
+      "soal": "Berikan satu contoh sederhana penggunaan logika if dalam kegiatan sehari-hari!",
+      "kunci": "contoh: jika hujan maka membawa payung",
+      "skor_maks": 1
+    },
+    {
+      "no": 22,
+      "soal": "Perintah yang digunakan agar beberapa langkah dapat dilakukan berulang sehingga program lebih singkat adalah ….",
+      "kunci": "repeat",
+      "skor_maks": 1
+    },
+    {
+      "no": 23,
+      "soal": "Teknik memecah masalah besar menjadi beberapa bagian yang lebih kecil disebut ….",
+      "kunci": "dekomposisi",
+      "skor_maks": 1
+    },
+    {
+      "no": 24,
+      "soal": "Kesamaan atau kejadian yang muncul berulang-ulang dalam suatu masalah disebut ….",
+      "kunci": "pola",
+      "skor_maks": 1
+    },
+    {
+      "no": 25,
+      "soal": "Jika komputer atau robot menerima instruksi yang salah, maka hasilnya dapat mengalami ….",
+      "kunci": "error / kesalahan",
       "skor_maks": 1
     }
   ],
   "uraian": [
     {
-      "no": 21,
-      "soal": "Jelaskan pengertian berpikir komputasional, sebutkan empat pilar utamanya, dan berikan satu contoh penerapannya!",
-      "rubrik": "Siswa menuliskan: (1) Pengertian berpikir komputasional (metode menyelesaikan masalah dengan cara seperti komputer), (2) Empat pilarnya: Dekomposisi, Pengenalan Pola, Abstraksi, Algoritma, (3) Satu contoh bebas (misalnya langkah mencuci piring atau membuat teh).",
+      "no": 26,
+      "soal": "Berikan satu contoh kegiatan di rumah yang dapat diselesaikan dengan berpikir komputasional. Jelaskan langkah penerapannya!",
+      "rubrik": "Siswa memberikan contoh kegiatan yang relevan, kemudian menjelaskan langkah secara teratur menggunakan prinsip berpikir komputasional, seperti memecah masalah, menyusun urutan, menemukan pola, atau menggunakan kondisi.",
       "skor_maks": 4
     },
     {
-      "no": 22,
-      "soal": "Perhatikan program Scratch: saat bendera hijau diklik, 'ulangi 10 kali: maju 10 langkah, lalu putar kanan 36 derajat'. Jelaskan apa yang terjadi pada karakter (Sprite) tersebut!",
-      "rubrik": "Karakter (Sprite) akan bergerak maju secara perlahan lalu berputar sebanyak 10 kali. Karena perputaran totalnya adalah 10 kali x 36 derajat = 360 derajat (satu putaran penuh), maka karakter tersebut akan berjalan membentuk lintasan berbentuk lingkaran penuh atau segi-10 beraturan lalu kembali menghadap ke arah semula.",
+      "no": 27,
+      "soal": "Berikan contoh penerapan logika if-else dalam kehidupan sehari-hari dan jelaskan kondisi serta tindakan yang dilakukan!",
+      "rubrik": "Siswa memberikan contoh yang memiliki dua kemungkinan berdasarkan kondisi. Contoh: jika hujan membawa payung, jika tidak hujan tidak membawa payung.",
       "skor_maks": 4
     },
     {
-      "no": 23,
-      "soal": "Sebutkan tiga contoh penggunaan Artificial Intelligence (AI) atau Kecerdasan Buatan dalam kehidupan sehari-hari beserta manfaatnya!",
-      "rubrik": "Menyebutkan minimal 3 contoh dan manfaat, seperti: (1) Deteksi wajah (Face ID) untuk membuka HP, (2) Google Assistant/Siri untuk mencari informasi lewat suara, (3) Rekomendasi video (YouTube) untuk mencarikan konten menarik, (4) Google Translate untuk menerjemahkan bahasa secara instan.",
+      "no": 28,
+      "soal": "Tuliskan urutan kegiatan yang logis mulai dari bersiap di rumah hingga sampai di sekolah!",
+      "rubrik": "Siswa menuliskan langkah secara runtut dan masuk akal, misalnya bangun, mandi, berpakaian, sarapan, menyiapkan perlengkapan, berangkat, dan tiba di sekolah.",
       "skor_maks": 4
     },
     {
-      "no": 24,
-      "soal": "Tuliskan langkah-langkah mengirimkan tugas kepada guru secara benar dan sopan melalui email!",
-      "rubrik": "Langkah logis: (1) Buka email (seperti Gmail), (2) Klik tombol 'Tulis' (Compose), (3) Ketik alamat email guru pada kolom 'To', (4) Isi subjek dengan format jelas (misal: Tugas KKA Kelas 5 - [Nama]), (5) Lampirkan file tugas menggunakan ikon klip kertas, (6) Ketik pesan sopan, (7) Klik 'Kirim' (Send).",
+      "no": 29,
+      "soal": "Mengapa perintah repeat dapat membuat program Blockly Games lebih pendek dan efisien? Berikan contoh sederhana!",
+      "rubrik": "Siswa menjelaskan bahwa repeat menghindari penulisan perintah yang sama berulang kali. Contoh: daripada menulis move forward berkali-kali, menggunakan repeat dengan jumlah pengulangan yang sesuai.",
       "skor_maks": 4
     },
     {
-      "no": 25,
-      "soal": "Mengapa siswa SD perlu mempelajari berpikir komputasional? Sebutkan minimal dua alasan!",
-      "rubrik": "Siswa menyebutkan minimal 2 alasan: (1) Melatih otak berpikir terstruktur, logis, dan sistematis dalam menyelesaikan masalah sehari-hari, (2) Mempersiapkan diri memahami teknologi masa depan seperti robotika, (3) Mempermudah tugas rumit dengan membaginya menjadi bagian kecil.",
+      "no": 30,
+      "soal": "Bagaimana penggunaan if path ahead dan else dapat membantu robot melewati labirin tanpa menabrak dinding?",
+      "rubrik": "Siswa menjelaskan bahwa robot memeriksa kondisi jalan di depan. Jika ada jalan, robot dapat maju; jika tidak ada jalan, bagian else digunakan untuk memilih tindakan lain, seperti berbelok.",
       "skor_maks": 4
     }
   ]

@@ -1,206 +1,206 @@
 {
   "kelas": 3,
-  "topik": "Operasi Gambar dan Transformasi di Paint",
+  "topik": "Desktop, Wallpaper, Screensaver, dan Program Accessories Windows",
   "mapel": "TIK",
   "sekolah": "SDN Sukasari 4 Tangerang",
   "npsn": "20606443",
   "nss": "10.1.02.23.10.068",
   "alamat": "Jl. Moch. Yamin No.1, Babakan, Tangerang",
-  "tahun": "2025-2026",
+  "tahun": "2026-2027",
   "durasi_menit": 60,
   "pg": [
     {
       "no": 1,
-      "soal": "Aplikasi di sistem Windows yang dapat digunakan untuk membuat dan mengedit gambar secara digital adalah ....",
+      "soal": "Gambar latar belakang yang tampil pada desktop Windows disebut ….",
       "pilihan": {
-        "a": "Microsoft Paint",
-        "b": "Microsoft Word",
-        "c": "Notepad"
-      },
-      "jawaban": "a"
-    },
-    {
-      "no": 2,
-      "soal": "Di bawah ini yang merupakan pilihan bentuk (shape) yang tersedia pada menu Shape di Microsoft Paint adalah ....",
-      "pilihan": {
-        "a": "Huruf, Angka, dan Kalimat",
-        "b": "Oval, Rectangle, dan Triangle",
-        "c": "Tabel, Grafik, dan Kolom"
+        "a": "animasi",
+        "b": "wallpaper",
+        "c": "screen saver"
       },
       "jawaban": "b"
     },
     {
-      "no": 3,
-      "soal": "Ikon apakah yang paling tepat digunakan untuk menggambar balon gas bulat secara rapi?",
+      "no": 2,
+      "soal": "Manakah yang bukan merupakan pilihan pengaturan tampilan wallpaper?",
       "pilihan": {
-        "a": "Polygon",
-        "b": "Rectangle",
-        "c": "Oval"
+        "a": "fit",
+        "b": "fill",
+        "c": "feeling"
       },
       "jawaban": "c"
     },
     {
-      "no": 4,
-      "soal": "Jika ingin mengetik atau menulis kalimat pada kanvas gambar, ikon yang digunakan adalah ....",
+      "no": 3,
+      "soal": "Pilihan pengaturan wallpaper yang digunakan untuk membuat gambar memenuhi tampilan layar adalah ….",
       "pilihan": {
-        "a": "Pencil",
-        "b": "Text (simbol A)",
-        "c": "Color picker"
+        "a": "stretch",
+        "b": "tile",
+        "c": "center"
       },
-      "jawaban": "b"
+      "jawaban": "a"
+    },
+    {
+      "no": 4,
+      "soal": "Pasangan aplikasi yang termasuk program aksesori bawaan Windows adalah ….",
+      "pilihan": {
+        "a": "Paint dan Calculator",
+        "b": "Winamp dan Paint",
+        "c": "Paint dan Mozilla"
+      },
+      "jawaban": "a"
     },
     {
       "no": 5,
-      "soal": "Pada awalnya, berapa banyak pilihan warna utama standar yang tersedia di kotak pilihan warna (Color Palette) Paint?",
+      "soal": "Aplikasi bawaan Windows yang dapat digunakan untuk membuat gambar sederhana adalah ….",
       "pilihan": {
-        "a": "10 warna",
-        "b": "20 warna",
-        "c": "50 warna"
+        "a": "Paint",
+        "b": "Notepad",
+        "c": "Calculator"
       },
-      "jawaban": "b"
+      "jawaban": "a"
     },
     {
       "no": 6,
-      "soal": "Ikon yang digunakan untuk membuat bentuk persegi dengan sudut melengkung/tumpul adalah ....",
+      "soal": "Pada Calculator, tombol Backspace digunakan untuk ….",
       "pilihan": {
-        "a": "Rounded Rectangle",
-        "b": "Rectangle",
-        "c": "Curve"
+        "a": "menghapus angka yang terakhir diketik",
+        "b": "menghapus angka yang pertama diketik",
+        "c": "menghapus operasi perhitungan terakhir"
       },
       "jawaban": "a"
     },
     {
       "no": 7,
-      "soal": "Tombol apakah yang digunakan untuk menutup jendela aplikasi Paint agar keluar dari program?",
+      "soal": "Dalam aplikasi Calculator, simbol '*' digunakan untuk melakukan operasi ….",
       "pilihan": {
-        "a": "Tombol Minimize (strip)",
-        "b": "Tombol Close (tanda silang 'X' merah)",
-        "c": "Tombol Maximize (kotak)"
-      },
-      "jawaban": "b"
-    },
-    {
-      "no": 8,
-      "soal": "Istilah lain dari kegiatan menyalin atau menggandakan suatu gambar agar menjadi dua atau lebih adalah ....",
-      "pilihan": {
-        "a": "Cut",
-        "b": "Paste",
-        "c": "Copy"
+        "a": "penambahan",
+        "b": "pengurangan",
+        "c": "perkalian"
       },
       "jawaban": "c"
     },
     {
-      "no": 9,
-      "soal": "Apa yang dimaksud dengan melakukan 'drag' gambar menggunakan mouse?",
+      "no": 8,
+      "soal": "Program bawaan Windows yang digunakan untuk membuat atau mengetik teks pendek adalah ….",
       "pilihan": {
-        "a": "Klik kiri mouse satu kali saja",
-        "b": "Klik kanan mouse untuk memunculkan menu",
-        "c": "Menekan tombol klik kiri mouse sambil menahannya dan menggeser mouse"
+        "a": "Notepad",
+        "b": "WordPad",
+        "c": "MS Word"
+      },
+      "jawaban": "a"
+    },
+    {
+      "no": 9,
+      "soal": "Gambar atau animasi yang muncul ketika komputer tidak digunakan selama beberapa waktu disebut ….",
+      "pilihan": {
+        "a": "Wallpaper",
+        "b": "Themes",
+        "c": "Screensaver"
       },
       "jawaban": "c"
     },
     {
       "no": 10,
-      "soal": "Tombol pada keyboard selain tombol 'Delete' yang dapat digunakan untuk menghapus karakter teks ke arah kiri adalah ....",
+      "soal": "Pengaturan yang dipilih untuk mengganti gambar latar belakang desktop adalah ….",
       "pilihan": {
-        "a": "Backspace",
-        "b": "Spacebar",
-        "c": "Shift"
+        "a": "sound",
+        "b": "screen saver",
+        "c": "desktop background"
       },
-      "jawaban": "a"
+      "jawaban": "c"
     }
   ],
   "isian": [
     {
       "no": 11,
-      "soal": "Ikon Color .......... digunakan untuk mengambil atau menyalin warna dari gambar yang sudah ada di kanvas.",
-      "kunci": "picker | pick color | pipet | picker warna",
+      "soal": "Untuk mematikan komputer melalui menu Start dengan cara yang benar, kita memilih ….",
+      "kunci": "Shut Down",
       "skor_maks": 1
     },
     {
       "no": 12,
-      "soal": "Fungsi Curve pada menu Shapes adalah untuk membuat garis ....",
-      "kunci": "lengkung | melengkung | bergelombang | tidak lurus",
+      "soal": "Saat ingin mengganti gambar latar desktop, klik kanan pada area kosong desktop lalu pilih ….",
+      "kunci": "Personalize",
       "skor_maks": 1
     },
     {
       "no": 13,
-      "soal": "Jika ingin membuat gambar menjadi miring (skew), menu/alat yang digunakan pada Paint adalah ....",
-      "kunci": "skew | resize | miring | kemiringan",
+      "soal": "Tombol pada keyboard yang dapat digunakan untuk menghapus file atau folder yang dipilih adalah ….",
+      "kunci": "Delete",
       "skor_maks": 1
     },
     {
       "no": 14,
-      "soal": "Fitur Stretch berfungsi untuk .......... atau meregangkan gambar ke arah tertentu pada menu Resize.",
-      "kunci": "meregangkan | menarik | memperlebar | merentangkan | memperbesar",
+      "soal": "Gambar yang menjadi latar belakang desktop Windows disebut ….",
+      "kunci": "wallpaper",
       "skor_maks": 1
     },
     {
       "no": 15,
-      "soal": "Ikon shape yang paling sesuai untuk menggambar badan mobil berbentuk kotak panjang adalah ....",
-      "kunci": "rectangle | kotak | persegi | persegi panjang",
+      "soal": "Agar sebuah gambar terlihat lebih menarik, gambar tersebut dapat diberi ….",
+      "kunci": "warna",
       "skor_maks": 1
     },
     {
       "no": 16,
-      "soal": "Untuk memiringkan gambar ke arah mendatar (kiri atau kanan), kita menggunakan opsi Skew ....",
-      "kunci": "horizontal",
+      "soal": "Untuk menyesuaikan ukuran gambar wallpaper dengan layar, salah satu opsi yang dapat dipilih adalah ….",
+      "kunci": "fit",
       "skor_maks": 1
     },
     {
       "no": 17,
-      "soal": "Skew Vertical berarti memiringkan gambar ke arah ....",
-      "kunci": "atas atau bawah | atas bawah | vertikal | tegak",
+      "soal": "Perangkat yang digunakan untuk menggerakkan kursor pada layar komputer adalah ….",
+      "kunci": "mouse",
       "skor_maks": 1
     },
     {
       "no": 18,
-      "soal": "Untuk meregangkan gambar secara tegak lurus (ke atas atau bawah), kita menggunakan fitur Stretch ....",
-      "kunci": "vertical | vertikal",
+      "soal": "Untuk melakukan operasi hitung matematika pada komputer, kita dapat menggunakan aplikasi ….",
+      "kunci": "Calculator",
       "skor_maks": 1
     },
     {
       "no": 19,
-      "soal": "Stretch Horizontal berarti memperlebar gambar ke arah kiri dan ....",
-      "kunci": "kanan | kiri kanan | mendatar | horizontal",
+      "soal": "Perangkat yang digunakan untuk mencetak hasil pekerjaan dari komputer disebut ….",
+      "kunci": "printer",
       "skor_maks": 1
     },
     {
       "no": 20,
-      "soal": "Rounded Rectangle digunakan untuk menggambar bentuk kotak dengan sudut yang ....",
-      "kunci": "melengkung | tumpul | bulat | lingkaran",
+      "soal": "Aplikasi sederhana pada Windows yang digunakan untuk menulis dan mengedit teks adalah ….",
+      "kunci": "Notepad",
       "skor_maks": 1
     }
   ],
   "uraian": [
     {
       "no": 21,
-      "soal": "Sebutkan alat-alat (tools atau shapes) yang dapat digunakan untuk membuat ekspresi wajah orang di Microsoft Paint beserta fungsinya masing-masing!",
-      "rubrik": "Siswa menyebutkan minimal 3 alat relevan beserta fungsinya: (1) Oval untuk membuat lingkar muka dan mata, (2) Curve untuk membuat garis mulut melengkung (senyum/sedih) dan alis, (3) Fill with Color untuk mewarnai bagian wajah, mata, dan rambut, (4) Eraser untuk menghapus coretan salah.",
+      "soal": "Jelaskan apa yang dimaksud dengan desktop pada komputer!",
+      "rubrik": "Siswa menjelaskan bahwa desktop adalah tampilan utama/latar kerja yang terlihat setelah komputer Windows siap digunakan, tempat berbagai ikon dan wallpaper ditampilkan.",
       "skor_maks": 4
     },
     {
       "no": 22,
-      "soal": "Apa perbedaan fungsi antara fitur Skew Horizontal dan Skew Vertical pada menu Resize Microsoft Paint?",
-      "rubrik": "Skew Horizontal berfungsi untuk memiringkan gambar secara mendatar (ke arah kiri atau kanan), sedangkan Skew Vertical berfungsi untuk memiringkan gambar secara tegak lurus (ke arah atas atau bawah).",
+      "soal": "Jelaskan perbedaan wallpaper dan screen saver pada komputer!",
+      "rubrik": "Wallpaper adalah gambar latar belakang desktop yang terlihat sebagai tampilan latar. Screen saver adalah gambar/animasi yang muncul ketika komputer tidak digunakan selama beberapa waktu.",
       "skor_maks": 4
     },
     {
       "no": 23,
-      "soal": "Pilih tiga alat gambar (tools) yang ada di Microsoft Paint, kemudian jelaskan kegunaan masing-masing alat tersebut dengan benar!",
-      "rubrik": "Siswa memilih 3 alat secara bebas dan menjelaskan fungsinya secara tepat, contoh: (1) Pencil untuk membuat garis bebas, (2) Eraser untuk menghapus gambar, (3) Text (A) untuk menulis huruf/kata, (4) Fill with Color untuk mewarnai bidang tertutup rapat.",
+      "soal": "Sebutkan empat program aksesori Windows dan jelaskan kegunaan masing-masing!",
+      "rubrik": "Siswa menyebutkan empat program yang relevan dan fungsi masing-masing. Contoh dari materi: Paint untuk menggambar, Calculator untuk menghitung, Notepad untuk menulis/mengedit teks sederhana, dan program aksesori lain yang sesuai dengan materi.",
       "skor_maks": 4
     },
     {
       "no": 24,
-      "soal": "Jelaskan fungsi alat Color Picker (ikon pipet) di Microsoft Paint dengan bahasamu sendiri!",
-      "rubrik": "Fungsi Color Picker (pipet warna) adalah untuk mengambil atau menyalin suatu warna yang sudah ada pada gambar di kanvas, lalu menerapkannya kembali sebagai warna aktif agar warna gambar berikutnya bisa sama persis tanpa repot mencari di color box.",
+      "soal": "Apa kegunaan aplikasi Calculator? Berikan contoh perhitungan yang dapat dilakukan dengan aplikasi tersebut!",
+      "rubrik": "Siswa menjelaskan bahwa Calculator digunakan untuk melakukan perhitungan matematika. Contoh: menghitung 5 x 4 = 20 atau operasi hitung sederhana lainnya.",
       "skor_maks": 4
     },
     {
       "no": 25,
-      "soal": "Mengapa kita perlu memahami nama dan fungsi setiap alat (tool) yang ada di Microsoft Paint saat ingin menggambar?",
-      "rubrik": "Kita perlu memahaminya agar: (1) Kita bisa menggambar lebih mudah dan cepat karena menggunakan alat yang tepat, (2) Hasil gambar di kanvas menjadi lebih rapi, teratur, dan indah, (3) Kita tidak melakukan kesalahan atau kebingungan saat ingin melakukan aksi menggambar, menghapus, atau mewarnai gambar.",
+      "soal": "Mengapa program aksesori Windows dapat membantu kegiatan sehari-hari? Berikan satu contoh program dan penggunaannya!",
+      "rubrik": "Siswa menjelaskan bahwa program aksesori membantu menyelesaikan pekerjaan sederhana. Contoh: Paint untuk menggambar, Calculator untuk menghitung, atau Notepad untuk menulis teks pendek.",
       "skor_maks": 4
     }
   ]
